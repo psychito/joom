@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "https://www.joomla.org/xml/dtd/2.5/template-install.dtd">
+<extension version="3.1" type="template" client="site">
+	<name>luckySeven</name>
+	<version>1.0</version>
+	<creationDate>8/28/2017</creationDate>
+	<author>Alexander Urbina</author>
+	<authorEmail>alexanderurbinac@gmail.com</authorEmail>
+	<copyright>Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.</copyright>
+	<description>Tema desarrollado para SIETE</description>
+	<files>
+		<filename>component.php</filename>
+		<filename>error.php</filename>
+		<filename>offline.php</filename>
+		<filename>favicon.ico</filename>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<folder>css</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>img</folder>
+		<folder>js</folder>
+		<folder>language</folder>
+		<folder>less</folder>
+	</files>
+	<positions>
+		<position>lsev-fecha</position>
+		<position>debug</position>
+		<position>lsev-buscador</position>
+		<position>lsev-pubtop</position>
+		<position>lsev-logo</position>
+		<position>lsev-menu</position>
+		<position>lsev-redes</position>
+		<position>lsev-slider</position>
+		<position>lsev-mark1</position>
+		<position>lsev-mark2</position>
+		<position>lsev-mark3</position>
+		<position>lsev-foot1</position>
+		<position>lsev-foot2</position>
+		<position>lsev-foot3</position>
+		<position>lsev-footer</position>
+		<position>lsev-footpub</position>
+		<position>lsev-conttop</position>
+		<position>lsev-derecha</position>
+		<position>lsev-breadcrumb</position>
+		<position>lsev-contbottom</position>
+	</positions>
+	<languages folder="language">
+		<language tag="es-ES">es-ES/es-ES.tpl_luckyseven.ini</language>
+		<language tag="es-ES">es-ES/es-ES.tpl_lucckyseven.sys.ini</language>
+	</languages>
+</extension>
