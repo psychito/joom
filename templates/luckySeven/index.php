@@ -15,7 +15,7 @@ JHtml::_('jquery.framework');
 JHtml::_('script', 'template.js', array('version' => 'auto', 'relative' => true));
 JHtml::_('script', 'jui/html5.js', array('version' => 'auto', 'relative' => true, 'conditional' => 'lt IE 9'));
 JHtml::_('stylesheet', 'siete.css', array('version' => 'auto', 'relative' => true));
-JHtml::_('stylesheet', '//fonts.googleapis.com/css?family=Lato:300,400,900');
+JHtml::_('stylesheet', '//fonts.googleapis.com/css?family=Lato:300,400,900|Roboto+Condensed:400,700');
 $this->addStyleDeclaration("h1, h2, h3, h4, h5, h6, .site-title {	font-family: Lato, sans-serif;
 }");
 ?>
@@ -34,11 +34,11 @@ $this->addStyleDeclaration("h1, h2, h3, h4, h5, h6, .site-title {	font-family: L
 	<div class="anchototal container-fluid">
 	<header>
 		<div class="row topper">
-			<div class="span5 fecha">
+			<div class="span7 fecha">
 				<?php
 				echo '<span>'.JFactory::getDate()->format('l, d F').' de '.JFactory::getDate()->format('Y').'</span>'?>
 			</div>
-			<div class="span5 offset2 buscador">
+			<div class="span5 buscador">
 				<jdoc:include type="modules" name="lsev-buscador" style="none" />
 			</div>
 		</div>
