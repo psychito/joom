@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-08-2017 a las 23:03:39
+-- Tiempo de generación: 06-09-2017 a las 22:32:12
 -- Versión del servidor: 5.6.36
 -- Versión de PHP: 5.3.29
 
@@ -38,68 +38,94 @@ CREATE TABLE IF NOT EXISTS `gtxly_assets` (
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The unique name for the asset.\n',
   `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The descriptive title for the asset.',
   `rules` varchar(5120) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'JSON encoded access control.'
-) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `gtxly_assets`
 --
 
 INSERT INTO `gtxly_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `title`, `rules`) VALUES
-(1, 0, 0, 109, 0, 'root.1', 'Root Asset', '{"core.login.site":{"6":1,"2":1},"core.login.admin":{"6":1},"core.login.offline":{"6":1},"core.admin":{"8":1},"core.manage":{"7":1},"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
+(1, 0, 0, 161, 0, 'root.1', 'Root Asset', '{"core.login.site":{"6":1,"2":1},"core.login.admin":{"6":1},"core.login.offline":{"6":1},"core.admin":{"8":1},"core.manage":{"7":1},"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
 (2, 1, 1, 2, 1, 'com_admin', 'com_admin', '{}'),
 (3, 1, 3, 6, 1, 'com_banners', 'com_banners', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
 (4, 1, 7, 8, 1, 'com_cache', 'com_cache', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
 (5, 1, 9, 10, 1, 'com_checkin', 'com_checkin', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
 (6, 1, 11, 12, 1, 'com_config', 'com_config', '{}'),
 (7, 1, 13, 16, 1, 'com_contact', 'com_contact', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
-(8, 1, 17, 20, 1, 'com_content', 'com_content', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.edit":{"4":1},"core.edit.state":{"5":1}}'),
-(9, 1, 21, 22, 1, 'com_cpanel', 'com_cpanel', '{}'),
-(10, 1, 23, 24, 1, 'com_installer', 'com_installer', '{"core.manage":{"7":0},"core.delete":{"7":0},"core.edit.state":{"7":0}}'),
-(11, 1, 25, 26, 1, 'com_languages', 'com_languages', '{"core.admin":{"7":1}}'),
-(12, 1, 27, 28, 1, 'com_login', 'com_login', '{}'),
-(13, 1, 29, 30, 1, 'com_mailto', 'com_mailto', '{}'),
-(14, 1, 31, 32, 1, 'com_massmail', 'com_massmail', '{}'),
-(15, 1, 33, 34, 1, 'com_media', 'com_media', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":{"5":1}}'),
-(16, 1, 35, 38, 1, 'com_menus', 'com_menus', '{"core.admin":{"7":1}}'),
-(17, 1, 39, 40, 1, 'com_messages', 'com_messages', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
-(18, 1, 41, 74, 1, 'com_modules', 'com_modules', '{"core.admin":{"7":1}}'),
-(19, 1, 75, 78, 1, 'com_newsfeeds', 'com_newsfeeds', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
-(20, 1, 79, 80, 1, 'com_plugins', 'com_plugins', '{"core.admin":{"7":1}}'),
-(21, 1, 81, 82, 1, 'com_redirect', 'com_redirect', '{"core.admin":{"7":1}}'),
-(22, 1, 83, 84, 1, 'com_search', 'com_search', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
-(23, 1, 85, 86, 1, 'com_templates', 'com_templates', '{"core.admin":{"7":1}}'),
-(24, 1, 87, 90, 1, 'com_users', 'com_users', '{"core.admin":{"7":1}}'),
-(26, 1, 91, 92, 1, 'com_wrapper', 'com_wrapper', '{}'),
-(27, 8, 18, 19, 2, 'com_content.category.2', 'Uncategorised', '{}'),
+(8, 1, 17, 46, 1, 'com_content', 'com_content', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.edit":{"4":1},"core.edit.state":{"5":1}}'),
+(9, 1, 47, 48, 1, 'com_cpanel', 'com_cpanel', '{}'),
+(10, 1, 49, 50, 1, 'com_installer', 'com_installer', '{"core.manage":{"7":0},"core.delete":{"7":0},"core.edit.state":{"7":0}}'),
+(11, 1, 51, 52, 1, 'com_languages', 'com_languages', '{"core.admin":{"7":1}}'),
+(12, 1, 53, 54, 1, 'com_login', 'com_login', '{}'),
+(13, 1, 55, 56, 1, 'com_mailto', 'com_mailto', '{}'),
+(14, 1, 57, 58, 1, 'com_massmail', 'com_massmail', '{}'),
+(15, 1, 59, 60, 1, 'com_media', 'com_media', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":{"5":1}}'),
+(16, 1, 61, 64, 1, 'com_menus', 'com_menus', '{"core.admin":{"7":1}}'),
+(17, 1, 65, 66, 1, 'com_messages', 'com_messages', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
+(18, 1, 67, 100, 1, 'com_modules', 'com_modules', '{"core.admin":{"7":1}}'),
+(19, 1, 101, 104, 1, 'com_newsfeeds', 'com_newsfeeds', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
+(20, 1, 105, 106, 1, 'com_plugins', 'com_plugins', '{"core.admin":{"7":1}}'),
+(21, 1, 107, 108, 1, 'com_redirect', 'com_redirect', '{"core.admin":{"7":1}}'),
+(22, 1, 109, 110, 1, 'com_search', 'com_search', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
+(23, 1, 111, 112, 1, 'com_templates', 'com_templates', '{"core.admin":{"7":1}}'),
+(24, 1, 113, 116, 1, 'com_users', 'com_users', '{"core.admin":{"7":1}}'),
+(26, 1, 117, 118, 1, 'com_wrapper', 'com_wrapper', '{}'),
+(27, 8, 18, 19, 2, 'com_content.category.2', 'Sin categoría', '{}'),
 (28, 3, 4, 5, 2, 'com_banners.category.3', 'Uncategorised', '{}'),
 (29, 7, 14, 15, 2, 'com_contact.category.4', 'Uncategorised', '{}'),
-(30, 19, 76, 77, 2, 'com_newsfeeds.category.5', 'Uncategorised', '{}'),
-(32, 24, 88, 89, 2, 'com_users.category.7', 'Uncategorised', '{}'),
-(33, 1, 93, 94, 1, 'com_finder', 'com_finder', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
-(34, 1, 95, 96, 1, 'com_joomlaupdate', 'com_joomlaupdate', '{}'),
-(35, 1, 97, 98, 1, 'com_tags', 'com_tags', '{}'),
-(36, 1, 99, 100, 1, 'com_contenthistory', 'com_contenthistory', '{}'),
-(37, 1, 101, 102, 1, 'com_ajax', 'com_ajax', '{}'),
-(38, 1, 103, 104, 1, 'com_postinstall', 'com_postinstall', '{}'),
-(39, 18, 42, 43, 2, 'com_modules.module.1', 'Main Menu', '{}'),
-(40, 18, 44, 45, 2, 'com_modules.module.2', 'Login', '{}'),
-(41, 18, 46, 47, 2, 'com_modules.module.3', 'Popular Articles', '{}'),
-(42, 18, 48, 49, 2, 'com_modules.module.4', 'Recently Added Articles', '{}'),
-(43, 18, 50, 51, 2, 'com_modules.module.8', 'Toolbar', '{}'),
-(44, 18, 52, 53, 2, 'com_modules.module.9', 'Quick Icons', '{}'),
-(45, 18, 54, 55, 2, 'com_modules.module.10', 'Logged-in Users', '{}'),
-(46, 18, 56, 57, 2, 'com_modules.module.12', 'Admin Menu', '{}'),
-(47, 18, 58, 59, 2, 'com_modules.module.13', 'Admin Submenu', '{}'),
-(48, 18, 60, 61, 2, 'com_modules.module.14', 'User Status', '{}'),
-(49, 18, 62, 63, 2, 'com_modules.module.15', 'Title', '{}'),
-(50, 18, 64, 65, 2, 'com_modules.module.16', 'Login Form', '{}'),
-(51, 18, 66, 67, 2, 'com_modules.module.17', 'Breadcrumbs', '{}'),
-(52, 18, 68, 69, 2, 'com_modules.module.79', 'Multilanguage status', '{}'),
-(53, 18, 70, 71, 2, 'com_modules.module.86', 'Joomla Version', '{}'),
-(54, 16, 36, 37, 2, 'com_menus.menu.1', 'Main Menu', '{}'),
-(55, 1, 105, 106, 1, '#__languages.2', '#__languages.2', '{}'),
-(57, 18, 72, 73, 2, 'com_modules.module.88', 'Buscador', '{}'),
-(59, 1, 107, 108, 1, '#__languages.3', '#__languages.3', '{}');
+(30, 19, 102, 103, 2, 'com_newsfeeds.category.5', 'Uncategorised', '{}'),
+(32, 24, 114, 115, 2, 'com_users.category.7', 'Uncategorised', '{}'),
+(33, 1, 119, 120, 1, 'com_finder', 'com_finder', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
+(34, 1, 121, 122, 1, 'com_joomlaupdate', 'com_joomlaupdate', '{}'),
+(35, 1, 123, 124, 1, 'com_tags', 'com_tags', '{}'),
+(36, 1, 125, 126, 1, 'com_contenthistory', 'com_contenthistory', '{}'),
+(37, 1, 127, 128, 1, 'com_ajax', 'com_ajax', '{}'),
+(38, 1, 129, 130, 1, 'com_postinstall', 'com_postinstall', '{}'),
+(39, 18, 68, 69, 2, 'com_modules.module.1', 'Menú principal', '{}'),
+(40, 18, 70, 71, 2, 'com_modules.module.2', 'Login', '{}'),
+(41, 18, 72, 73, 2, 'com_modules.module.3', 'Popular Articles', '{}'),
+(42, 18, 74, 75, 2, 'com_modules.module.4', 'Recently Added Articles', '{}'),
+(43, 18, 76, 77, 2, 'com_modules.module.8', 'Toolbar', '{}'),
+(44, 18, 78, 79, 2, 'com_modules.module.9', 'Quick Icons', '{}'),
+(45, 18, 80, 81, 2, 'com_modules.module.10', 'Logged-in Users', '{}'),
+(46, 18, 82, 83, 2, 'com_modules.module.12', 'Admin Menu', '{}'),
+(47, 18, 84, 85, 2, 'com_modules.module.13', 'Admin Submenu', '{}'),
+(48, 18, 86, 87, 2, 'com_modules.module.14', 'User Status', '{}'),
+(49, 18, 88, 89, 2, 'com_modules.module.15', 'Title', '{}'),
+(50, 18, 90, 91, 2, 'com_modules.module.16', 'Login Form', '{}'),
+(51, 18, 92, 93, 2, 'com_modules.module.17', 'Breadcrumbs', '{}'),
+(52, 18, 94, 95, 2, 'com_modules.module.79', 'Multilanguage status', '{}'),
+(53, 18, 96, 97, 2, 'com_modules.module.86', 'Joomla Version', '{}'),
+(54, 16, 62, 63, 2, 'com_menus.menu.1', 'Main Menu', '{}'),
+(55, 1, 131, 132, 1, '#__languages.2', '#__languages.2', '{}'),
+(57, 18, 98, 99, 2, 'com_modules.module.88', 'Buscador', '{}'),
+(59, 1, 133, 134, 1, '#__languages.3', '#__languages.3', '{}'),
+(60, 8, 20, 21, 2, 'com_content.category.8', 'Música', '{}'),
+(61, 8, 22, 23, 2, 'com_content.category.9', 'Cine', '{}'),
+(62, 8, 24, 25, 2, 'com_content.category.10', 'SIETE', '{}'),
+(63, 8, 26, 27, 2, 'com_content.category.11', 'Arte y muestras', '{}'),
+(64, 8, 28, 29, 2, 'com_content.category.12', 'Literatura', '{}'),
+(65, 8, 30, 31, 2, 'com_content.category.13', 'Gastronomía', '{}'),
+(66, 8, 32, 33, 2, 'com_content.category.14', 'Con niños', '{}'),
+(67, 8, 34, 35, 2, 'com_content.category.15', 'Agenda', '{}'),
+(68, 8, 36, 37, 2, 'com_content.category.16', 'LGBTI', '{}'),
+(69, 8, 38, 39, 2, 'com_content.category.17', 'Vida nocturna', '{}'),
+(70, 8, 40, 41, 2, 'com_content.category.18', 'Tendencias', '{}'),
+(71, 8, 42, 43, 2, 'com_content.category.19', 'Viajes', '{}'),
+(72, 8, 44, 45, 2, 'com_content.category.20', 'De compras', '{}'),
+(73, 1, 135, 136, 1, '#__ucm_content.1', '#__ucm_content.1', '{}'),
+(74, 1, 137, 138, 1, '#__ucm_content.2', '#__ucm_content.2', '{}'),
+(75, 1, 139, 140, 1, '#__ucm_content.3', '#__ucm_content.3', '{}'),
+(76, 1, 141, 142, 1, '#__ucm_content.4', '#__ucm_content.4', '{}'),
+(77, 1, 143, 144, 1, '#__ucm_content.5', '#__ucm_content.5', '{}'),
+(78, 1, 145, 146, 1, '#__ucm_content.6', '#__ucm_content.6', '{}'),
+(79, 1, 147, 148, 1, '#__ucm_content.7', '#__ucm_content.7', '{}'),
+(80, 1, 149, 150, 1, '#__ucm_content.8', '#__ucm_content.8', '{}'),
+(81, 1, 151, 152, 1, '#__ucm_content.9', '#__ucm_content.9', '{}'),
+(82, 1, 153, 154, 1, '#__ucm_content.10', '#__ucm_content.10', '{}'),
+(83, 1, 155, 156, 1, '#__ucm_content.11', '#__ucm_content.11', '{}'),
+(84, 1, 157, 158, 1, '#__ucm_content.12', '#__ucm_content.12', '{}'),
+(85, 1, 159, 160, 1, '#__ucm_content.13', '#__ucm_content.13', '{}');
 
 -- --------------------------------------------------------
 
@@ -231,19 +257,32 @@ CREATE TABLE IF NOT EXISTS `gtxly_categories` (
   `hits` int(10) unsigned NOT NULL DEFAULT '0',
   `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `version` int(10) unsigned NOT NULL DEFAULT '1'
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `gtxly_categories`
 --
 
 INSERT INTO `gtxly_categories` (`id`, `asset_id`, `parent_id`, `lft`, `rgt`, `level`, `path`, `extension`, `title`, `alias`, `note`, `description`, `published`, `checked_out`, `checked_out_time`, `access`, `params`, `metadesc`, `metakey`, `metadata`, `created_user_id`, `created_time`, `modified_user_id`, `modified_time`, `hits`, `language`, `version`) VALUES
-(1, 0, 0, 0, 11, 0, '', 'system', 'ROOT', 'root', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{}', '', '', '{}', 224, '2017-08-28 16:24:05', 0, '0000-00-00 00:00:00', 0, '*', 1),
-(2, 27, 1, 1, 2, 1, 'uncategorised', 'com_content', 'Uncategorised', 'uncategorised', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 224, '2017-08-28 16:24:05', 0, '0000-00-00 00:00:00', 0, '*', 1),
+(1, 0, 0, 0, 37, 0, '', 'system', 'ROOT', 'root', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{}', '', '', '{}', 224, '2017-08-28 16:24:05', 0, '0000-00-00 00:00:00', 0, '*', 1),
+(2, 27, 1, 1, 2, 1, 'uncategorised', 'com_content', 'Sin categoría', 'uncategorised', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":"","image_alt":""}', '', '', '{"author":"","robots":""}', 224, '2017-08-28 16:24:05', 224, '2017-09-06 15:32:59', 0, '*', 1),
 (3, 28, 1, 3, 4, 1, 'uncategorised', 'com_banners', 'Uncategorised', 'uncategorised', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 224, '2017-08-28 16:24:05', 0, '0000-00-00 00:00:00', 0, '*', 1),
 (4, 29, 1, 5, 6, 1, 'uncategorised', 'com_contact', 'Uncategorised', 'uncategorised', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 224, '2017-08-28 16:24:05', 0, '0000-00-00 00:00:00', 0, '*', 1),
 (5, 30, 1, 7, 8, 1, 'uncategorised', 'com_newsfeeds', 'Uncategorised', 'uncategorised', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 224, '2017-08-28 16:24:05', 0, '0000-00-00 00:00:00', 0, '*', 1),
-(7, 32, 1, 9, 10, 1, 'uncategorised', 'com_users', 'Uncategorised', 'uncategorised', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 224, '2017-08-28 16:24:05', 0, '0000-00-00 00:00:00', 0, '*', 1);
+(7, 32, 1, 9, 10, 1, 'uncategorised', 'com_users', 'Uncategorised', 'uncategorised', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 224, '2017-08-28 16:24:05', 0, '0000-00-00 00:00:00', 0, '*', 1),
+(8, 60, 1, 11, 12, 1, 'musica', 'com_content', 'Música', 'musica', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":"","image_alt":""}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 15:32:45', 224, '2017-09-06 16:16:46', 0, '*', 1),
+(9, 61, 1, 13, 14, 1, 'cine', 'com_content', 'Cine', 'cine', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":"","image_alt":""}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 15:33:04', 224, '2017-09-06 16:16:52', 0, '*', 1),
+(10, 62, 1, 15, 16, 1, 'siete', 'com_content', 'SIETE', 'siete', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":"","image_alt":""}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 15:33:10', 224, '2017-09-06 16:16:57', 0, '*', 1),
+(11, 63, 1, 17, 18, 1, 'arte-y-muestras', 'com_content', 'Arte y muestras', 'arte-y-muestras', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":"","image_alt":""}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 15:33:25', 224, '2017-09-06 16:17:02', 0, '*', 1),
+(12, 64, 1, 19, 20, 1, 'literatura', 'com_content', 'Literatura', 'literatura', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":"","image_alt":""}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 15:33:33', 224, '2017-09-06 16:17:07', 0, '*', 1),
+(13, 65, 1, 21, 22, 1, 'gastronomia', 'com_content', 'Gastronomía', 'gastronomia', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":"","image_alt":""}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 15:33:41', 224, '2017-09-06 16:17:12', 0, '*', 1),
+(14, 66, 1, 23, 24, 1, 'con-ninos', 'com_content', 'Con niños', 'con-ninos', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":"","image_alt":""}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 15:34:28', 224, '2017-09-06 16:17:17', 0, '*', 1),
+(15, 67, 1, 25, 26, 1, 'agenda', 'com_content', 'Agenda', 'agenda', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":"","image_alt":""}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 15:35:13', 224, '2017-09-06 16:17:23', 0, '*', 1),
+(16, 68, 1, 27, 28, 1, 'lgbti', 'com_content', 'LGBTI', 'lgbti', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":"","image_alt":""}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 15:35:24', 224, '2017-09-06 16:17:28', 0, '*', 1),
+(17, 69, 1, 29, 30, 1, 'vida-nocturna', 'com_content', 'Vida nocturna', 'vida-nocturna', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":"","image_alt":""}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 15:35:32', 224, '2017-09-06 16:17:33', 0, '*', 1),
+(18, 70, 1, 31, 32, 1, 'tendencias', 'com_content', 'Tendencias', 'tendencias', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":"","image_alt":""}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 15:35:44', 224, '2017-09-06 16:17:38', 0, '*', 1),
+(19, 71, 1, 33, 34, 1, 'viajes', 'com_content', 'Viajes', 'viajes', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":"","image_alt":""}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 15:35:52', 224, '2017-09-06 16:17:44', 0, '*', 1),
+(20, 72, 1, 35, 36, 1, 'de-compras', 'com_content', 'De compras', 'de-compras', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":"","image_alt":""}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 15:35:58', 224, '2017-09-06 16:17:51', 0, '*', 1);
 
 -- --------------------------------------------------------
 
@@ -417,6 +456,25 @@ CREATE TABLE IF NOT EXISTS `gtxly_contentitem_tag_map` (
   `type_id` mediumint(8) NOT NULL COMMENT 'PK from the content_type table'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Maps items from content tables to tags';
 
+--
+-- Volcado de datos para la tabla `gtxly_contentitem_tag_map`
+--
+
+INSERT INTO `gtxly_contentitem_tag_map` (`type_alias`, `core_content_id`, `content_item_id`, `tag_id`, `tag_date`, `type_id`) VALUES
+('com_content.category', 1, 8, 2, '2017-09-06 16:16:46', 5),
+('com_content.category', 2, 9, 3, '2017-09-06 16:16:52', 5),
+('com_content.category', 3, 10, 5, '2017-09-06 16:16:57', 5),
+('com_content.category', 4, 11, 4, '2017-09-06 16:17:02', 5),
+('com_content.category', 5, 12, 6, '2017-09-06 16:17:07', 5),
+('com_content.category', 6, 13, 7, '2017-09-06 16:17:12', 5),
+('com_content.category', 7, 14, 8, '2017-09-06 16:17:18', 5),
+('com_content.category', 8, 15, 9, '2017-09-06 16:17:23', 5),
+('com_content.category', 9, 16, 10, '2017-09-06 16:17:28', 5),
+('com_content.category', 10, 17, 11, '2017-09-06 16:17:33', 5),
+('com_content.category', 11, 18, 12, '2017-09-06 16:17:38', 5),
+('com_content.category', 12, 19, 13, '2017-09-06 16:17:44', 5),
+('com_content.category', 13, 20, 14, '2017-09-06 16:17:51', 5);
+
 -- --------------------------------------------------------
 
 --
@@ -589,7 +647,7 @@ INSERT INTO `gtxly_extensions` (`extension_id`, `package_id`, `name`, `type`, `e
 (449, 0, 'plg_authentication_cookie', 'plugin', 'cookie', 'authentication', 0, 1, 1, 0, '{"name":"plg_authentication_cookie","type":"plugin","creationDate":"July 2013","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.0.0","description":"PLG_AUTH_COOKIE_XML_DESCRIPTION","group":"","filename":"cookie"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (450, 0, 'plg_twofactorauth_yubikey', 'plugin', 'yubikey', 'twofactorauth', 0, 0, 1, 0, '{"name":"plg_twofactorauth_yubikey","type":"plugin","creationDate":"September 2013","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.2.0","description":"PLG_TWOFACTORAUTH_YUBIKEY_XML_DESCRIPTION","group":"","filename":"yubikey"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (451, 0, 'plg_search_tags', 'plugin', 'tags', 'search', 0, 1, 1, 0, '{"name":"plg_search_tags","type":"plugin","creationDate":"March 2014","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.0.0","description":"PLG_SEARCH_TAGS_XML_DESCRIPTION","group":"","filename":"tags"}', '{"search_limit":"50","show_tagged_items":"1"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(452, 0, 'plg_system_updatenotification', 'plugin', 'updatenotification', 'system', 0, 1, 1, 0, '{"name":"plg_system_updatenotification","type":"plugin","creationDate":"May 2015","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.5.0","description":"PLG_SYSTEM_UPDATENOTIFICATION_XML_DESCRIPTION","group":"","filename":"updatenotification"}', '{"lastrun":1504037510}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(452, 0, 'plg_system_updatenotification', 'plugin', 'updatenotification', 'system', 0, 1, 1, 0, '{"name":"plg_system_updatenotification","type":"plugin","creationDate":"May 2015","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.5.0","description":"PLG_SYSTEM_UPDATENOTIFICATION_XML_DESCRIPTION","group":"","filename":"updatenotification"}', '{"lastrun":1504706064}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (453, 0, 'plg_editors-xtd_module', 'plugin', 'module', 'editors-xtd', 0, 1, 1, 0, '{"name":"plg_editors-xtd_module","type":"plugin","creationDate":"October 2015","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.5.0","description":"PLG_MODULE_XML_DESCRIPTION","group":"","filename":"module"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (454, 0, 'plg_system_stats', 'plugin', 'stats', 'system', 0, 1, 1, 0, '{"name":"plg_system_stats","type":"plugin","creationDate":"November 2013","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.5.0","description":"PLG_SYSTEM_STATS_XML_DESCRIPTION","group":"","filename":"stats"}', '{"mode":3,"lastrun":1504037612,"unique_id":"315d32a23ac05a6da317f6a9a5a3b84f66739dcd","interval":12}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (455, 0, 'plg_installer_packageinstaller', 'plugin', 'packageinstaller', 'installer', 0, 1, 1, 1, '{"name":"plg_installer_packageinstaller","type":"plugin","creationDate":"May 2016","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.6.0","description":"PLG_INSTALLER_PACKAGEINSTALLER_PLUGIN_XML_DESCRIPTION","group":"","filename":"packageinstaller"}', '', '', '', 0, '0000-00-00 00:00:00', 1, 0),
@@ -1277,14 +1335,14 @@ CREATE TABLE IF NOT EXISTS `gtxly_menu` (
   `home` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'Indicates if this menu item is the home or default page.',
   `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `client_id` tinyint(4) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=115 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `gtxly_menu`
 --
 
 INSERT INTO `gtxly_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `link`, `type`, `published`, `parent_id`, `level`, `component_id`, `checked_out`, `checked_out_time`, `browserNav`, `access`, `img`, `template_style_id`, `params`, `lft`, `rgt`, `home`, `language`, `client_id`) VALUES
-(1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, 0, '0000-00-00 00:00:00', 0, 0, '', 0, '', 0, 43, 0, '*', 0),
+(1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, 0, '0000-00-00 00:00:00', 0, 0, '', 0, '', 0, 69, 0, '*', 0),
 (2, 'main', 'com_banners', 'Banners', '', 'Banners', 'index.php?option=com_banners', 'component', 1, 1, 1, 4, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 1, 10, 0, '*', 1),
 (3, 'main', 'com_banners', 'Banners', '', 'Banners/Banners', 'index.php?option=com_banners', 'component', 1, 2, 2, 4, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 2, 3, 0, '*', 1),
 (4, 'main', 'com_banners_categories', 'Categories', '', 'Banners/Categories', 'index.php?option=com_categories&extension=com_banners', 'component', 1, 2, 2, 6, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners-cat', 0, '', 4, 5, 0, '*', 1),
@@ -1305,7 +1363,20 @@ INSERT INTO `gtxly_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `l
 (20, 'main', 'com_tags', 'Tags', '', 'Tags', 'index.php?option=com_tags', 'component', 1, 1, 1, 29, 0, '0000-00-00 00:00:00', 0, 1, 'class:tags', 0, '', 35, 36, 0, '', 1),
 (21, 'main', 'com_postinstall', 'Post-installation messages', '', 'Post-installation messages', 'index.php?option=com_postinstall', 'component', 1, 1, 1, 32, 0, '0000-00-00 00:00:00', 0, 1, 'class:postinstall', 0, '', 37, 38, 0, '*', 1),
 (22, 'main', 'com_associations', 'Multilingual Associations', '', 'Multilingual Associations', 'index.php?option=com_associations', 'component', 1, 1, 1, 34, 0, '0000-00-00 00:00:00', 0, 0, 'class:associations', 0, '', 39, 40, 0, '*', 1),
-(101, 'mainmenu', 'Inicio', 'home', '', 'home', 'index.php?option=com_content&view=featured', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{"featured_categories":[""],"layout_type":"blog","num_leading_articles":"1","num_intro_articles":"3","num_columns":"3","num_links":"0","multi_column_order":"1","orderby_pri":"","orderby_sec":"front","order_date":"","show_pagination":"2","show_pagination_results":"1","show_title":"","link_titles":"","show_intro":"","info_block_position":"","info_block_show_title":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_associations":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_readmore":"","show_readmore_title":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_tags":"","show_noauth":"","show_feed_link":"1","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"menu_show":1,"page_title":"","show_page_heading":"1","page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 41, 42, 1, '*', 0);
+(101, 'mainmenu', 'Inicio', 'home', '', 'home', 'index.php?option=com_content&view=featured', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{"featured_categories":[""],"layout_type":"blog","num_leading_articles":"1","num_intro_articles":"3","num_columns":"3","num_links":"0","multi_column_order":"1","orderby_pri":"","orderby_sec":"front","order_date":"","show_pagination":"2","show_pagination_results":"1","show_title":"","link_titles":"","show_intro":"","info_block_position":"","info_block_show_title":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_associations":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_readmore":"","show_readmore_title":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_tags":"","show_noauth":"","show_feed_link":"1","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"menu_show":1,"page_title":"","show_page_heading":"1","page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 41, 42, 1, '*', 0),
+(102, 'mainmenu', 'Música', 'musica', '', 'musica', 'index.php?option=com_content&view=category&layout=blog&id=8&filter_tag=2', 'component', 1, 1, 1, 22, 224, '2017-09-06 16:19:18', 0, 1, ' ', 0, '{"layout_type":"blog","show_category_heading_title_text":"","show_category_title":"","show_description":"","show_description_image":"","maxLevel":"","show_empty_categories":"","show_no_articles":"","show_subcat_desc":"","show_cat_num_articles":"","show_cat_tags":"","page_subheading":"","num_leading_articles":"","num_intro_articles":"","num_columns":"","num_links":"","multi_column_order":"","show_subcategory_content":"","orderby_pri":"","orderby_sec":"","order_date":"","show_pagination":"","show_pagination_results":"","show_featured":"","show_title":"","link_titles":"","show_intro":"","info_block_position":"","info_block_show_title":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_associations":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_readmore":"","show_readmore_title":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_tags":"","show_noauth":"","show_feed_link":"","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"menu_show":1,"page_title":"","show_page_heading":"","page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 43, 44, 0, '*', 0),
+(103, 'mainmenu', 'Cine', 'cine', '', 'cine', 'index.php?option=com_content&view=category&layout=blog&id=9&filter_tag=3', 'component', 1, 1, 1, 22, 224, '2017-09-06 16:19:15', 0, 1, ' ', 0, '{"layout_type":"blog","show_category_heading_title_text":"","show_category_title":"","show_description":"","show_description_image":"","maxLevel":"","show_empty_categories":"","show_no_articles":"","show_subcat_desc":"","show_cat_num_articles":"","show_cat_tags":"","page_subheading":"","num_leading_articles":"","num_intro_articles":"","num_columns":"","num_links":"","multi_column_order":"","show_subcategory_content":"","orderby_pri":"","orderby_sec":"","order_date":"","show_pagination":"","show_pagination_results":"","show_featured":"","show_title":"","link_titles":"","show_intro":"","info_block_position":"","info_block_show_title":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_associations":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_readmore":"","show_readmore_title":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_tags":"","show_noauth":"","show_feed_link":"","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"menu_show":1,"page_title":"","show_page_heading":"","page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 45, 46, 0, '*', 0),
+(104, 'mainmenu', 'Arte y muestras', 'arte-y-muestras', '', 'arte-y-muestras', 'index.php?option=com_content&view=category&layout=blog&id=11&filter_tag=4', 'component', 1, 1, 1, 22, 224, '2017-09-06 16:19:20', 0, 1, ' ', 0, '{"layout_type":"blog","show_category_heading_title_text":"","show_category_title":"","show_description":"","show_description_image":"","maxLevel":"","show_empty_categories":"","show_no_articles":"","show_subcat_desc":"","show_cat_num_articles":"","show_cat_tags":"","page_subheading":"","num_leading_articles":"","num_intro_articles":"","num_columns":"","num_links":"","multi_column_order":"","show_subcategory_content":"","orderby_pri":"","orderby_sec":"","order_date":"","show_pagination":"","show_pagination_results":"","show_featured":"","show_title":"","link_titles":"","show_intro":"","info_block_position":"","info_block_show_title":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_associations":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_readmore":"","show_readmore_title":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_tags":"","show_noauth":"","show_feed_link":"","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"menu_show":1,"page_title":"","show_page_heading":"","page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 47, 48, 0, '*', 0),
+(105, 'mainmenu', 'Literatura', 'literatura', '', 'literatura', 'index.php?option=com_content&view=category&layout=blog&id=12&filter_tag=6', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{"layout_type":"blog","show_category_heading_title_text":"","show_category_title":"","show_description":"","show_description_image":"","maxLevel":"","show_empty_categories":"","show_no_articles":"","show_subcat_desc":"","show_cat_num_articles":"","show_cat_tags":"","page_subheading":"","num_leading_articles":"","num_intro_articles":"","num_columns":"","num_links":"","multi_column_order":"","show_subcategory_content":"","orderby_pri":"","orderby_sec":"","order_date":"","show_pagination":"","show_pagination_results":"","show_featured":"","show_title":"","link_titles":"","show_intro":"","info_block_position":"","info_block_show_title":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_associations":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_readmore":"","show_readmore_title":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_tags":"","show_noauth":"","show_feed_link":"","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"menu_show":1,"page_title":"","show_page_heading":"","page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 49, 50, 0, '*', 0),
+(106, 'mainmenu', 'Gastronomía', 'gastronomia', '', 'gastronomia', 'index.php?option=com_content&view=category&layout=blog&id=13&filter_tag=7', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{"layout_type":"blog","show_category_heading_title_text":"","show_category_title":"","show_description":"","show_description_image":"","maxLevel":"","show_empty_categories":"","show_no_articles":"","show_subcat_desc":"","show_cat_num_articles":"","show_cat_tags":"","page_subheading":"","num_leading_articles":"","num_intro_articles":"","num_columns":"","num_links":"","multi_column_order":"","show_subcategory_content":"","orderby_pri":"","orderby_sec":"","order_date":"","show_pagination":"","show_pagination_results":"","show_featured":"","show_title":"","link_titles":"","show_intro":"","info_block_position":"","info_block_show_title":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_associations":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_readmore":"","show_readmore_title":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_tags":"","show_noauth":"","show_feed_link":"","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"menu_show":1,"page_title":"","show_page_heading":"","page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 51, 52, 0, '*', 0),
+(107, 'mainmenu', 'Con niños', 'con-ninos', '', 'con-ninos', 'index.php?option=com_content&view=category&layout=blog&id=14&filter_tag=8', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{"layout_type":"blog","show_category_heading_title_text":"","show_category_title":"","show_description":"","show_description_image":"","maxLevel":"","show_empty_categories":"","show_no_articles":"","show_subcat_desc":"","show_cat_num_articles":"","show_cat_tags":"","page_subheading":"","num_leading_articles":"","num_intro_articles":"","num_columns":"","num_links":"","multi_column_order":"","show_subcategory_content":"","orderby_pri":"","orderby_sec":"","order_date":"","show_pagination":"","show_pagination_results":"","show_featured":"","show_title":"","link_titles":"","show_intro":"","info_block_position":"","info_block_show_title":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_associations":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_readmore":"","show_readmore_title":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_tags":"","show_noauth":"","show_feed_link":"","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"menu_show":1,"page_title":"","show_page_heading":"","page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 53, 54, 0, '*', 0),
+(108, 'mainmenu', 'Agenda', 'agenda', '', 'agenda', 'index.php?option=com_content&view=category&layout=blog&id=15&filter_tag=9', 'component', 1, 1, 1, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{"layout_type":"blog","show_category_heading_title_text":"","show_category_title":"","show_description":"","show_description_image":"","maxLevel":"","show_empty_categories":"","show_no_articles":"","show_subcat_desc":"","show_cat_num_articles":"","show_cat_tags":"","page_subheading":"","num_leading_articles":"","num_intro_articles":"","num_columns":"","num_links":"","multi_column_order":"","show_subcategory_content":"","orderby_pri":"","orderby_sec":"","order_date":"","show_pagination":"","show_pagination_results":"","show_featured":"","show_title":"","link_titles":"","show_intro":"","info_block_position":"","info_block_show_title":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_associations":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_readmore":"","show_readmore_title":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_tags":"","show_noauth":"","show_feed_link":"","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"menu_show":1,"page_title":"","show_page_heading":"","page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 55, 56, 0, '*', 0),
+(109, 'mainmenu', 'Más', 'mas', '', 'mas', '', 'heading', 1, 1, 1, 0, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{"menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"menu_show":1}', 57, 68, 0, '*', 0),
+(110, 'mainmenu', 'LGBTI', 'lgbti', '', 'mas/lgbti', 'index.php?option=com_content&view=category&layout=blog&id=16&filter_tag=10', 'component', 1, 109, 2, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{"layout_type":"blog","show_category_heading_title_text":"","show_category_title":"","show_description":"","show_description_image":"","maxLevel":"","show_empty_categories":"","show_no_articles":"","show_subcat_desc":"","show_cat_num_articles":"","show_cat_tags":"","page_subheading":"","num_leading_articles":"","num_intro_articles":"","num_columns":"","num_links":"","multi_column_order":"","show_subcategory_content":"","orderby_pri":"","orderby_sec":"","order_date":"","show_pagination":"","show_pagination_results":"","show_featured":"","show_title":"","link_titles":"","show_intro":"","info_block_position":"","info_block_show_title":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_associations":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_readmore":"","show_readmore_title":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_tags":"","show_noauth":"","show_feed_link":"","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"menu_show":1,"page_title":"","show_page_heading":"","page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 58, 59, 0, '*', 0),
+(111, 'mainmenu', 'Vida nocturna', 'vida-nocturna', '', 'mas/vida-nocturna', 'index.php?option=com_content&view=category&layout=blog&id=17&filter_tag=11', 'component', 1, 109, 2, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{"layout_type":"blog","show_category_heading_title_text":"","show_category_title":"","show_description":"","show_description_image":"","maxLevel":"","show_empty_categories":"","show_no_articles":"","show_subcat_desc":"","show_cat_num_articles":"","show_cat_tags":"","page_subheading":"","num_leading_articles":"","num_intro_articles":"","num_columns":"","num_links":"","multi_column_order":"","show_subcategory_content":"","orderby_pri":"","orderby_sec":"","order_date":"","show_pagination":"","show_pagination_results":"","show_featured":"","show_title":"","link_titles":"","show_intro":"","info_block_position":"","info_block_show_title":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_associations":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_readmore":"","show_readmore_title":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_tags":"","show_noauth":"","show_feed_link":"","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"menu_show":1,"page_title":"","show_page_heading":"","page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 60, 61, 0, '*', 0),
+(112, 'mainmenu', 'Tendencias', 'tendencias', '', 'mas/tendencias', 'index.php?option=com_content&view=category&layout=blog&id=18&filter_tag=12', 'component', 1, 109, 2, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{"layout_type":"blog","show_category_heading_title_text":"","show_category_title":"","show_description":"","show_description_image":"","maxLevel":"","show_empty_categories":"","show_no_articles":"","show_subcat_desc":"","show_cat_num_articles":"","show_cat_tags":"","page_subheading":"","num_leading_articles":"","num_intro_articles":"","num_columns":"","num_links":"","multi_column_order":"","show_subcategory_content":"","orderby_pri":"","orderby_sec":"","order_date":"","show_pagination":"","show_pagination_results":"","show_featured":"","show_title":"","link_titles":"","show_intro":"","info_block_position":"","info_block_show_title":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_associations":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_readmore":"","show_readmore_title":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_tags":"","show_noauth":"","show_feed_link":"","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"menu_show":1,"page_title":"","show_page_heading":"","page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 62, 63, 0, '*', 0),
+(113, 'mainmenu', 'Viajes', 'viajes', '', 'mas/viajes', 'index.php?option=com_content&view=category&layout=blog&id=19&filter_tag=13', 'component', 1, 109, 2, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{"layout_type":"blog","show_category_heading_title_text":"","show_category_title":"","show_description":"","show_description_image":"","maxLevel":"","show_empty_categories":"","show_no_articles":"","show_subcat_desc":"","show_cat_num_articles":"","show_cat_tags":"","page_subheading":"","num_leading_articles":"","num_intro_articles":"","num_columns":"","num_links":"","multi_column_order":"","show_subcategory_content":"","orderby_pri":"","orderby_sec":"","order_date":"","show_pagination":"","show_pagination_results":"","show_featured":"","show_title":"","link_titles":"","show_intro":"","info_block_position":"","info_block_show_title":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_associations":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_readmore":"","show_readmore_title":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_tags":"","show_noauth":"","show_feed_link":"","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"menu_show":1,"page_title":"","show_page_heading":"","page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 64, 65, 0, '*', 0),
+(114, 'mainmenu', 'De compras', 'de-compras', '', 'mas/de-compras', 'index.php?option=com_content&view=category&layout=blog&id=20&filter_tag=14', 'component', 1, 109, 2, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{"layout_type":"blog","show_category_heading_title_text":"","show_category_title":"","show_description":"","show_description_image":"","maxLevel":"","show_empty_categories":"","show_no_articles":"","show_subcat_desc":"","show_cat_num_articles":"","show_cat_tags":"","page_subheading":"","num_leading_articles":"","num_intro_articles":"","num_columns":"","num_links":"","multi_column_order":"","show_subcategory_content":"","orderby_pri":"","orderby_sec":"","order_date":"","show_pagination":"","show_pagination_results":"","show_featured":"","show_title":"","link_titles":"","show_intro":"","info_block_position":"","info_block_show_title":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_associations":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_readmore":"","show_readmore_title":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_tags":"","show_noauth":"","show_feed_link":"","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"menu_show":1,"page_title":"","show_page_heading":"","page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 66, 67, 0, '*', 0);
 
 -- --------------------------------------------------------
 
@@ -1395,7 +1466,7 @@ CREATE TABLE IF NOT EXISTS `gtxly_modules` (
 --
 
 INSERT INTO `gtxly_modules` (`id`, `asset_id`, `title`, `note`, `content`, `ordering`, `position`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `published`, `module`, `access`, `showtitle`, `params`, `client_id`, `language`) VALUES
-(1, 39, 'Main Menu', '', '', 1, 'position-7', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_menu', 1, 1, '{"menutype":"mainmenu","startLevel":"0","endLevel":"0","showAllChildren":"1","tag_id":"","class_sfx":"","window_open":"","layout":"","moduleclass_sfx":"_menu","cache":"1","cache_time":"900","cachemode":"itemid"}', 0, '*'),
+(1, 39, 'Menú principal', '', '', 1, 'lsev-menu', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_menu', 1, 1, '{"menutype":"mainmenu","base":"","startLevel":"1","endLevel":"0","showAllChildren":"1","tag_id":"","class_sfx":"","window_open":"","layout":"_:default","moduleclass_sfx":"_menu","cache":"1","cache_time":"900","cachemode":"itemid","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
 (2, 40, 'Login', '', '', 1, 'login', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_login', 1, 1, '', 1, '*'),
 (3, 41, 'Popular Articles', '', '', 3, 'cpanel', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_popular', 3, 1, '{"count":"5","catid":"","user_id":"0","layout":"_:default","moduleclass_sfx":"","cache":"0"}', 1, '*'),
 (4, 42, 'Recently Added Articles', '', '', 4, 'cpanel', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_latest', 3, 1, '{"count":"5","ordering":"c_dsc","catid":"","user_id":"0","layout":"_:default","moduleclass_sfx":"","cache":"0"}', 1, '*'),
@@ -1410,7 +1481,7 @@ INSERT INTO `gtxly_modules` (`id`, `asset_id`, `title`, `note`, `content`, `orde
 (17, 51, 'Breadcrumbs', '', '', 1, 'position-2', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_breadcrumbs', 1, 1, '{"moduleclass_sfx":"","showHome":"1","homeText":"","showComponent":"1","separator":"","cache":"0","cache_time":"0","cachemode":"itemid"}', 0, '*'),
 (79, 52, 'Multilanguage status', '', '', 1, 'status', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_multilangstatus', 3, 1, '{"layout":"_:default","moduleclass_sfx":"","cache":"0"}', 1, '*'),
 (86, 53, 'Joomla Version', '', '', 1, 'footer', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_version', 3, 1, '{"format":"short","product":"1","layout":"_:default","moduleclass_sfx":"","cache":"0"}', 1, '*'),
-(88, 57, 'Buscador', '', '', 1, 'lsev-buscador', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_search', 1, 1, '{"label":"","width":"25","text":"Buscar...","button":"1","button_pos":"right","imagebutton":"0","button_text":"","opensearch":"1","opensearch_title":"","set_itemid":"0","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"itemid","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*');
+(88, 57, 'Buscador', '', '', 1, 'lsev-buscador', 224, '2017-09-06 14:54:51', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_search', 1, 1, '{"label":"","width":"25","text":"Estoy buscando...","button":"1","button_pos":"right","imagebutton":"1","button_text":"","opensearch":"1","opensearch_title":"","set_itemid":"0","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"itemid","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*');
 
 -- --------------------------------------------------------
 
@@ -1599,9 +1670,9 @@ CREATE TABLE IF NOT EXISTS `gtxly_session` (
 --
 
 INSERT INTO `gtxly_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`) VALUES
-('8sqcs3mmv4k20ju7cto98snnt7', 0, 1, '1504046829', 'joomla|s:644:"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjozOntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjI6e3M6NzoiY291bnRlciI7aTozNDtzOjU6InRpbWVyIjtPOjg6InN0ZENsYXNzIjozOntzOjU6InN0YXJ0IjtpOjE1MDQwNDI5OTg7czo0OiJsYXN0IjtpOjE1MDQwNDY3NDU7czozOiJub3ciO2k6MTUwNDA0NjgyOTt9fXM6ODoicmVnaXN0cnkiO086MjQ6Ikpvb21sYVxSZWdpc3RyeVxSZWdpc3RyeSI6Mzp7czo3OiIAKgBkYXRhIjtPOjg6InN0ZENsYXNzIjowOnt9czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjU6IkpVc2VyIjoxOntzOjI6ImlkIjtpOjA7fX19czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9";', 0, ''),
-('e657pnuf11d062phdjdqdg85r5', 0, 1, '1504047236', 'joomla|s:644:"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjozOntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjI6e3M6NzoiY291bnRlciI7aTo3O3M6NToidGltZXIiO086ODoic3RkQ2xhc3MiOjM6e3M6NToic3RhcnQiO2k6MTUwNDA0NjA2NztzOjQ6Imxhc3QiO2k6MTUwNDA0NzE2MztzOjM6Im5vdyI7aToxNTA0MDQ3MjM1O319czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6OToic2VwYXJhdG9yIjtzOjE6Ii4iO31zOjQ6InVzZXIiO086NToiSlVzZXIiOjE6e3M6MjoiaWQiO2k6MDt9fX1zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6OToic2VwYXJhdG9yIjtzOjE6Ii4iO30=";', 0, ''),
-('tbi4q261tt0mdf7rkiu4hc6v97', 0, 1, '1504046829', 'joomla|s:644:"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjozOntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjI6e3M6NzoiY291bnRlciI7aTo0NDtzOjU6InRpbWVyIjtPOjg6InN0ZENsYXNzIjozOntzOjU6InN0YXJ0IjtpOjE1MDQwNDE3NjQ7czo0OiJsYXN0IjtpOjE1MDQwNDY3NDU7czozOiJub3ciO2k6MTUwNDA0NjgyOTt9fXM6ODoicmVnaXN0cnkiO086MjQ6Ikpvb21sYVxSZWdpc3RyeVxSZWdpc3RyeSI6Mzp7czo3OiIAKgBkYXRhIjtPOjg6InN0ZENsYXNzIjowOnt9czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjU6IkpVc2VyIjoxOntzOjI6ImlkIjtpOjA7fX19czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9";', 0, '');
+('ah4735tihbfrlmapogugb6kkh5', 0, 1, '1504724823', 'joomla|s:644:"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjozOntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjI6e3M6NzoiY291bnRlciI7aToxNTtzOjU6InRpbWVyIjtPOjg6InN0ZENsYXNzIjozOntzOjU6InN0YXJ0IjtpOjE1MDQ3MjI3ODM7czo0OiJsYXN0IjtpOjE1MDQ3MjQ3NjE7czozOiJub3ciO2k6MTUwNDcyNDgyMzt9fXM6ODoicmVnaXN0cnkiO086MjQ6Ikpvb21sYVxSZWdpc3RyeVxSZWdpc3RyeSI6Mzp7czo3OiIAKgBkYXRhIjtPOjg6InN0ZENsYXNzIjowOnt9czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjU6IkpVc2VyIjoxOntzOjI6ImlkIjtpOjA7fX19czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9";', 0, ''),
+('ec357esdl0bv44ipqoqpc756m1', 0, 1, '1504724824', 'joomla|s:644:"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjozOntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjI6e3M6NzoiY291bnRlciI7aToxNTtzOjU6InRpbWVyIjtPOjg6InN0ZENsYXNzIjozOntzOjU6InN0YXJ0IjtpOjE1MDQ3MjI3ODQ7czo0OiJsYXN0IjtpOjE1MDQ3MjQ3NjM7czozOiJub3ciO2k6MTUwNDcyNDgyNDt9fXM6ODoicmVnaXN0cnkiO086MjQ6Ikpvb21sYVxSZWdpc3RyeVxSZWdpc3RyeSI6Mzp7czo3OiIAKgBkYXRhIjtPOjg6InN0ZENsYXNzIjowOnt9czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjU6IkpVc2VyIjoxOntzOjI6ImlkIjtpOjA7fX19czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9";', 0, ''),
+('k64bikk5jsk9v4osrtd0q80bu3', 1, 1, '1504725364', 'joomla|s:712:"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjozOntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjM6e3M6NzoiY291bnRlciI7aToxO3M6NToidGltZXIiO086ODoic3RkQ2xhc3MiOjM6e3M6NToic3RhcnQiO2k6MTUwNDcyNTM2MztzOjQ6Imxhc3QiO2k6MTUwNDcyNTM2MztzOjM6Im5vdyI7aToxNTA0NzI1MzYzO31zOjU6InRva2VuIjtzOjMyOiIzYXdVMHJBcGVHZ3lXUGVzRzFwRmRmZ2M2QjlJU1ZkRCI7fXM6ODoicmVnaXN0cnkiO086MjQ6Ikpvb21sYVxSZWdpc3RyeVxSZWdpc3RyeSI6Mzp7czo3OiIAKgBkYXRhIjtPOjg6InN0ZENsYXNzIjowOnt9czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjU6IkpVc2VyIjoxOntzOjI6ImlkIjtpOjA7fX19czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9";', 0, '');
 
 -- --------------------------------------------------------
 
@@ -1641,14 +1712,27 @@ CREATE TABLE IF NOT EXISTS `gtxly_tags` (
   `version` int(10) unsigned NOT NULL DEFAULT '1',
   `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `gtxly_tags`
 --
 
 INSERT INTO `gtxly_tags` (`id`, `parent_id`, `lft`, `rgt`, `level`, `path`, `title`, `alias`, `note`, `description`, `published`, `checked_out`, `checked_out_time`, `access`, `params`, `metadesc`, `metakey`, `metadata`, `created_user_id`, `created_time`, `created_by_alias`, `modified_user_id`, `modified_time`, `images`, `urls`, `hits`, `language`, `version`, `publish_up`, `publish_down`) VALUES
-(1, 0, 0, 1, 0, '', 'ROOT', 'root', '', '', 1, 0, '0000-00-00 00:00:00', 1, '', '', '', '', 224, '2017-08-28 16:24:05', '', 0, '0000-00-00 00:00:00', '', '', 0, '*', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(1, 0, 0, 27, 0, '', 'ROOT', 'root', '', '', 1, 0, '0000-00-00 00:00:00', 1, '', '', '', '', 224, '2017-08-28 16:24:05', '', 0, '0000-00-00 00:00:00', '', '', 0, '*', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(2, 1, 1, 2, 1, 'musica', 'Música', 'musica', '', '', 1, 0, '2017-09-06 16:15:01', 1, '{"tag_layout":"","tag_link_class":"label label-info"}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 16:15:01', '', 0, '2017-09-06 16:15:01', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{}', 0, '*', 1, '2017-09-06 16:15:01', '2017-09-06 16:15:01'),
+(3, 1, 3, 4, 1, 'cine', 'Cine', 'cine', '', '', 1, 0, '2017-09-06 16:15:10', 1, '{"tag_layout":"","tag_link_class":"label label-info"}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 16:15:10', '', 0, '2017-09-06 16:15:10', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{}', 0, '*', 1, '2017-09-06 16:15:10', '2017-09-06 16:15:10'),
+(4, 1, 5, 6, 1, 'arte-y-muestras', 'Arte y muestras', 'arte-y-muestras', '', '', 1, 0, '2017-09-06 16:15:15', 1, '{"tag_layout":"","tag_link_class":"label label-info"}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 16:15:15', '', 0, '2017-09-06 16:15:15', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{}', 0, '*', 1, '2017-09-06 16:15:15', '2017-09-06 16:15:15'),
+(5, 1, 7, 8, 1, 'siete', 'SIETE', 'siete', '', '', 1, 0, '2017-09-06 16:15:19', 1, '{"tag_layout":"","tag_link_class":"label label-info"}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 16:15:19', '', 0, '2017-09-06 16:15:19', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{}', 0, '*', 1, '2017-09-06 16:15:19', '2017-09-06 16:15:19'),
+(6, 1, 9, 10, 1, 'literatura', 'Literatura', 'literatura', '', '', 1, 0, '2017-09-06 16:15:33', 1, '{"tag_layout":"","tag_link_class":"label label-info"}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 16:15:33', '', 0, '2017-09-06 16:15:33', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{}', 0, '*', 1, '2017-09-06 16:15:33', '2017-09-06 16:15:33'),
+(7, 1, 11, 12, 1, 'gastronomia', 'Gastronomía', 'gastronomia', '', '', 1, 0, '2017-09-06 16:15:37', 1, '{"tag_layout":"","tag_link_class":"label label-info"}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 16:15:37', '', 0, '2017-09-06 16:15:37', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{}', 0, '*', 1, '2017-09-06 16:15:37', '2017-09-06 16:15:37'),
+(8, 1, 13, 14, 1, 'con-ninos', 'Con niños', 'con-ninos', '', '', 1, 0, '2017-09-06 16:15:44', 1, '{"tag_layout":"","tag_link_class":"label label-info"}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 16:15:44', '', 0, '2017-09-06 16:15:44', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{}', 0, '*', 1, '2017-09-06 16:15:44', '2017-09-06 16:15:44'),
+(9, 1, 15, 16, 1, 'agenda', 'Agenda', 'agenda', '', '', 1, 0, '2017-09-06 16:15:47', 1, '{"tag_layout":"","tag_link_class":"label label-info"}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 16:15:47', '', 0, '2017-09-06 16:15:47', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{}', 0, '*', 1, '2017-09-06 16:15:47', '2017-09-06 16:15:47'),
+(10, 1, 17, 18, 1, 'lgbti', 'LGBTI', 'lgbti', '', '', 1, 0, '2017-09-06 16:16:00', 1, '{"tag_layout":"","tag_link_class":"label label-info"}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 16:16:00', '', 0, '2017-09-06 16:16:00', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{}', 0, '*', 1, '2017-09-06 16:16:00', '2017-09-06 16:16:00'),
+(11, 1, 19, 20, 1, 'vida-nocturna', 'Vida nocturna', 'vida-nocturna', '', '', 1, 0, '2017-09-06 16:16:08', 1, '{"tag_layout":"","tag_link_class":"label label-info"}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 16:16:08', '', 0, '2017-09-06 16:16:08', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{}', 0, '*', 1, '2017-09-06 16:16:08', '2017-09-06 16:16:08'),
+(12, 1, 21, 22, 1, 'tendencias', 'Tendencias', 'tendencias', '', '', 1, 0, '2017-09-06 16:16:14', 1, '{"tag_layout":"","tag_link_class":"label label-info"}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 16:16:14', '', 0, '2017-09-06 16:16:14', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{}', 0, '*', 1, '2017-09-06 16:16:14', '2017-09-06 16:16:14'),
+(13, 1, 23, 24, 1, 'viajes', 'Viajes', 'viajes', '', '', 1, 0, '2017-09-06 16:16:21', 1, '{"tag_layout":"","tag_link_class":"label label-info"}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 16:16:21', '', 0, '2017-09-06 16:16:21', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{}', 0, '*', 1, '2017-09-06 16:16:21', '2017-09-06 16:16:21'),
+(14, 1, 25, 26, 1, 'de-compras', 'De compras', 'de-compras', '', '', 1, 0, '2017-09-06 16:16:25', 1, '{"tag_layout":"","tag_link_class":"label label-info"}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 16:16:25', '', 0, '2017-09-06 16:16:25', '{"image_intro":"","float_intro":"","image_intro_alt":"","image_intro_caption":"","image_fulltext":"","float_fulltext":"","image_fulltext_alt":"","image_fulltext_caption":""}', '{}', 0, '*', 1, '2017-09-06 16:16:25', '2017-09-06 16:16:25');
 
 -- --------------------------------------------------------
 
@@ -1691,6 +1775,25 @@ CREATE TABLE IF NOT EXISTS `gtxly_ucm_base` (
   `ucm_language_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `gtxly_ucm_base`
+--
+
+INSERT INTO `gtxly_ucm_base` (`ucm_id`, `ucm_item_id`, `ucm_type_id`, `ucm_language_id`) VALUES
+(1, 8, 5, 0),
+(2, 9, 5, 0),
+(3, 10, 5, 0),
+(4, 11, 5, 0),
+(5, 12, 5, 0),
+(6, 13, 5, 0),
+(7, 14, 5, 0),
+(8, 15, 5, 0),
+(9, 16, 5, 0),
+(10, 17, 5, 0),
+(11, 18, 5, 0),
+(12, 19, 5, 0),
+(13, 20, 5, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -1731,7 +1834,26 @@ CREATE TABLE IF NOT EXISTS `gtxly_ucm_content` (
   `core_catid` int(10) unsigned NOT NULL DEFAULT '0',
   `core_xreference` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'A reference to enable linkages to external data sets.',
   `core_type_id` int(10) unsigned NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Contains core content data in name spaced fields';
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Contains core content data in name spaced fields';
+
+--
+-- Volcado de datos para la tabla `gtxly_ucm_content`
+--
+
+INSERT INTO `gtxly_ucm_content` (`core_content_id`, `core_type_alias`, `core_title`, `core_alias`, `core_body`, `core_state`, `core_checked_out_time`, `core_checked_out_user_id`, `core_access`, `core_params`, `core_featured`, `core_metadata`, `core_created_user_id`, `core_created_by_alias`, `core_created_time`, `core_modified_user_id`, `core_modified_time`, `core_language`, `core_publish_up`, `core_publish_down`, `core_content_item_id`, `asset_id`, `core_images`, `core_urls`, `core_hits`, `core_version`, `core_ordering`, `core_metakey`, `core_metadesc`, `core_catid`, `core_xreference`, `core_type_id`) VALUES
+(1, 'com_content.category', 'Música', 'musica', '', 1, '0000-00-00 00:00:00', 0, 1, '{"category_layout":"","image":"","image_alt":""}', 0, '{"author":"","robots":""}', 224, '', '2017-09-06 15:32:45', 0, '2017-09-06 16:16:46', '*', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 8, 73, '{}', '{}', 0, 1, 0, '', '', 1, '', 5),
+(2, 'com_content.category', 'Cine', 'cine', '', 1, '0000-00-00 00:00:00', 0, 1, '{"category_layout":"","image":"","image_alt":""}', 0, '{"author":"","robots":""}', 224, '', '2017-09-06 15:33:04', 0, '2017-09-06 16:16:52', '*', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 9, 74, '{}', '{}', 0, 1, 0, '', '', 1, '', 5),
+(3, 'com_content.category', 'SIETE', 'siete', '', 1, '0000-00-00 00:00:00', 0, 1, '{"category_layout":"","image":"","image_alt":""}', 0, '{"author":"","robots":""}', 224, '', '2017-09-06 15:33:10', 0, '2017-09-06 16:16:57', '*', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 10, 75, '{}', '{}', 0, 1, 0, '', '', 1, '', 5),
+(4, 'com_content.category', 'Arte y muestras', 'arte-y-muestras', '', 1, '0000-00-00 00:00:00', 0, 1, '{"category_layout":"","image":"","image_alt":""}', 0, '{"author":"","robots":""}', 224, '', '2017-09-06 15:33:25', 0, '2017-09-06 16:17:02', '*', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 11, 76, '{}', '{}', 0, 1, 0, '', '', 1, '', 5),
+(5, 'com_content.category', 'Literatura', 'literatura', '', 1, '0000-00-00 00:00:00', 0, 1, '{"category_layout":"","image":"","image_alt":""}', 0, '{"author":"","robots":""}', 224, '', '2017-09-06 15:33:33', 0, '2017-09-06 16:17:07', '*', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 12, 77, '{}', '{}', 0, 1, 0, '', '', 1, '', 5),
+(6, 'com_content.category', 'Gastronomía', 'gastronomia', '', 1, '0000-00-00 00:00:00', 0, 1, '{"category_layout":"","image":"","image_alt":""}', 0, '{"author":"","robots":""}', 224, '', '2017-09-06 15:33:41', 0, '2017-09-06 16:17:12', '*', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 13, 78, '{}', '{}', 0, 1, 0, '', '', 1, '', 5),
+(7, 'com_content.category', 'Con niños', 'con-ninos', '', 1, '0000-00-00 00:00:00', 0, 1, '{"category_layout":"","image":"","image_alt":""}', 0, '{"author":"","robots":""}', 224, '', '2017-09-06 15:34:28', 0, '2017-09-06 16:17:17', '*', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 14, 79, '{}', '{}', 0, 1, 0, '', '', 1, '', 5),
+(8, 'com_content.category', 'Agenda', 'agenda', '', 1, '0000-00-00 00:00:00', 0, 1, '{"category_layout":"","image":"","image_alt":""}', 0, '{"author":"","robots":""}', 224, '', '2017-09-06 15:35:13', 0, '2017-09-06 16:17:23', '*', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 15, 80, '{}', '{}', 0, 1, 0, '', '', 1, '', 5),
+(9, 'com_content.category', 'LGBTI', 'lgbti', '', 1, '0000-00-00 00:00:00', 0, 1, '{"category_layout":"","image":"","image_alt":""}', 0, '{"author":"","robots":""}', 224, '', '2017-09-06 15:35:24', 0, '2017-09-06 16:17:28', '*', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 16, 81, '{}', '{}', 0, 1, 0, '', '', 1, '', 5),
+(10, 'com_content.category', 'Vida nocturna', 'vida-nocturna', '', 1, '0000-00-00 00:00:00', 0, 1, '{"category_layout":"","image":"","image_alt":""}', 0, '{"author":"","robots":""}', 224, '', '2017-09-06 15:35:32', 0, '2017-09-06 16:17:33', '*', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 17, 82, '{}', '{}', 0, 1, 0, '', '', 1, '', 5),
+(11, 'com_content.category', 'Tendencias', 'tendencias', '', 1, '0000-00-00 00:00:00', 0, 1, '{"category_layout":"","image":"","image_alt":""}', 0, '{"author":"","robots":""}', 224, '', '2017-09-06 15:35:44', 0, '2017-09-06 16:17:38', '*', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 18, 83, '{}', '{}', 0, 1, 0, '', '', 1, '', 5),
+(12, 'com_content.category', 'Viajes', 'viajes', '', 1, '0000-00-00 00:00:00', 0, 1, '{"category_layout":"","image":"","image_alt":""}', 0, '{"author":"","robots":""}', 224, '', '2017-09-06 15:35:52', 0, '2017-09-06 16:17:44', '*', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 19, 84, '{}', '{}', 0, 1, 0, '', '', 1, '', 5),
+(13, 'com_content.category', 'De compras', 'de-compras', '', 1, '0000-00-00 00:00:00', 0, 1, '{"category_layout":"","image":"","image_alt":""}', 0, '{"author":"","robots":""}', 224, '', '2017-09-06 15:35:58', 0, '2017-09-06 16:17:51', '*', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 20, 85, '{}', '{}', 0, 1, 0, '', '', 1, '', 5);
 
 -- --------------------------------------------------------
 
@@ -1751,7 +1873,40 @@ CREATE TABLE IF NOT EXISTS `gtxly_ucm_history` (
   `sha1_hash` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'SHA1 hash of the version_data column.',
   `version_data` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'json-encoded string of version data',
   `keep_forever` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0=auto delete; 1=keep'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `gtxly_ucm_history`
+--
+
+INSERT INTO `gtxly_ucm_history` (`version_id`, `ucm_item_id`, `ucm_type_id`, `version_note`, `save_date`, `editor_user_id`, `character_count`, `sha1_hash`, `version_data`, `keep_forever`) VALUES
+(1, 8, 5, '', '2017-09-06 15:32:45', 224, 554, '58918f9beefb5dfce08ce642069c95d72b548747', '{"id":8,"asset_id":60,"parent_id":"1","lft":"11","rgt":12,"level":1,"path":null,"extension":"com_content","title":"M\\u00fasica","alias":"musica","note":"","description":"","published":"1","checked_out":null,"checked_out_time":null,"access":"1","params":"{\\"category_layout\\":\\"\\",\\"image\\":\\"\\",\\"image_alt\\":\\"\\"}","metadesc":"","metakey":"","metadata":"{\\"author\\":\\"\\",\\"robots\\":\\"\\"}","created_user_id":"224","created_time":"2017-09-06 15:32:45","modified_user_id":null,"modified_time":"2017-09-06 15:32:45","hits":"0","language":"*","version":null}', 0),
+(2, 2, 5, '', '2017-09-06 15:32:59', 224, 601, 'a1d6d51d31bd794d264222f9b4ebdeae521c146f', '{"id":2,"asset_id":"27","parent_id":"1","lft":"1","rgt":"2","level":"1","path":"uncategorised","extension":"com_content","title":"Sin categor\\u00eda","alias":"uncategorised","note":"","description":"","published":"1","checked_out":"224","checked_out_time":"2017-09-06 15:32:52","access":"1","params":"{\\"category_layout\\":\\"\\",\\"image\\":\\"\\",\\"image_alt\\":\\"\\"}","metadesc":"","metakey":"","metadata":"{\\"author\\":\\"\\",\\"robots\\":\\"\\"}","created_user_id":"224","created_time":"2017-08-28 16:24:05","modified_user_id":"224","modified_time":"2017-09-06 15:32:59","hits":"0","language":"*","version":"1"}', 0),
+(3, 9, 5, '', '2017-09-06 15:33:04', 224, 545, '3b7702130efa9cee25f377aef04a6bd5556a3c94', '{"id":9,"asset_id":61,"parent_id":"1","lft":"13","rgt":14,"level":1,"path":null,"extension":"com_content","title":"Cine","alias":"cine","note":"","description":"","published":"1","checked_out":null,"checked_out_time":null,"access":"1","params":"{\\"category_layout\\":\\"\\",\\"image\\":\\"\\",\\"image_alt\\":\\"\\"}","metadesc":"","metakey":"","metadata":"{\\"author\\":\\"\\",\\"robots\\":\\"\\"}","created_user_id":"224","created_time":"2017-09-06 15:33:04","modified_user_id":null,"modified_time":"2017-09-06 15:33:04","hits":"0","language":"*","version":null}', 0),
+(4, 10, 5, '', '2017-09-06 15:33:10', 224, 548, '210e3ff590ae368d95533b35f0b3f9c55838feb9', '{"id":10,"asset_id":62,"parent_id":"1","lft":"15","rgt":16,"level":1,"path":null,"extension":"com_content","title":"SIETE","alias":"siete","note":"","description":"","published":"1","checked_out":null,"checked_out_time":null,"access":"1","params":"{\\"category_layout\\":\\"\\",\\"image\\":\\"\\",\\"image_alt\\":\\"\\"}","metadesc":"","metakey":"","metadata":"{\\"author\\":\\"\\",\\"robots\\":\\"\\"}","created_user_id":"224","created_time":"2017-09-06 15:33:10","modified_user_id":null,"modified_time":"2017-09-06 15:33:10","hits":"0","language":"*","version":null}', 0),
+(5, 11, 5, '', '2017-09-06 15:33:25', 224, 568, '55ace6e46407e2ac148fb8db22fb4688021f13d4', '{"id":11,"asset_id":63,"parent_id":"1","lft":"17","rgt":18,"level":1,"path":null,"extension":"com_content","title":"Arte y muestras","alias":"arte-y-muestras","note":"","description":"","published":"1","checked_out":null,"checked_out_time":null,"access":"1","params":"{\\"category_layout\\":\\"\\",\\"image\\":\\"\\",\\"image_alt\\":\\"\\"}","metadesc":"","metakey":"","metadata":"{\\"author\\":\\"\\",\\"robots\\":\\"\\"}","created_user_id":"224","created_time":"2017-09-06 15:33:25","modified_user_id":null,"modified_time":"2017-09-06 15:33:25","hits":"0","language":"*","version":null}', 0),
+(6, 12, 5, '', '2017-09-06 15:33:33', 224, 558, '6f3a9210cb7531dec9ba2adfb5e7d5d6cafaa9ff', '{"id":12,"asset_id":64,"parent_id":"1","lft":"19","rgt":20,"level":1,"path":null,"extension":"com_content","title":"Literatura","alias":"literatura","note":"","description":"","published":"1","checked_out":null,"checked_out_time":null,"access":"1","params":"{\\"category_layout\\":\\"\\",\\"image\\":\\"\\",\\"image_alt\\":\\"\\"}","metadesc":"","metakey":"","metadata":"{\\"author\\":\\"\\",\\"robots\\":\\"\\"}","created_user_id":"224","created_time":"2017-09-06 15:33:33","modified_user_id":null,"modified_time":"2017-09-06 15:33:33","hits":"0","language":"*","version":null}', 0),
+(7, 13, 5, '', '2017-09-06 15:33:41', 224, 565, 'bb89282c6bf4ac5710955281f3fb49ab9181fc11', '{"id":13,"asset_id":65,"parent_id":"1","lft":"21","rgt":22,"level":1,"path":null,"extension":"com_content","title":"Gastronom\\u00eda","alias":"gastronomia","note":"","description":"","published":"1","checked_out":null,"checked_out_time":null,"access":"1","params":"{\\"category_layout\\":\\"\\",\\"image\\":\\"\\",\\"image_alt\\":\\"\\"}","metadesc":"","metakey":"","metadata":"{\\"author\\":\\"\\",\\"robots\\":\\"\\"}","created_user_id":"224","created_time":"2017-09-06 15:33:41","modified_user_id":null,"modified_time":"2017-09-06 15:33:41","hits":"0","language":"*","version":null}', 0),
+(8, 14, 5, '', '2017-09-06 15:34:28', 224, 561, '9daeb31f09015dbba4b8ac4c02f869d56f8e89e9', '{"id":14,"asset_id":66,"parent_id":"1","lft":"23","rgt":24,"level":1,"path":null,"extension":"com_content","title":"Con ni\\u00f1os","alias":"con-ninos","note":"","description":"","published":"1","checked_out":null,"checked_out_time":null,"access":"1","params":"{\\"category_layout\\":\\"\\",\\"image\\":\\"\\",\\"image_alt\\":\\"\\"}","metadesc":"","metakey":"","metadata":"{\\"author\\":\\"\\",\\"robots\\":\\"\\"}","created_user_id":"224","created_time":"2017-09-06 15:34:28","modified_user_id":null,"modified_time":"2017-09-06 15:34:28","hits":"0","language":"*","version":null}', 0),
+(9, 15, 5, '', '2017-09-06 15:35:13', 224, 550, '7e7fd711b207817cbb4d8ace7cc26150af358937', '{"id":15,"asset_id":67,"parent_id":"1","lft":"25","rgt":26,"level":1,"path":null,"extension":"com_content","title":"Agenda","alias":"agenda","note":"","description":"","published":"1","checked_out":null,"checked_out_time":null,"access":"1","params":"{\\"category_layout\\":\\"\\",\\"image\\":\\"\\",\\"image_alt\\":\\"\\"}","metadesc":"","metakey":"","metadata":"{\\"author\\":\\"\\",\\"robots\\":\\"\\"}","created_user_id":"224","created_time":"2017-09-06 15:35:13","modified_user_id":null,"modified_time":"2017-09-06 15:35:13","hits":"0","language":"*","version":null}', 0),
+(10, 16, 5, '', '2017-09-06 15:35:24', 224, 548, '4bb99298c3680bd0d2a2e712a68f650fd48b715e', '{"id":16,"asset_id":68,"parent_id":"1","lft":"27","rgt":28,"level":1,"path":null,"extension":"com_content","title":"LGBTI","alias":"lgbti","note":"","description":"","published":"1","checked_out":null,"checked_out_time":null,"access":"1","params":"{\\"category_layout\\":\\"\\",\\"image\\":\\"\\",\\"image_alt\\":\\"\\"}","metadesc":"","metakey":"","metadata":"{\\"author\\":\\"\\",\\"robots\\":\\"\\"}","created_user_id":"224","created_time":"2017-09-06 15:35:24","modified_user_id":null,"modified_time":"2017-09-06 15:35:24","hits":"0","language":"*","version":null}', 0),
+(11, 17, 5, '', '2017-09-06 15:35:32', 224, 564, 'e45ba876da83e76bc00d1fec1d8a8339a0dc35ec', '{"id":17,"asset_id":69,"parent_id":"1","lft":"29","rgt":30,"level":1,"path":null,"extension":"com_content","title":"Vida nocturna","alias":"vida-nocturna","note":"","description":"","published":"1","checked_out":null,"checked_out_time":null,"access":"1","params":"{\\"category_layout\\":\\"\\",\\"image\\":\\"\\",\\"image_alt\\":\\"\\"}","metadesc":"","metakey":"","metadata":"{\\"author\\":\\"\\",\\"robots\\":\\"\\"}","created_user_id":"224","created_time":"2017-09-06 15:35:32","modified_user_id":null,"modified_time":"2017-09-06 15:35:32","hits":"0","language":"*","version":null}', 0),
+(12, 18, 5, '', '2017-09-06 15:35:44', 224, 558, 'e0184d319037835704481ca1f72837095e48033a', '{"id":18,"asset_id":70,"parent_id":"1","lft":"31","rgt":32,"level":1,"path":null,"extension":"com_content","title":"Tendencias","alias":"tendencias","note":"","description":"","published":"1","checked_out":null,"checked_out_time":null,"access":"1","params":"{\\"category_layout\\":\\"\\",\\"image\\":\\"\\",\\"image_alt\\":\\"\\"}","metadesc":"","metakey":"","metadata":"{\\"author\\":\\"\\",\\"robots\\":\\"\\"}","created_user_id":"224","created_time":"2017-09-06 15:35:44","modified_user_id":null,"modified_time":"2017-09-06 15:35:44","hits":"0","language":"*","version":null}', 0),
+(13, 19, 5, '', '2017-09-06 15:35:52', 224, 550, '94dc45704d5ea7bc26f57e6c4d075b95f4bd2834', '{"id":19,"asset_id":71,"parent_id":"1","lft":"33","rgt":34,"level":1,"path":null,"extension":"com_content","title":"Viajes","alias":"viajes","note":"","description":"","published":"1","checked_out":null,"checked_out_time":null,"access":"1","params":"{\\"category_layout\\":\\"\\",\\"image\\":\\"\\",\\"image_alt\\":\\"\\"}","metadesc":"","metakey":"","metadata":"{\\"author\\":\\"\\",\\"robots\\":\\"\\"}","created_user_id":"224","created_time":"2017-09-06 15:35:52","modified_user_id":null,"modified_time":"2017-09-06 15:35:52","hits":"0","language":"*","version":null}', 0),
+(14, 20, 5, '', '2017-09-06 15:35:58', 224, 558, '142998ebd67429f7d1dc6cc70d6ea3612bddfe03', '{"id":20,"asset_id":72,"parent_id":"1","lft":"35","rgt":36,"level":1,"path":null,"extension":"com_content","title":"De compras","alias":"de-compras","note":"","description":"","published":"1","checked_out":null,"checked_out_time":null,"access":"1","params":"{\\"category_layout\\":\\"\\",\\"image\\":\\"\\",\\"image_alt\\":\\"\\"}","metadesc":"","metakey":"","metadata":"{\\"author\\":\\"\\",\\"robots\\":\\"\\"}","created_user_id":"224","created_time":"2017-09-06 15:35:58","modified_user_id":null,"modified_time":"2017-09-06 15:35:58","hits":"0","language":"*","version":null}', 0),
+(15, 2, 8, '', '2017-09-06 16:15:01', 224, 853, '65ba3ce09b5875c9e3b7778b1fd42fe9c368da4e', '{"id":2,"parent_id":"1","lft":"1","rgt":2,"level":1,"path":null,"title":"M\\u00fasica","alias":"musica","note":"","description":"","published":"1","checked_out":null,"checked_out_time":"2017-09-06 16:15:01","access":"1","params":"{\\"tag_layout\\":\\"\\",\\"tag_link_class\\":\\"label label-info\\"}","metadesc":"","metakey":"","metadata":"{\\"author\\":\\"\\",\\"robots\\":\\"\\"}","created_user_id":"224","created_time":"2017-09-06 16:15:01","created_by_alias":"","modified_user_id":null,"modified_time":"2017-09-06 16:15:01","images":"{\\"image_intro\\":\\"\\",\\"float_intro\\":\\"\\",\\"image_intro_alt\\":\\"\\",\\"image_intro_caption\\":\\"\\",\\"image_fulltext\\":\\"\\",\\"float_fulltext\\":\\"\\",\\"image_fulltext_alt\\":\\"\\",\\"image_fulltext_caption\\":\\"\\"}","urls":"{}","hits":"0","language":"*","version":null,"publish_up":"2017-09-06 16:15:01","publish_down":"2017-09-06 16:15:01"}', 0),
+(16, 3, 8, '', '2017-09-06 16:15:10', 224, 844, '45a4a5c113eed2880b9a0f7e14b82d37aff54034', '{"id":3,"parent_id":"1","lft":"3","rgt":4,"level":1,"path":null,"title":"Cine","alias":"cine","note":"","description":"","published":"1","checked_out":null,"checked_out_time":"2017-09-06 16:15:10","access":"1","params":"{\\"tag_layout\\":\\"\\",\\"tag_link_class\\":\\"label label-info\\"}","metadesc":"","metakey":"","metadata":"{\\"author\\":\\"\\",\\"robots\\":\\"\\"}","created_user_id":"224","created_time":"2017-09-06 16:15:10","created_by_alias":"","modified_user_id":null,"modified_time":"2017-09-06 16:15:10","images":"{\\"image_intro\\":\\"\\",\\"float_intro\\":\\"\\",\\"image_intro_alt\\":\\"\\",\\"image_intro_caption\\":\\"\\",\\"image_fulltext\\":\\"\\",\\"float_fulltext\\":\\"\\",\\"image_fulltext_alt\\":\\"\\",\\"image_fulltext_caption\\":\\"\\"}","urls":"{}","hits":"0","language":"*","version":null,"publish_up":"2017-09-06 16:15:10","publish_down":"2017-09-06 16:15:10"}', 0),
+(17, 4, 8, '', '2017-09-06 16:15:15', 224, 866, '1b5eb33938d42e36db1ab2298cfd2c5c5c4d9b29', '{"id":4,"parent_id":"1","lft":"5","rgt":6,"level":1,"path":null,"title":"Arte y muestras","alias":"arte-y-muestras","note":"","description":"","published":"1","checked_out":null,"checked_out_time":"2017-09-06 16:15:15","access":"1","params":"{\\"tag_layout\\":\\"\\",\\"tag_link_class\\":\\"label label-info\\"}","metadesc":"","metakey":"","metadata":"{\\"author\\":\\"\\",\\"robots\\":\\"\\"}","created_user_id":"224","created_time":"2017-09-06 16:15:15","created_by_alias":"","modified_user_id":null,"modified_time":"2017-09-06 16:15:15","images":"{\\"image_intro\\":\\"\\",\\"float_intro\\":\\"\\",\\"image_intro_alt\\":\\"\\",\\"image_intro_caption\\":\\"\\",\\"image_fulltext\\":\\"\\",\\"float_fulltext\\":\\"\\",\\"image_fulltext_alt\\":\\"\\",\\"image_fulltext_caption\\":\\"\\"}","urls":"{}","hits":"0","language":"*","version":null,"publish_up":"2017-09-06 16:15:15","publish_down":"2017-09-06 16:15:15"}', 0),
+(18, 5, 8, '', '2017-09-06 16:15:19', 224, 846, 'a5f4a88df141dc04d29edaa7486e6ca52af31d35', '{"id":5,"parent_id":"1","lft":"7","rgt":8,"level":1,"path":null,"title":"SIETE","alias":"siete","note":"","description":"","published":"1","checked_out":null,"checked_out_time":"2017-09-06 16:15:19","access":"1","params":"{\\"tag_layout\\":\\"\\",\\"tag_link_class\\":\\"label label-info\\"}","metadesc":"","metakey":"","metadata":"{\\"author\\":\\"\\",\\"robots\\":\\"\\"}","created_user_id":"224","created_time":"2017-09-06 16:15:19","created_by_alias":"","modified_user_id":null,"modified_time":"2017-09-06 16:15:19","images":"{\\"image_intro\\":\\"\\",\\"float_intro\\":\\"\\",\\"image_intro_alt\\":\\"\\",\\"image_intro_caption\\":\\"\\",\\"image_fulltext\\":\\"\\",\\"float_fulltext\\":\\"\\",\\"image_fulltext_alt\\":\\"\\",\\"image_fulltext_caption\\":\\"\\"}","urls":"{}","hits":"0","language":"*","version":null,"publish_up":"2017-09-06 16:15:19","publish_down":"2017-09-06 16:15:19"}', 0),
+(19, 6, 8, '', '2017-09-06 16:15:33', 224, 857, '69478a6852af8f17d534ee546f9a462c74d8a016', '{"id":6,"parent_id":"1","lft":"9","rgt":10,"level":1,"path":null,"title":"Literatura","alias":"literatura","note":"","description":"","published":"1","checked_out":null,"checked_out_time":"2017-09-06 16:15:33","access":"1","params":"{\\"tag_layout\\":\\"\\",\\"tag_link_class\\":\\"label label-info\\"}","metadesc":"","metakey":"","metadata":"{\\"author\\":\\"\\",\\"robots\\":\\"\\"}","created_user_id":"224","created_time":"2017-09-06 16:15:33","created_by_alias":"","modified_user_id":null,"modified_time":"2017-09-06 16:15:33","images":"{\\"image_intro\\":\\"\\",\\"float_intro\\":\\"\\",\\"image_intro_alt\\":\\"\\",\\"image_intro_caption\\":\\"\\",\\"image_fulltext\\":\\"\\",\\"float_fulltext\\":\\"\\",\\"image_fulltext_alt\\":\\"\\",\\"image_fulltext_caption\\":\\"\\"}","urls":"{}","hits":"0","language":"*","version":null,"publish_up":"2017-09-06 16:15:33","publish_down":"2017-09-06 16:15:33"}', 0),
+(20, 7, 8, '', '2017-09-06 16:15:37', 224, 865, '9d9b54b0ca3d1bd62b6bcd30b96c010159956613', '{"id":7,"parent_id":"1","lft":"11","rgt":12,"level":1,"path":null,"title":"Gastronom\\u00eda","alias":"gastronomia","note":"","description":"","published":"1","checked_out":null,"checked_out_time":"2017-09-06 16:15:37","access":"1","params":"{\\"tag_layout\\":\\"\\",\\"tag_link_class\\":\\"label label-info\\"}","metadesc":"","metakey":"","metadata":"{\\"author\\":\\"\\",\\"robots\\":\\"\\"}","created_user_id":"224","created_time":"2017-09-06 16:15:37","created_by_alias":"","modified_user_id":null,"modified_time":"2017-09-06 16:15:37","images":"{\\"image_intro\\":\\"\\",\\"float_intro\\":\\"\\",\\"image_intro_alt\\":\\"\\",\\"image_intro_caption\\":\\"\\",\\"image_fulltext\\":\\"\\",\\"float_fulltext\\":\\"\\",\\"image_fulltext_alt\\":\\"\\",\\"image_fulltext_caption\\":\\"\\"}","urls":"{}","hits":"0","language":"*","version":null,"publish_up":"2017-09-06 16:15:37","publish_down":"2017-09-06 16:15:37"}', 0),
+(21, 8, 8, '', '2017-09-06 16:15:44', 224, 861, '802f08f8ed8599ff89734a9abc5001c030625432', '{"id":8,"parent_id":"1","lft":"13","rgt":14,"level":1,"path":null,"title":"Con ni\\u00f1os","alias":"con-ninos","note":"","description":"","published":"1","checked_out":null,"checked_out_time":"2017-09-06 16:15:44","access":"1","params":"{\\"tag_layout\\":\\"\\",\\"tag_link_class\\":\\"label label-info\\"}","metadesc":"","metakey":"","metadata":"{\\"author\\":\\"\\",\\"robots\\":\\"\\"}","created_user_id":"224","created_time":"2017-09-06 16:15:44","created_by_alias":"","modified_user_id":null,"modified_time":"2017-09-06 16:15:44","images":"{\\"image_intro\\":\\"\\",\\"float_intro\\":\\"\\",\\"image_intro_alt\\":\\"\\",\\"image_intro_caption\\":\\"\\",\\"image_fulltext\\":\\"\\",\\"float_fulltext\\":\\"\\",\\"image_fulltext_alt\\":\\"\\",\\"image_fulltext_caption\\":\\"\\"}","urls":"{}","hits":"0","language":"*","version":null,"publish_up":"2017-09-06 16:15:44","publish_down":"2017-09-06 16:15:44"}', 0),
+(22, 9, 8, '', '2017-09-06 16:15:47', 224, 850, '773bff5387f3c816a3759efd8770c196da632a27', '{"id":9,"parent_id":"1","lft":"15","rgt":16,"level":1,"path":null,"title":"Agenda","alias":"agenda","note":"","description":"","published":"1","checked_out":null,"checked_out_time":"2017-09-06 16:15:47","access":"1","params":"{\\"tag_layout\\":\\"\\",\\"tag_link_class\\":\\"label label-info\\"}","metadesc":"","metakey":"","metadata":"{\\"author\\":\\"\\",\\"robots\\":\\"\\"}","created_user_id":"224","created_time":"2017-09-06 16:15:47","created_by_alias":"","modified_user_id":null,"modified_time":"2017-09-06 16:15:47","images":"{\\"image_intro\\":\\"\\",\\"float_intro\\":\\"\\",\\"image_intro_alt\\":\\"\\",\\"image_intro_caption\\":\\"\\",\\"image_fulltext\\":\\"\\",\\"float_fulltext\\":\\"\\",\\"image_fulltext_alt\\":\\"\\",\\"image_fulltext_caption\\":\\"\\"}","urls":"{}","hits":"0","language":"*","version":null,"publish_up":"2017-09-06 16:15:47","publish_down":"2017-09-06 16:15:47"}', 0),
+(23, 10, 8, '', '2017-09-06 16:16:00', 224, 849, '5c9857b94a49a2c49001ed20d257cf3d568732de', '{"id":10,"parent_id":"1","lft":"17","rgt":18,"level":1,"path":null,"title":"LGBTI","alias":"lgbti","note":"","description":"","published":"1","checked_out":null,"checked_out_time":"2017-09-06 16:16:00","access":"1","params":"{\\"tag_layout\\":\\"\\",\\"tag_link_class\\":\\"label label-info\\"}","metadesc":"","metakey":"","metadata":"{\\"author\\":\\"\\",\\"robots\\":\\"\\"}","created_user_id":"224","created_time":"2017-09-06 16:16:00","created_by_alias":"","modified_user_id":null,"modified_time":"2017-09-06 16:16:00","images":"{\\"image_intro\\":\\"\\",\\"float_intro\\":\\"\\",\\"image_intro_alt\\":\\"\\",\\"image_intro_caption\\":\\"\\",\\"image_fulltext\\":\\"\\",\\"float_fulltext\\":\\"\\",\\"image_fulltext_alt\\":\\"\\",\\"image_fulltext_caption\\":\\"\\"}","urls":"{}","hits":"0","language":"*","version":null,"publish_up":"2017-09-06 16:16:00","publish_down":"2017-09-06 16:16:00"}', 0),
+(24, 11, 8, '', '2017-09-06 16:16:08', 224, 865, '15e742d2e583468883616a918e830d9ae951a019', '{"id":11,"parent_id":"1","lft":"19","rgt":20,"level":1,"path":null,"title":"Vida nocturna","alias":"vida-nocturna","note":"","description":"","published":"1","checked_out":null,"checked_out_time":"2017-09-06 16:16:08","access":"1","params":"{\\"tag_layout\\":\\"\\",\\"tag_link_class\\":\\"label label-info\\"}","metadesc":"","metakey":"","metadata":"{\\"author\\":\\"\\",\\"robots\\":\\"\\"}","created_user_id":"224","created_time":"2017-09-06 16:16:08","created_by_alias":"","modified_user_id":null,"modified_time":"2017-09-06 16:16:08","images":"{\\"image_intro\\":\\"\\",\\"float_intro\\":\\"\\",\\"image_intro_alt\\":\\"\\",\\"image_intro_caption\\":\\"\\",\\"image_fulltext\\":\\"\\",\\"float_fulltext\\":\\"\\",\\"image_fulltext_alt\\":\\"\\",\\"image_fulltext_caption\\":\\"\\"}","urls":"{}","hits":"0","language":"*","version":null,"publish_up":"2017-09-06 16:16:08","publish_down":"2017-09-06 16:16:08"}', 0),
+(25, 12, 8, '', '2017-09-06 16:16:14', 224, 859, 'a23bc8797fb047719ea15aca54e08ca85d464768', '{"id":12,"parent_id":"1","lft":"21","rgt":22,"level":1,"path":null,"title":"Tendencias","alias":"tendencias","note":"","description":"","published":"1","checked_out":null,"checked_out_time":"2017-09-06 16:16:14","access":"1","params":"{\\"tag_layout\\":\\"\\",\\"tag_link_class\\":\\"label label-info\\"}","metadesc":"","metakey":"","metadata":"{\\"author\\":\\"\\",\\"robots\\":\\"\\"}","created_user_id":"224","created_time":"2017-09-06 16:16:14","created_by_alias":"","modified_user_id":null,"modified_time":"2017-09-06 16:16:14","images":"{\\"image_intro\\":\\"\\",\\"float_intro\\":\\"\\",\\"image_intro_alt\\":\\"\\",\\"image_intro_caption\\":\\"\\",\\"image_fulltext\\":\\"\\",\\"float_fulltext\\":\\"\\",\\"image_fulltext_alt\\":\\"\\",\\"image_fulltext_caption\\":\\"\\"}","urls":"{}","hits":"0","language":"*","version":null,"publish_up":"2017-09-06 16:16:14","publish_down":"2017-09-06 16:16:14"}', 0),
+(26, 13, 8, '', '2017-09-06 16:16:21', 224, 851, 'fb5faca90187c0dad4d71f7d14bd4a1d1f885b16', '{"id":13,"parent_id":"1","lft":"23","rgt":24,"level":1,"path":null,"title":"Viajes","alias":"viajes","note":"","description":"","published":"1","checked_out":null,"checked_out_time":"2017-09-06 16:16:21","access":"1","params":"{\\"tag_layout\\":\\"\\",\\"tag_link_class\\":\\"label label-info\\"}","metadesc":"","metakey":"","metadata":"{\\"author\\":\\"\\",\\"robots\\":\\"\\"}","created_user_id":"224","created_time":"2017-09-06 16:16:21","created_by_alias":"","modified_user_id":null,"modified_time":"2017-09-06 16:16:21","images":"{\\"image_intro\\":\\"\\",\\"float_intro\\":\\"\\",\\"image_intro_alt\\":\\"\\",\\"image_intro_caption\\":\\"\\",\\"image_fulltext\\":\\"\\",\\"float_fulltext\\":\\"\\",\\"image_fulltext_alt\\":\\"\\",\\"image_fulltext_caption\\":\\"\\"}","urls":"{}","hits":"0","language":"*","version":null,"publish_up":"2017-09-06 16:16:21","publish_down":"2017-09-06 16:16:21"}', 0),
+(27, 14, 8, '', '2017-09-06 16:16:25', 224, 859, '336c8c62ad7b84b17c4c1fb52a47423c12a551dd', '{"id":14,"parent_id":"1","lft":"25","rgt":26,"level":1,"path":null,"title":"De compras","alias":"de-compras","note":"","description":"","published":"1","checked_out":null,"checked_out_time":"2017-09-06 16:16:25","access":"1","params":"{\\"tag_layout\\":\\"\\",\\"tag_link_class\\":\\"label label-info\\"}","metadesc":"","metakey":"","metadata":"{\\"author\\":\\"\\",\\"robots\\":\\"\\"}","created_user_id":"224","created_time":"2017-09-06 16:16:25","created_by_alias":"","modified_user_id":null,"modified_time":"2017-09-06 16:16:25","images":"{\\"image_intro\\":\\"\\",\\"float_intro\\":\\"\\",\\"image_intro_alt\\":\\"\\",\\"image_intro_caption\\":\\"\\",\\"image_fulltext\\":\\"\\",\\"float_fulltext\\":\\"\\",\\"image_fulltext_alt\\":\\"\\",\\"image_fulltext_caption\\":\\"\\"}","urls":"{}","hits":"0","language":"*","version":null,"publish_up":"2017-09-06 16:16:25","publish_down":"2017-09-06 16:16:25"}', 0);
 
 -- --------------------------------------------------------
 
@@ -1775,10 +1930,10 @@ CREATE TABLE IF NOT EXISTS `gtxly_update_sites` (
 --
 
 INSERT INTO `gtxly_update_sites` (`update_site_id`, `name`, `type`, `location`, `enabled`, `last_check_timestamp`, `extra_query`) VALUES
-(1, 'Joomla! Core', 'collection', 'https://update.joomla.org/core/list.xml', 1, 1504044851, ''),
+(1, 'Joomla! Core', 'collection', 'https://update.joomla.org/core/list.xml', 1, 1504714439, ''),
 (2, 'Accredited Joomla! Translations', 'collection', 'https://update.joomla.org/language/translationlist_3.xml', 1, 0, ''),
-(3, 'Joomla! Update Component Update Site', 'extension', 'https://update.joomla.org/core/extensions/com_joomlaupdate.xml', 1, 1504044850, ''),
-(5, 'Web357 Framework', 'extension', 'http://updates.web357.eu/web357framework/web357framework.xml', 1, 1504044851, '');
+(3, 'Joomla! Update Component Update Site', 'extension', 'https://update.joomla.org/core/extensions/com_joomlaupdate.xml', 1, 0, ''),
+(5, 'Web357 Framework', 'extension', 'http://updates.web357.eu/web357framework/web357framework.xml', 1, 1504714438, '');
 
 -- --------------------------------------------------------
 
@@ -1964,7 +2119,7 @@ CREATE TABLE IF NOT EXISTS `gtxly_users` (
 --
 
 INSERT INTO `gtxly_users` (`id`, `name`, `username`, `email`, `password`, `block`, `sendEmail`, `registerDate`, `lastvisitDate`, `activation`, `params`, `lastResetTime`, `resetCount`, `otpKey`, `otep`, `requireReset`) VALUES
-(224, 'Super User', 'mosaicoStudio', 'alexanderurbinac@gmail.com', '$2y$10$Rb1A6dP6dSlqpcrxVSMyleXQOdaogocmrpinZIOzDoVGMej0R/J5y', 0, 1, '2017-08-28 16:24:06', '2017-08-29 21:44:50', '0', '', '0000-00-00 00:00:00', 0, '', '', 0);
+(224, 'Super User', 'mosaicoStudio', 'alexanderurbinac@gmail.com', '$2y$10$Rb1A6dP6dSlqpcrxVSMyleXQOdaogocmrpinZIOzDoVGMej0R/J5y', 0, 1, '2017-08-28 16:24:06', '2017-09-06 18:32:59', '0', '', '0000-00-00 00:00:00', 0, '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -2619,7 +2774,7 @@ ALTER TABLE `gtxly_viewlevels`
 -- AUTO_INCREMENT de la tabla `gtxly_assets`
 --
 ALTER TABLE `gtxly_assets`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',AUTO_INCREMENT=60;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',AUTO_INCREMENT=86;
 --
 -- AUTO_INCREMENT de la tabla `gtxly_banner_clients`
 --
@@ -2634,7 +2789,7 @@ ALTER TABLE `gtxly_banners`
 -- AUTO_INCREMENT de la tabla `gtxly_categories`
 --
 ALTER TABLE `gtxly_categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT de la tabla `gtxly_contact_details`
 --
@@ -2699,7 +2854,7 @@ ALTER TABLE `gtxly_languages`
 -- AUTO_INCREMENT de la tabla `gtxly_menu`
 --
 ALTER TABLE `gtxly_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=102;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=115;
 --
 -- AUTO_INCREMENT de la tabla `gtxly_menu_types`
 --
@@ -2739,7 +2894,7 @@ ALTER TABLE `gtxly_redirect_links`
 -- AUTO_INCREMENT de la tabla `gtxly_tags`
 --
 ALTER TABLE `gtxly_tags`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT de la tabla `gtxly_template_styles`
 --
@@ -2749,12 +2904,12 @@ ALTER TABLE `gtxly_template_styles`
 -- AUTO_INCREMENT de la tabla `gtxly_ucm_content`
 --
 ALTER TABLE `gtxly_ucm_content`
-  MODIFY `core_content_id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `core_content_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT de la tabla `gtxly_ucm_history`
 --
 ALTER TABLE `gtxly_ucm_history`
-  MODIFY `version_id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `version_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT de la tabla `gtxly_update_sites`
 --
