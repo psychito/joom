@@ -33,7 +33,7 @@ $this->addStyleDeclaration("h1, h2, h3, h4, h5, h6, .site-title {	font-family: L
 <div class="completo">
 	<div class="anchototal container-fluid">
 	<header>
-		<div class="row topper">
+		<div class="row-fluid topper">
 			<div class="span7 fecha">
 				<?php
 				echo '<span>'.JFactory::getDate()->format('l, d F').' de '.JFactory::getDate()->format('Y').'</span>'?>
@@ -42,7 +42,7 @@ $this->addStyleDeclaration("h1, h2, h3, h4, h5, h6, .site-title {	font-family: L
 				<jdoc:include type="modules" name="lsev-buscador" style="none" />
 			</div>
 		</div>
-		<div class="row logocont">
+		<div class="row-fluid  logocont">
 			<div class="span9">
 				<jdoc:include type="modules" name="lsev-pubtop" style="none" />
 			</div>
@@ -52,7 +52,7 @@ $this->addStyleDeclaration("h1, h2, h3, h4, h5, h6, .site-title {	font-family: L
 			  </a>
 			</div>
 		</div>
-		<div class="row menucont">
+		<div class="row-fluid menucont">
 			<div class="span9 menu">
 				<nav class="navigation" role="navigation">
 					<div class="navbar pull-left">
@@ -76,12 +76,12 @@ $this->addStyleDeclaration("h1, h2, h3, h4, h5, h6, .site-title {	font-family: L
 		<?php $menu = $app->getMenu();
 if ($menu->getActive() == $menu->getDefault($lang->getTag())) {?>
 <section class="frontpagecont">
-<div class="row slidercont">
+<div class="row-fluid slidercont">
 	<div class="span12 slider">
 		<jdoc:include type="modules" name="lsev-slider" style="none" />
 	</div>
 </div>
-<div class="row markcont">
+<div class="row-fluid  markcont">
 	<div class="span4 mark1">
 		<jdoc:include type="modules" name="lsev-mark1" style="none" />
 	</div>
@@ -95,7 +95,7 @@ if ($menu->getActive() == $menu->getDefault($lang->getTag())) {?>
 </section>
 <?php }else{ ?>
 	<section class="contenidocont">
-		<div class="row contenedor">
+		<div class="row-fluid  contenedor">
 			<div class="span9">
 				<div class="span12 conttopcont">
 					<jdoc:include type="modules" name="lsev-conttop" style="none" />
@@ -117,12 +117,12 @@ if ($menu->getActive() == $menu->getDefault($lang->getTag())) {?>
 	</section>
 <?php } ?>
 			<footer>
-			<div class="row footpubcont">
+			<div class="row-fluid  footpubcont">
 				<div class="span12 footpub">
 					<jdoc:include type="modules" name="lsev-footpub" style="none" />
 				</div>
 			</div>
-			<div class="row footcont">
+			<div class="row-fluid  footcont">
 				<div class="span5 foot1">
 					<jdoc:include type="modules" name="lsev-foot1" style="none" />
 				</div>
