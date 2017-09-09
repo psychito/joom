@@ -33,14 +33,16 @@ $this->addStyleDeclaration("h1, h2, h3, h4, h5, h6, .site-title {	font-family: L
 <div class="completo">
 	<div class="anchototal container-fluid">
 	<header>
-		<div class="row-fluid topper">
-			<div class="span7 fecha">
-				<?php
-				echo '<span>'.JFactory::getDate()->format('l, d F').' de '.JFactory::getDate()->format('Y').'</span>'?>
-			</div>
-			<div class="span5 buscador">
-				<jdoc:include type="modules" name="lsev-buscador" style="none" />
-			</div>
+		<div class="row-fluid topper padders">
+
+				<div class="span7 fecha">
+					<?php
+					echo '<span>'.JFactory::getDate()->format('l, d F').' de '.JFactory::getDate()->format('Y').'</span>'?>
+				</div>
+				<div class="span5 buscador">
+					<jdoc:include type="modules" name="lsev-buscador" style="none" />
+				</div>
+
 		</div>
 		<div class="row-fluid  logocont">
 			<div class="span9">
@@ -52,31 +54,34 @@ $this->addStyleDeclaration("h1, h2, h3, h4, h5, h6, .site-title {	font-family: L
 			  </a>
 			</div>
 		</div>
-		<div class="row-fluid menucont">
-			<div class="span9 menu">
-				<nav class="navigation" role="navigation">
-					<div class="navbar pull-left">
-						<a class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
-							<span class="element-invisible"><?php echo JTEXT::_('TPL_LUCKYSEVEN_TOGGLE_MENU'); ?></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</a>
-					</div>
-					<div class="nav-collapse">
-						<jdoc:include type="modules" name="lsev-menu" style="none" />
-					</div>
-				</nav>
-			</div>
+		<div class="row-fluid menucont padders">
+
+				<div class="span9 menu">
+					<nav class="navigation" role="navigation">
+						<div class="navbar pull-left">
+							<a class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+								<span class="element-invisible"><?php echo JTEXT::_('TPL_LUCKYSEVEN_TOGGLE_MENU'); ?></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</a>
+						</div>
+						<div class="nav-collapse">
+							<jdoc:include type="modules" name="lsev-menu" style="none" />
+						</div>
+					</nav>
+				</div>
+
 			<div class="span3 redes">
 				<jdoc:include type="modules" name="lsev-redes" style="none" />
 			</div>
+
 		</div>
 		</header>
 		<?php $menu = $app->getMenu();
 if ($menu->getActive() == $menu->getDefault($lang->getTag())) {?>
 <section class="frontpagecont">
-<div class="row-fluid slidercont">
+<div class="row-fluid slidercont padders">
 	<div class="span12 slider">
 		<jdoc:include type="modules" name="lsev-slider" style="none" />
 	</div>

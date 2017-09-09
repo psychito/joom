@@ -1,4 +1,4 @@
-.topper, .menucont{
+.topper, .menucont, .menucont .padders{
 	background-color: #201f24;
 
 	color: #eee;
@@ -6,6 +6,19 @@
   align-items: center;
 
 }
+.redes table{
+	float: right;
+}
+.redes table td{
+	padding: 0 10px;
+}
+
+.padders{
+	padding-right: 30px;
+	padding-left: 30px;
+width: calc(100% - 60px) !important;
+}
+
 .redes img{
 	max-height: 20px;
 }
@@ -202,7 +215,7 @@ sub {
 }
 img {
 	max-width: 100%;
-	width: auto \9;
+	width: auto;
 	height: auto;
 	vertical-align: middle;
 	border: 0;
