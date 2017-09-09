@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.15.7
--- http://www.phpmyadmin.net
+-- version 4.6.4
+-- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 07-09-2017 a las 22:57:20
--- Versión del servidor: 5.6.36
--- Versión de PHP: 5.3.29
+-- Host: 127.0.0.1
+-- Generation Time: Sep 09, 2017 at 11:57 PM
+-- Server version: 5.7.14
+-- PHP Version: 5.6.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,35 +17,36 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `lsevenjm3`
+-- Database: `lsevenjm3`
 --
+DROP DATABASE `lsevenjm3`;
 CREATE DATABASE IF NOT EXISTS `lsevenjm3` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `lsevenjm3`;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_assets`
+-- Table structure for table `gtxly_assets`
 --
 
 DROP TABLE IF EXISTS `gtxly_assets`;
-CREATE TABLE IF NOT EXISTS `gtxly_assets` (
-  `id` int(10) unsigned NOT NULL COMMENT 'Primary Key',
+CREATE TABLE `gtxly_assets` (
+  `id` int(10) UNSIGNED NOT NULL COMMENT 'Primary Key',
   `parent_id` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set parent.',
   `lft` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set lft.',
   `rgt` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set rgt.',
-  `level` int(10) unsigned NOT NULL COMMENT 'The cached level in the nested tree.',
+  `level` int(10) UNSIGNED NOT NULL COMMENT 'The cached level in the nested tree.',
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The unique name for the asset.\n',
   `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The descriptive title for the asset.',
   `rules` varchar(5120) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'JSON encoded access control.'
-) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Volcado de datos para la tabla `gtxly_assets`
+-- Dumping data for table `gtxly_assets`
 --
 
 INSERT INTO `gtxly_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `title`, `rules`) VALUES
-(1, 0, 0, 163, 0, 'root.1', 'Root Asset', '{"core.login.site":{"6":1,"2":1},"core.login.admin":{"6":1},"core.login.offline":{"6":1},"core.admin":{"8":1},"core.manage":{"7":1},"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
+(1, 0, 0, 169, 0, 'root.1', 'Root Asset', '{"core.login.site":{"6":1,"2":1},"core.login.admin":{"6":1},"core.login.offline":{"6":1},"core.admin":{"8":1},"core.manage":{"7":1},"core.create":{"6":1,"3":1},"core.delete":{"6":1},"core.edit":{"6":1,"4":1},"core.edit.state":{"6":1,"5":1},"core.edit.own":{"6":1,"3":1}}'),
 (2, 1, 1, 2, 1, 'com_admin', 'com_admin', '{}'),
 (3, 1, 3, 6, 1, 'com_banners', 'com_banners', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
 (4, 1, 7, 8, 1, 'com_cache', 'com_cache', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
@@ -62,25 +63,25 @@ INSERT INTO `gtxly_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `t
 (15, 1, 59, 60, 1, 'com_media', 'com_media', '{"core.admin":{"7":1},"core.manage":{"6":1},"core.create":{"3":1},"core.delete":{"5":1}}'),
 (16, 1, 61, 64, 1, 'com_menus', 'com_menus', '{"core.admin":{"7":1}}'),
 (17, 1, 65, 66, 1, 'com_messages', 'com_messages', '{"core.admin":{"7":1},"core.manage":{"7":1}}'),
-(18, 1, 67, 102, 1, 'com_modules', 'com_modules', '{"core.admin":{"7":1}}'),
-(19, 1, 103, 106, 1, 'com_newsfeeds', 'com_newsfeeds', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
-(20, 1, 107, 108, 1, 'com_plugins', 'com_plugins', '{"core.admin":{"7":1}}'),
-(21, 1, 109, 110, 1, 'com_redirect', 'com_redirect', '{"core.admin":{"7":1}}'),
-(22, 1, 111, 112, 1, 'com_search', 'com_search', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
-(23, 1, 113, 114, 1, 'com_templates', 'com_templates', '{"core.admin":{"7":1}}'),
-(24, 1, 115, 118, 1, 'com_users', 'com_users', '{"core.admin":{"7":1}}'),
-(26, 1, 119, 120, 1, 'com_wrapper', 'com_wrapper', '{}'),
+(18, 1, 67, 104, 1, 'com_modules', 'com_modules', '{"core.admin":{"7":1}}'),
+(19, 1, 105, 108, 1, 'com_newsfeeds', 'com_newsfeeds', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
+(20, 1, 109, 110, 1, 'com_plugins', 'com_plugins', '{"core.admin":{"7":1}}'),
+(21, 1, 111, 112, 1, 'com_redirect', 'com_redirect', '{"core.admin":{"7":1}}'),
+(22, 1, 113, 114, 1, 'com_search', 'com_search', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
+(23, 1, 115, 116, 1, 'com_templates', 'com_templates', '{"core.admin":{"7":1}}'),
+(24, 1, 117, 120, 1, 'com_users', 'com_users', '{"core.admin":{"7":1}}'),
+(26, 1, 121, 122, 1, 'com_wrapper', 'com_wrapper', '{}'),
 (27, 8, 18, 19, 2, 'com_content.category.2', 'Sin categoría', '{}'),
 (28, 3, 4, 5, 2, 'com_banners.category.3', 'Uncategorised', '{}'),
 (29, 7, 14, 15, 2, 'com_contact.category.4', 'Uncategorised', '{}'),
-(30, 19, 104, 105, 2, 'com_newsfeeds.category.5', 'Uncategorised', '{}'),
-(32, 24, 116, 117, 2, 'com_users.category.7', 'Uncategorised', '{}'),
-(33, 1, 121, 122, 1, 'com_finder', 'com_finder', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
-(34, 1, 123, 124, 1, 'com_joomlaupdate', 'com_joomlaupdate', '{}'),
-(35, 1, 125, 126, 1, 'com_tags', 'com_tags', '{}'),
-(36, 1, 127, 128, 1, 'com_contenthistory', 'com_contenthistory', '{}'),
-(37, 1, 129, 130, 1, 'com_ajax', 'com_ajax', '{}'),
-(38, 1, 131, 132, 1, 'com_postinstall', 'com_postinstall', '{}'),
+(30, 19, 106, 107, 2, 'com_newsfeeds.category.5', 'Uncategorised', '{}'),
+(32, 24, 118, 119, 2, 'com_users.category.7', 'Uncategorised', '{}'),
+(33, 1, 123, 124, 1, 'com_finder', 'com_finder', '{"core.admin":{"7":1},"core.manage":{"6":1}}'),
+(34, 1, 125, 126, 1, 'com_joomlaupdate', 'com_joomlaupdate', '{}'),
+(35, 1, 127, 128, 1, 'com_tags', 'com_tags', '{}'),
+(36, 1, 129, 130, 1, 'com_contenthistory', 'com_contenthistory', '{}'),
+(37, 1, 131, 132, 1, 'com_ajax', 'com_ajax', '{}'),
+(38, 1, 133, 134, 1, 'com_postinstall', 'com_postinstall', '{}'),
 (39, 18, 68, 69, 2, 'com_modules.module.1', 'Menú principal', '{}'),
 (40, 18, 70, 71, 2, 'com_modules.module.2', 'Login', '{}'),
 (41, 18, 72, 73, 2, 'com_modules.module.3', 'Popular Articles', '{}'),
@@ -97,9 +98,9 @@ INSERT INTO `gtxly_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `t
 (52, 18, 94, 95, 2, 'com_modules.module.79', 'Multilanguage status', '{}'),
 (53, 18, 96, 97, 2, 'com_modules.module.86', 'Joomla Version', '{}'),
 (54, 16, 62, 63, 2, 'com_menus.menu.1', 'Main Menu', '{}'),
-(55, 1, 133, 134, 1, '#__languages.2', '#__languages.2', '{}'),
+(55, 1, 135, 136, 1, '#__languages.2', '#__languages.2', '{}'),
 (57, 18, 98, 99, 2, 'com_modules.module.88', 'Buscador', '{}'),
-(59, 1, 135, 136, 1, '#__languages.3', '#__languages.3', '{}'),
+(59, 1, 137, 138, 1, '#__languages.3', '#__languages.3', '{}'),
 (60, 8, 20, 21, 2, 'com_content.category.8', 'Música', '{}'),
 (61, 8, 22, 23, 2, 'com_content.category.9', 'Cine', '{}'),
 (62, 8, 24, 25, 2, 'com_content.category.10', 'SIETE', '{}'),
@@ -113,29 +114,32 @@ INSERT INTO `gtxly_assets` (`id`, `parent_id`, `lft`, `rgt`, `level`, `name`, `t
 (70, 8, 40, 41, 2, 'com_content.category.18', 'Tendencias', '{}'),
 (71, 8, 42, 43, 2, 'com_content.category.19', 'Viajes', '{}'),
 (72, 8, 44, 45, 2, 'com_content.category.20', 'De compras', '{}'),
-(73, 1, 137, 138, 1, '#__ucm_content.1', '#__ucm_content.1', '{}'),
-(74, 1, 139, 140, 1, '#__ucm_content.2', '#__ucm_content.2', '{}'),
-(75, 1, 141, 142, 1, '#__ucm_content.3', '#__ucm_content.3', '{}'),
-(76, 1, 143, 144, 1, '#__ucm_content.4', '#__ucm_content.4', '{}'),
-(77, 1, 145, 146, 1, '#__ucm_content.5', '#__ucm_content.5', '{}'),
-(78, 1, 147, 148, 1, '#__ucm_content.6', '#__ucm_content.6', '{}'),
-(79, 1, 149, 150, 1, '#__ucm_content.7', '#__ucm_content.7', '{}'),
-(80, 1, 151, 152, 1, '#__ucm_content.8', '#__ucm_content.8', '{}'),
-(81, 1, 153, 154, 1, '#__ucm_content.9', '#__ucm_content.9', '{}'),
-(82, 1, 155, 156, 1, '#__ucm_content.10', '#__ucm_content.10', '{}'),
-(83, 1, 157, 158, 1, '#__ucm_content.11', '#__ucm_content.11', '{}'),
-(84, 1, 159, 160, 1, '#__ucm_content.12', '#__ucm_content.12', '{}'),
-(85, 1, 161, 162, 1, '#__ucm_content.13', '#__ucm_content.13', '{}'),
-(86, 18, 100, 101, 2, 'com_modules.module.89', 'social', '{}');
+(73, 1, 139, 140, 1, '#__ucm_content.1', '#__ucm_content.1', '{}'),
+(74, 1, 141, 142, 1, '#__ucm_content.2', '#__ucm_content.2', '{}'),
+(75, 1, 143, 144, 1, '#__ucm_content.3', '#__ucm_content.3', '{}'),
+(76, 1, 145, 146, 1, '#__ucm_content.4', '#__ucm_content.4', '{}'),
+(77, 1, 147, 148, 1, '#__ucm_content.5', '#__ucm_content.5', '{}'),
+(78, 1, 149, 150, 1, '#__ucm_content.6', '#__ucm_content.6', '{}'),
+(79, 1, 151, 152, 1, '#__ucm_content.7', '#__ucm_content.7', '{}'),
+(80, 1, 153, 154, 1, '#__ucm_content.8', '#__ucm_content.8', '{}'),
+(81, 1, 155, 156, 1, '#__ucm_content.9', '#__ucm_content.9', '{}'),
+(82, 1, 157, 158, 1, '#__ucm_content.10', '#__ucm_content.10', '{}'),
+(83, 1, 159, 160, 1, '#__ucm_content.11', '#__ucm_content.11', '{}'),
+(84, 1, 161, 162, 1, '#__ucm_content.12', '#__ucm_content.12', '{}'),
+(85, 1, 163, 164, 1, '#__ucm_content.13', '#__ucm_content.13', '{}'),
+(86, 18, 100, 101, 2, 'com_modules.module.89', 'social', '{}'),
+(87, 1, 165, 168, 1, 'com_djimageslider', 'com_djimageslider', '{}'),
+(88, 18, 102, 103, 2, 'com_modules.module.90', 'DJ-ImageSlider', '{}'),
+(89, 87, 166, 167, 2, 'com_djimageslider.category.21', 'SIETE', '{}');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_associations`
+-- Table structure for table `gtxly_associations`
 --
 
 DROP TABLE IF EXISTS `gtxly_associations`;
-CREATE TABLE IF NOT EXISTS `gtxly_associations` (
+CREATE TABLE `gtxly_associations` (
   `id` int(11) NOT NULL COMMENT 'A reference to the associated item.',
   `context` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The context of the associated item.',
   `key` char(32) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The key for the association computed from an md5 on associated ids.'
@@ -144,18 +148,18 @@ CREATE TABLE IF NOT EXISTS `gtxly_associations` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_banner_clients`
+-- Table structure for table `gtxly_banner_clients`
 --
 
 DROP TABLE IF EXISTS `gtxly_banner_clients`;
-CREATE TABLE IF NOT EXISTS `gtxly_banner_clients` (
+CREATE TABLE `gtxly_banner_clients` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `contact` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `extrainfo` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `state` tinyint(3) NOT NULL DEFAULT '0',
-  `checked_out` int(10) unsigned NOT NULL DEFAULT '0',
+  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `own_prefix` tinyint(4) NOT NULL DEFAULT '0',
@@ -168,25 +172,25 @@ CREATE TABLE IF NOT EXISTS `gtxly_banner_clients` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_banner_tracks`
+-- Table structure for table `gtxly_banner_tracks`
 --
 
 DROP TABLE IF EXISTS `gtxly_banner_tracks`;
-CREATE TABLE IF NOT EXISTS `gtxly_banner_tracks` (
+CREATE TABLE `gtxly_banner_tracks` (
   `track_date` datetime NOT NULL,
-  `track_type` int(10) unsigned NOT NULL,
-  `banner_id` int(10) unsigned NOT NULL,
-  `count` int(10) unsigned NOT NULL DEFAULT '0'
+  `track_type` int(10) UNSIGNED NOT NULL,
+  `banner_id` int(10) UNSIGNED NOT NULL,
+  `count` int(10) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_banners`
+-- Table structure for table `gtxly_banners`
 --
 
 DROP TABLE IF EXISTS `gtxly_banners`;
-CREATE TABLE IF NOT EXISTS `gtxly_banners` (
+CREATE TABLE `gtxly_banners` (
   `id` int(11) NOT NULL,
   `cid` int(11) NOT NULL DEFAULT '0',
   `type` int(11) NOT NULL DEFAULT '0',
@@ -197,10 +201,10 @@ CREATE TABLE IF NOT EXISTS `gtxly_banners` (
   `clicks` int(11) NOT NULL DEFAULT '0',
   `clickurl` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `state` tinyint(3) NOT NULL DEFAULT '0',
-  `catid` int(10) unsigned NOT NULL DEFAULT '0',
+  `catid` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `custombannercode` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `sticky` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `sticky` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
   `ordering` int(11) NOT NULL DEFAULT '0',
   `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -209,34 +213,34 @@ CREATE TABLE IF NOT EXISTS `gtxly_banners` (
   `purchase_type` tinyint(4) NOT NULL DEFAULT '-1',
   `track_clicks` tinyint(4) NOT NULL DEFAULT '-1',
   `track_impressions` tinyint(4) NOT NULL DEFAULT '-1',
-  `checked_out` int(10) unsigned NOT NULL DEFAULT '0',
+  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `reset` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `created_by` int(10) unsigned NOT NULL DEFAULT '0',
+  `created_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `modified_by` int(10) unsigned NOT NULL DEFAULT '0',
-  `version` int(10) unsigned NOT NULL DEFAULT '1'
+  `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `version` int(10) UNSIGNED NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_categories`
+-- Table structure for table `gtxly_categories`
 --
 
 DROP TABLE IF EXISTS `gtxly_categories`;
-CREATE TABLE IF NOT EXISTS `gtxly_categories` (
+CREATE TABLE `gtxly_categories` (
   `id` int(11) NOT NULL,
-  `asset_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
-  `parent_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
+  `parent_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `lft` int(11) NOT NULL DEFAULT '0',
   `rgt` int(11) NOT NULL DEFAULT '0',
-  `level` int(10) unsigned NOT NULL DEFAULT '0',
+  `level` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `path` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `extension` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
@@ -244,28 +248,28 @@ CREATE TABLE IF NOT EXISTS `gtxly_categories` (
   `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `description` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `published` tinyint(1) NOT NULL DEFAULT '0',
-  `checked_out` int(11) unsigned NOT NULL DEFAULT '0',
+  `checked_out` int(11) UNSIGNED NOT NULL DEFAULT '0',
   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `access` int(10) unsigned NOT NULL DEFAULT '0',
+  `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `metadesc` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'The meta description for the page.',
   `metakey` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'The meta keywords for the page.',
   `metadata` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'JSON encoded metadata properties.',
-  `created_user_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `created_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `modified_user_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `modified_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `hits` int(10) unsigned NOT NULL DEFAULT '0',
+  `hits` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `version` int(10) unsigned NOT NULL DEFAULT '1'
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `version` int(10) UNSIGNED NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Volcado de datos para la tabla `gtxly_categories`
+-- Dumping data for table `gtxly_categories`
 --
 
 INSERT INTO `gtxly_categories` (`id`, `asset_id`, `parent_id`, `lft`, `rgt`, `level`, `path`, `extension`, `title`, `alias`, `note`, `description`, `published`, `checked_out`, `checked_out_time`, `access`, `params`, `metadesc`, `metakey`, `metadata`, `created_user_id`, `created_time`, `modified_user_id`, `modified_time`, `hits`, `language`, `version`) VALUES
-(1, 0, 0, 0, 37, 0, '', 'system', 'ROOT', 'root', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{}', '', '', '{}', 224, '2017-08-28 16:24:05', 0, '0000-00-00 00:00:00', 0, '*', 1),
+(1, 0, 0, 0, 39, 0, '', 'system', 'ROOT', 'root', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{}', '', '', '{}', 224, '2017-08-28 16:24:05', 0, '0000-00-00 00:00:00', 0, '*', 1),
 (2, 27, 1, 1, 2, 1, 'uncategorised', 'com_content', 'Sin categoría', 'uncategorised', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":"","image_alt":""}', '', '', '{"author":"","robots":""}', 224, '2017-08-28 16:24:05', 224, '2017-09-06 15:32:59', 0, '*', 1),
 (3, 28, 1, 3, 4, 1, 'uncategorised', 'com_banners', 'Uncategorised', 'uncategorised', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 224, '2017-08-28 16:24:05', 0, '0000-00-00 00:00:00', 0, '*', 1),
 (4, 29, 1, 5, 6, 1, 'uncategorised', 'com_contact', 'Uncategorised', 'uncategorised', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":""}', '', '', '{"author":"","robots":""}', 224, '2017-08-28 16:24:05', 0, '0000-00-00 00:00:00', 0, '*', 1),
@@ -283,16 +287,17 @@ INSERT INTO `gtxly_categories` (`id`, `asset_id`, `parent_id`, `lft`, `rgt`, `le
 (17, 69, 1, 29, 30, 1, 'vida-nocturna', 'com_content', 'Vida nocturna', 'vida-nocturna', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":"","image_alt":""}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 15:35:32', 224, '2017-09-06 16:17:33', 0, '*', 1),
 (18, 70, 1, 31, 32, 1, 'tendencias', 'com_content', 'Tendencias', 'tendencias', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":"","image_alt":""}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 15:35:44', 224, '2017-09-06 16:17:38', 0, '*', 1),
 (19, 71, 1, 33, 34, 1, 'viajes', 'com_content', 'Viajes', 'viajes', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":"","image_alt":""}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 15:35:52', 224, '2017-09-06 16:17:44', 0, '*', 1),
-(20, 72, 1, 35, 36, 1, 'de-compras', 'com_content', 'De compras', 'de-compras', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":"","image_alt":""}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 15:35:58', 224, '2017-09-06 16:17:51', 0, '*', 1);
+(20, 72, 1, 35, 36, 1, 'de-compras', 'com_content', 'De compras', 'de-compras', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":"","image_alt":""}', '', '', '{"author":"","robots":""}', 224, '2017-09-06 15:35:58', 224, '2017-09-06 16:17:51', 0, '*', 1),
+(21, 89, 1, 37, 38, 1, 'siete', 'com_djimageslider', 'SIETE', 'siete', '', '', 1, 0, '0000-00-00 00:00:00', 1, '{"category_layout":"","image":"","image_alt":""}', '', '', '{"author":"","robots":""}', 224, '2017-09-09 23:34:00', 224, '2017-09-09 23:47:29', 0, '*', 1);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_contact_details`
+-- Table structure for table `gtxly_contact_details`
 --
 
 DROP TABLE IF EXISTS `gtxly_contact_details`;
-CREATE TABLE IF NOT EXISTS `gtxly_contact_details` (
+CREATE TABLE `gtxly_contact_details` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
@@ -307,15 +312,15 @@ CREATE TABLE IF NOT EXISTS `gtxly_contact_details` (
   `misc` mediumtext COLLATE utf8mb4_unicode_ci,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email_to` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `default_con` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `default_con` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
   `published` tinyint(1) NOT NULL DEFAULT '0',
-  `checked_out` int(10) unsigned NOT NULL DEFAULT '0',
+  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `ordering` int(11) NOT NULL DEFAULT '0',
   `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `user_id` int(11) NOT NULL DEFAULT '0',
   `catid` int(11) NOT NULL DEFAULT '0',
-  `access` int(10) unsigned NOT NULL DEFAULT '0',
+  `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `mobile` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `webpage` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `sortname1` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
@@ -323,57 +328,57 @@ CREATE TABLE IF NOT EXISTS `gtxly_contact_details` (
   `sortname3` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `language` varchar(7) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `created_by` int(10) unsigned NOT NULL DEFAULT '0',
+  `created_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `modified_by` int(10) unsigned NOT NULL DEFAULT '0',
+  `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `metadesc` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `metadata` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `featured` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'Set if contact is featured.',
+  `featured` tinyint(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Set if contact is featured.',
   `xreference` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'A reference to enable linkages to external data sets.',
   `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `version` int(10) unsigned NOT NULL DEFAULT '1',
-  `hits` int(10) unsigned NOT NULL DEFAULT '0'
+  `version` int(10) UNSIGNED NOT NULL DEFAULT '1',
+  `hits` int(10) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_content`
+-- Table structure for table `gtxly_content`
 --
 
 DROP TABLE IF EXISTS `gtxly_content`;
-CREATE TABLE IF NOT EXISTS `gtxly_content` (
-  `id` int(10) unsigned NOT NULL,
-  `asset_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
+CREATE TABLE `gtxly_content` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
   `introtext` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `fulltext` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `state` tinyint(3) NOT NULL DEFAULT '0',
-  `catid` int(10) unsigned NOT NULL DEFAULT '0',
+  `catid` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `created_by` int(10) unsigned NOT NULL DEFAULT '0',
+  `created_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `modified_by` int(10) unsigned NOT NULL DEFAULT '0',
-  `checked_out` int(10) unsigned NOT NULL DEFAULT '0',
+  `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `images` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `urls` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `attribs` varchar(5120) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `version` int(10) unsigned NOT NULL DEFAULT '1',
+  `version` int(10) UNSIGNED NOT NULL DEFAULT '1',
   `ordering` int(11) NOT NULL DEFAULT '0',
   `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `metadesc` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `access` int(10) unsigned NOT NULL DEFAULT '0',
-  `hits` int(10) unsigned NOT NULL DEFAULT '0',
+  `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `hits` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `metadata` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `featured` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'Set if article is featured.',
+  `featured` tinyint(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Set if article is featured.',
   `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The language code for the article.',
   `xreference` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'A reference to enable linkages to external data sets.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -381,11 +386,11 @@ CREATE TABLE IF NOT EXISTS `gtxly_content` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_content_frontpage`
+-- Table structure for table `gtxly_content_frontpage`
 --
 
 DROP TABLE IF EXISTS `gtxly_content_frontpage`;
-CREATE TABLE IF NOT EXISTS `gtxly_content_frontpage` (
+CREATE TABLE `gtxly_content_frontpage` (
   `content_id` int(11) NOT NULL DEFAULT '0',
   `ordering` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -393,26 +398,26 @@ CREATE TABLE IF NOT EXISTS `gtxly_content_frontpage` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_content_rating`
+-- Table structure for table `gtxly_content_rating`
 --
 
 DROP TABLE IF EXISTS `gtxly_content_rating`;
-CREATE TABLE IF NOT EXISTS `gtxly_content_rating` (
+CREATE TABLE `gtxly_content_rating` (
   `content_id` int(11) NOT NULL DEFAULT '0',
-  `rating_sum` int(10) unsigned NOT NULL DEFAULT '0',
-  `rating_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `rating_sum` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `rating_count` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `lastip` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_content_types`
+-- Table structure for table `gtxly_content_types`
 --
 
 DROP TABLE IF EXISTS `gtxly_content_types`;
-CREATE TABLE IF NOT EXISTS `gtxly_content_types` (
-  `type_id` int(10) unsigned NOT NULL,
+CREATE TABLE `gtxly_content_types` (
+  `type_id` int(10) UNSIGNED NOT NULL,
   `type_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `type_alias` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `table` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
@@ -420,10 +425,10 @@ CREATE TABLE IF NOT EXISTS `gtxly_content_types` (
   `field_mappings` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `router` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `content_history_options` varchar(5120) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'JSON string for com_contenthistory options'
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Volcado de datos para la tabla `gtxly_content_types`
+-- Dumping data for table `gtxly_content_types`
 --
 
 INSERT INTO `gtxly_content_types` (`type_id`, `type_title`, `type_alias`, `table`, `rules`, `field_mappings`, `router`, `content_history_options`) VALUES
@@ -444,21 +449,21 @@ INSERT INTO `gtxly_content_types` (`type_id`, `type_title`, `type_alias`, `table
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_contentitem_tag_map`
+-- Table structure for table `gtxly_contentitem_tag_map`
 --
 
 DROP TABLE IF EXISTS `gtxly_contentitem_tag_map`;
-CREATE TABLE IF NOT EXISTS `gtxly_contentitem_tag_map` (
+CREATE TABLE `gtxly_contentitem_tag_map` (
   `type_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `core_content_id` int(10) unsigned NOT NULL COMMENT 'PK from the core content table',
+  `core_content_id` int(10) UNSIGNED NOT NULL COMMENT 'PK from the core content table',
   `content_item_id` int(11) NOT NULL COMMENT 'PK from the content type table',
-  `tag_id` int(10) unsigned NOT NULL COMMENT 'PK from the tag table',
+  `tag_id` int(10) UNSIGNED NOT NULL COMMENT 'PK from the tag table',
   `tag_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'Date of most recent save for this tag-item',
   `type_id` mediumint(8) NOT NULL COMMENT 'PK from the content_type table'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Maps items from content tables to tags';
 
 --
--- Volcado de datos para la tabla `gtxly_contentitem_tag_map`
+-- Dumping data for table `gtxly_contentitem_tag_map`
 --
 
 INSERT INTO `gtxly_contentitem_tag_map` (`type_alias`, `core_content_id`, `content_item_id`, `tag_id`, `tag_date`, `type_id`) VALUES
@@ -479,23 +484,55 @@ INSERT INTO `gtxly_contentitem_tag_map` (`type_alias`, `core_content_id`, `conte
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_core_log_searches`
+-- Table structure for table `gtxly_core_log_searches`
 --
 
 DROP TABLE IF EXISTS `gtxly_core_log_searches`;
-CREATE TABLE IF NOT EXISTS `gtxly_core_log_searches` (
+CREATE TABLE `gtxly_core_log_searches` (
   `search_term` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `hits` int(10) unsigned NOT NULL DEFAULT '0'
+  `hits` int(10) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_extensions`
+-- Table structure for table `gtxly_djimageslider`
+--
+
+DROP TABLE IF EXISTS `gtxly_djimageslider`;
+CREATE TABLE `gtxly_djimageslider` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `catid` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `title` varchar(255) NOT NULL,
+  `alias` varchar(255) NOT NULL DEFAULT '',
+  `image` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `published` tinyint(1) NOT NULL DEFAULT '0',
+  `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `ordering` int(11) NOT NULL DEFAULT '0',
+  `params` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `gtxly_djimageslider`
+--
+
+INSERT INTO `gtxly_djimageslider` (`id`, `catid`, `title`, `alias`, `image`, `description`, `published`, `publish_up`, `publish_down`, `checked_out`, `checked_out_time`, `ordering`, `params`) VALUES
+(1, 21, 'slide1', 'slide1', 'images/banners/slide1.jpg', '<p>TOP SIETE lugares de la ciudad</p>', 1, '2017-09-09 23:48:47', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, '{"link_type":"","link_menu":"101","link_url":"","link_article":"","link_target":"","link_rel":"","alt_attr":"","title_attr":""}'),
+(2, 21, 'slide2', 'slide2', 'images/banners/slide2.jpg', '', 1, '2017-09-09 23:49:08', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, '{"link_type":"","link_menu":"101","link_url":"","link_article":"","link_target":"","link_rel":"","alt_attr":"","title_attr":""}'),
+(3, 21, 'slide3', 'slide3', 'images/banners/slide3.jpg', '', 1, '2017-09-09 23:49:30', '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, '{"link_type":"","link_menu":"101","link_url":"","link_article":"","link_target":"","link_rel":"","alt_attr":"","title_attr":""}');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gtxly_extensions`
 --
 
 DROP TABLE IF EXISTS `gtxly_extensions`;
-CREATE TABLE IF NOT EXISTS `gtxly_extensions` (
+CREATE TABLE `gtxly_extensions` (
   `extension_id` int(11) NOT NULL,
   `package_id` int(11) NOT NULL DEFAULT '0' COMMENT 'Parent package ID for extensions installed as a package.',
   `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -504,20 +541,20 @@ CREATE TABLE IF NOT EXISTS `gtxly_extensions` (
   `folder` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `client_id` tinyint(3) NOT NULL,
   `enabled` tinyint(3) NOT NULL DEFAULT '0',
-  `access` int(10) unsigned NOT NULL DEFAULT '1',
+  `access` int(10) UNSIGNED NOT NULL DEFAULT '1',
   `protected` tinyint(3) NOT NULL DEFAULT '0',
   `manifest_cache` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `custom_data` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `system_data` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `checked_out` int(10) unsigned NOT NULL DEFAULT '0',
+  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `ordering` int(11) DEFAULT '0',
   `state` int(11) DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=10009 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Volcado de datos para la tabla `gtxly_extensions`
+-- Dumping data for table `gtxly_extensions`
 --
 
 INSERT INTO `gtxly_extensions` (`extension_id`, `package_id`, `name`, `type`, `element`, `folder`, `client_id`, `enabled`, `access`, `protected`, `manifest_cache`, `params`, `custom_data`, `system_data`, `checked_out`, `checked_out_time`, `ordering`, `state`) VALUES
@@ -554,7 +591,7 @@ INSERT INTO `gtxly_extensions` (`extension_id`, `package_id`, `name`, `type`, `e
 (33, 0, 'com_fields', 'component', 'com_fields', '', 1, 1, 1, 0, '{"name":"com_fields","type":"component","creationDate":"March 2016","author":"Joomla! Project","copyright":"(C) 2005 - 2017 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.7.0","description":"COM_FIELDS_XML_DESCRIPTION","group":"","filename":"fields"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (34, 0, 'com_associations', 'component', 'com_associations', '', 1, 1, 1, 0, '{"name":"com_associations","type":"component","creationDate":"Januar 2017","author":"Joomla! Project","copyright":"(C) 2005 - 2017 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.7.0","description":"COM_ASSOCIATIONS_XML_DESCRIPTION","group":""}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (102, 0, 'LIB_PHPUTF8', 'library', 'phputf8', '', 0, 1, 1, 1, '{"name":"LIB_PHPUTF8","type":"library","creationDate":"2006","author":"Harry Fuecks","copyright":"Copyright various authors","authorEmail":"hfuecks@gmail.com","authorUrl":"http:\\/\\/sourceforge.net\\/projects\\/phputf8","version":"0.5","description":"LIB_PHPUTF8_XML_DESCRIPTION","group":"","filename":"phputf8"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(103, 0, 'LIB_JOOMLA', 'library', 'joomla', '', 0, 1, 1, 1, '{"name":"LIB_JOOMLA","type":"library","creationDate":"2008","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"https:\\/\\/www.joomla.org","version":"13.1","description":"LIB_JOOMLA_XML_DESCRIPTION","group":"","filename":"joomla"}', '{"mediaversion":"02df08e5f0acf702861a2070736b6476"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(103, 0, 'LIB_JOOMLA', 'library', 'joomla', '', 0, 1, 1, 1, '{"name":"LIB_JOOMLA","type":"library","creationDate":"2008","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"https:\\/\\/www.joomla.org","version":"13.1","description":"LIB_JOOMLA_XML_DESCRIPTION","group":"","filename":"joomla"}', '{"mediaversion":"15713fc683a184d9bb0b75a1ee35b55a"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (104, 0, 'LIB_IDNA', 'library', 'idna_convert', '', 0, 1, 1, 1, '{"name":"LIB_IDNA","type":"library","creationDate":"2004","author":"phlyLabs","copyright":"2004-2011 phlyLabs Berlin, http:\\/\\/phlylabs.de","authorEmail":"phlymail@phlylabs.de","authorUrl":"http:\\/\\/phlylabs.de","version":"0.8.0","description":"LIB_IDNA_XML_DESCRIPTION","group":"","filename":"idna_convert"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (105, 0, 'FOF', 'library', 'fof', '', 0, 1, 1, 1, '{"name":"FOF","type":"library","creationDate":"2015-04-22 13:15:32","author":"Nicholas K. Dionysopoulos \\/ Akeeba Ltd","copyright":"(C)2011-2015 Nicholas K. Dionysopoulos","authorEmail":"nicholas@akeebabackup.com","authorUrl":"https:\\/\\/www.akeebabackup.com","version":"2.4.3","description":"LIB_FOF_XML_DESCRIPTION","group":"","filename":"fof"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (106, 0, 'LIB_PHPASS', 'library', 'phpass', '', 0, 1, 1, 1, '{"name":"LIB_PHPASS","type":"library","creationDate":"2004-2006","author":"Solar Designer","copyright":"","authorEmail":"solar@openwall.com","authorUrl":"http:\\/\\/www.openwall.com\\/phpass\\/","version":"0.3","description":"LIB_PHPASS_XML_DESCRIPTION","group":"","filename":"phpass"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
@@ -648,7 +685,7 @@ INSERT INTO `gtxly_extensions` (`extension_id`, `package_id`, `name`, `type`, `e
 (449, 0, 'plg_authentication_cookie', 'plugin', 'cookie', 'authentication', 0, 1, 1, 0, '{"name":"plg_authentication_cookie","type":"plugin","creationDate":"July 2013","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.0.0","description":"PLG_AUTH_COOKIE_XML_DESCRIPTION","group":"","filename":"cookie"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (450, 0, 'plg_twofactorauth_yubikey', 'plugin', 'yubikey', 'twofactorauth', 0, 0, 1, 0, '{"name":"plg_twofactorauth_yubikey","type":"plugin","creationDate":"September 2013","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.2.0","description":"PLG_TWOFACTORAUTH_YUBIKEY_XML_DESCRIPTION","group":"","filename":"yubikey"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (451, 0, 'plg_search_tags', 'plugin', 'tags', 'search', 0, 1, 1, 0, '{"name":"plg_search_tags","type":"plugin","creationDate":"March 2014","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.0.0","description":"PLG_SEARCH_TAGS_XML_DESCRIPTION","group":"","filename":"tags"}', '{"search_limit":"50","show_tagged_items":"1"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(452, 0, 'plg_system_updatenotification', 'plugin', 'updatenotification', 'system', 0, 1, 1, 0, '{"name":"plg_system_updatenotification","type":"plugin","creationDate":"May 2015","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.5.0","description":"PLG_SYSTEM_UPDATENOTIFICATION_XML_DESCRIPTION","group":"","filename":"updatenotification"}', '{"lastrun":1504817167}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(452, 0, 'plg_system_updatenotification', 'plugin', 'updatenotification', 'system', 0, 1, 1, 0, '{"name":"plg_system_updatenotification","type":"plugin","creationDate":"May 2015","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.5.0","description":"PLG_SYSTEM_UPDATENOTIFICATION_XML_DESCRIPTION","group":"","filename":"updatenotification"}', '{"lastrun":1504992699}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (453, 0, 'plg_editors-xtd_module', 'plugin', 'module', 'editors-xtd', 0, 1, 1, 0, '{"name":"plg_editors-xtd_module","type":"plugin","creationDate":"October 2015","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.5.0","description":"PLG_MODULE_XML_DESCRIPTION","group":"","filename":"module"}', '', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (454, 0, 'plg_system_stats', 'plugin', 'stats', 'system', 0, 1, 1, 0, '{"name":"plg_system_stats","type":"plugin","creationDate":"November 2013","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.5.0","description":"PLG_SYSTEM_STATS_XML_DESCRIPTION","group":"","filename":"stats"}', '{"mode":3,"lastrun":1504037612,"unique_id":"315d32a23ac05a6da317f6a9a5a3b84f66739dcd","interval":12}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (455, 0, 'plg_installer_packageinstaller', 'plugin', 'packageinstaller', 'installer', 0, 1, 1, 1, '{"name":"plg_installer_packageinstaller","type":"plugin","creationDate":"May 2016","author":"Joomla! Project","copyright":"Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"3.6.0","description":"PLG_INSTALLER_PACKAGEINSTALLER_PLUGIN_XML_DESCRIPTION","group":"","filename":"packageinstaller"}', '', '', '', 0, '0000-00-00 00:00:00', 1, 0),
@@ -690,20 +727,24 @@ INSERT INTO `gtxly_extensions` (`extension_id`, `package_id`, `name`, `type`, `e
 (10005, 0, 'luckySeven', 'template', 'luckySeven', '', 0, 1, 1, 0, '{"name":"luckySeven","type":"template","creationDate":"8\\/28\\/2017","author":"Alexander Urbina","copyright":"Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.","authorEmail":"alexanderurbinac@gmail.com","authorUrl":"","version":"1.0","description":"TPL_LUCKYSEVEN_XML_DESCRIPTION","group":"","filename":"templateDetails"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10006, 10008, 'Russian', 'language', 'ru-RU', '', 0, 1, 0, 0, '{"name":"Russian","type":"language","creationDate":"2017-05-11","author":"Russian Translation Team","copyright":"Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.","authorEmail":"smart@joomlaportal.ru","authorUrl":"www.joomlaportal.ru","version":"3.7.0.1","description":"Russian language pack (site) for Joomla! 3.7.0","group":"","filename":"install"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
 (10007, 10008, 'ru-RU', 'language', 'ru-RU', '', 1, 1, 0, 0, '{"name":"\\u0420\\u0443\\u0441\\u0441\\u043a\\u0438\\u0439 (ru-RU)","type":"language","creationDate":"2017-05-11","author":"Russian Translation Team","copyright":"Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.","authorEmail":"smart@joomlaportal.ru","authorUrl":"www.joomlaportal.ru","version":"3.7.0.1","description":"Russian language pack (administrator) for Joomla! 3.7.0","group":"","filename":"install"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
-(10008, 0, 'Russian (ru-RU) Language Pack', 'package', 'pkg_ru-RU', '', 0, 1, 1, 0, '{"name":"Russian (ru-RU) Language Pack","type":"package","creationDate":"2017-05-11","author":"Russian Translation Team","copyright":"Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.","authorEmail":"smart@joomlaportal.ru","authorUrl":"www.joomlaportal.ru","version":"3.7.0.1","description":"Joomla 3.7 Russian Language Package","group":"","filename":"pkg_ru-RU"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0);
+(10008, 0, 'Russian (ru-RU) Language Pack', 'package', 'pkg_ru-RU', '', 0, 1, 1, 0, '{"name":"Russian (ru-RU) Language Pack","type":"package","creationDate":"2017-05-11","author":"Russian Translation Team","copyright":"Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.","authorEmail":"smart@joomlaportal.ru","authorUrl":"www.joomlaportal.ru","version":"3.7.0.1","description":"Joomla 3.7 Russian Language Package","group":"","filename":"pkg_ru-RU"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10009, 0, 'plg_installer_webinstaller', 'plugin', 'webinstaller', 'installer', 0, 1, 1, 0, '{"name":"plg_installer_webinstaller","type":"plugin","creationDate":"28 April 2017","author":"Joomla! Project","copyright":"Copyright (C) 2013-2017 Open Source Matters. All rights reserved.","authorEmail":"admin@joomla.org","authorUrl":"www.joomla.org","version":"1.1.1","description":"PLG_INSTALLER_WEBINSTALLER_XML_DESCRIPTION","group":"","filename":"webinstaller"}', '{"tab_position":"0"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10010, 10012, 'com_djimageslider', 'component', 'com_djimageslider', '', 1, 1, 0, 0, '{"name":"com_djimageslider","type":"component","creationDate":"August 2017","author":"DJ-Extensions.com","copyright":"Copyright (C) 2017 DJ-Extensions.com, All rights reserved.","authorEmail":"contact@dj-extensions.com","authorUrl":"http:\\/\\/dj-extensions.com","version":"3.2.3","description":"DJ-ImageSlider component","group":""}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10011, 10012, 'DJ-ImageSlider', 'module', 'mod_djimageslider', '', 0, 1, 0, 0, '{"name":"DJ-ImageSlider","type":"module","creationDate":"August 2017","author":"DJ-Extensions.com","copyright":"Copyright (C) 2017 DJ-Extensions.com, All rights reserved.","authorEmail":"contact@dj-extensions.com","authorUrl":"http:\\/\\/dj-extensions.com","version":"3.2.3","description":"DJ-ImageSlider Module","group":"","filename":"mod_djimageslider"}', '{"slider_source":"0","slider_type":"0","theme":"default","link_image":"1","image_folder":"images\\/sampledata\\/fruitshop","link":"","show_title":"1","show_desc":"1","show_readmore":"0","readmore_text":"","link_title":"1","link_desc":"0","limit_desc":"","full_width":"0","image_width":"240","image_height":"180","fit_to":"0","image_centering":"0","visible_images":"3","space_between_images":"10","max_images":"20","sort_by":"1","css3":"1","autoplay":"1","looponce":"0","show_buttons":"1","show_arrows":"1","show_custom_nav":"0","wcag":"1","desc_width":"","desc_bottom":"0","desc_horizontal":"0","left_arrow":"","right_arrow":"","play_button":"","pause_button":"","arrows_top":"40","arrows_horizontal":"10","idx_style":"0","effect":"Expo","effect_type":"0","duration":"","delay":"","preload":"800","cache":"1","cache_time":"900"}', '', '', 0, '0000-00-00 00:00:00', 0, 0),
+(10012, 0, 'DJ-ImageSlider Package', 'package', 'pkg_dj-imageslider', '', 0, 1, 1, 0, '{"name":"DJ-ImageSlider Package","type":"package","creationDate":"August 2017","author":"DJ-Extensions.com","copyright":"Copyright (C) 2017 DJ-Extensions.com, All rights reserved.","authorEmail":"contact@dj-extensions.com","authorUrl":"http:\\/\\/dj-extensions.com","version":"3.2.3","description":"\\n\\t\\t<style type=\\"text\\/css\\">\\n\\t\\t\\t.djex-info { padding: 20px 30px 10px; margin: 0 0 20px 0; background: #ac00d4; color: #fff; border: 1px solid #81009f; font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: normal; -webkit-border-radius: 4px; border-radius: 4px; }\\n\\t\\t\\t.djex-title { text-transform: uppercase; font-weight: bold; font-size: 14px; }\\n\\t\\t\\t.djex-info a:link, .djex-info a:visited, .djex-info a:hover { color:#fff; text-decoration:underline; font-weight: 600; }\\t\\n\\t\\t\\t.djex-info img { float: left; margin: 0 30px 10px 0; }\\n\\t\\t<\\/style>\\n\\t\\t<div class=\\"djex-info\\">\\n\\t\\t\\t<a href=\\"index.php?option=com_djimageslider\\"><img src=\\"components\\/com_djimageslider\\/assets\\/ex_slider.png\\" \\/><\\/a>\\n\\t\\t\\t<p class=\\"djex-title\\">Thank you for installing DJ-ImageSlider!<\\/p>\\n\\t\\t\\t<p>The DJ-ImageSlider extension allows you to display slideshows containing slides with title and short description linked to any menu item, article or custom url address. \\n\\t\\t\\tIf you want to learn how to use DJ-ImageSlider please read <a target=\\"_blank\\" href=\\"http:\\/\\/dj-extensions.com\\/documentation\\">Documentation<\\/a> and <a target=\\"_blank\\" href=\\"http:\\/\\/dj-extensions.com\\/faq\\">FAQ section<\\/a><\\/p>\\n\\t\\t\\t<p>Check out our other extensions at <a target=\\"_blank\\" href=\\"http:\\/\\/dj-extensions.com\\">DJ-Extensions.com<\\/a><\\/p>\\n\\t\\t\\t<div style=\\"clear:both\\"><\\/div>\\n\\t\\t<\\/div>\\n\\t\\t","group":"","filename":"pkg_dj-imageslider"}', '{}', '', '', 0, '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_fields`
+-- Table structure for table `gtxly_fields`
 --
 
 DROP TABLE IF EXISTS `gtxly_fields`;
-CREATE TABLE IF NOT EXISTS `gtxly_fields` (
-  `id` int(10) unsigned NOT NULL,
-  `asset_id` int(10) unsigned NOT NULL DEFAULT '0',
+CREATE TABLE `gtxly_fields` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `context` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `group_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `group_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `label` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
@@ -720,20 +761,20 @@ CREATE TABLE IF NOT EXISTS `gtxly_fields` (
   `fieldparams` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `created_user_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `created_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `modified_by` int(10) unsigned NOT NULL DEFAULT '0',
+  `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `access` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_fields_categories`
+-- Table structure for table `gtxly_fields_categories`
 --
 
 DROP TABLE IF EXISTS `gtxly_fields_categories`;
-CREATE TABLE IF NOT EXISTS `gtxly_fields_categories` (
+CREATE TABLE `gtxly_fields_categories` (
   `field_id` int(11) NOT NULL DEFAULT '0',
   `category_id` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -741,13 +782,13 @@ CREATE TABLE IF NOT EXISTS `gtxly_fields_categories` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_fields_groups`
+-- Table structure for table `gtxly_fields_groups`
 --
 
 DROP TABLE IF EXISTS `gtxly_fields_groups`;
-CREATE TABLE IF NOT EXISTS `gtxly_fields_groups` (
-  `id` int(10) unsigned NOT NULL,
-  `asset_id` int(10) unsigned NOT NULL DEFAULT '0',
+CREATE TABLE `gtxly_fields_groups` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `context` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
@@ -758,21 +799,21 @@ CREATE TABLE IF NOT EXISTS `gtxly_fields_groups` (
   `ordering` int(11) NOT NULL DEFAULT '0',
   `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `created_by` int(10) unsigned NOT NULL DEFAULT '0',
+  `created_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `modified_by` int(10) unsigned NOT NULL DEFAULT '0',
+  `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `access` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_fields_values`
+-- Table structure for table `gtxly_fields_values`
 --
 
 DROP TABLE IF EXISTS `gtxly_fields_values`;
-CREATE TABLE IF NOT EXISTS `gtxly_fields_values` (
-  `field_id` int(10) unsigned NOT NULL,
+CREATE TABLE `gtxly_fields_values` (
+  `field_id` int(10) UNSIGNED NOT NULL,
   `item_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Allow references to items which have strings as ids, eg. none db systems.',
   `value` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -780,23 +821,23 @@ CREATE TABLE IF NOT EXISTS `gtxly_fields_values` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_finder_filters`
+-- Table structure for table `gtxly_finder_filters`
 --
 
 DROP TABLE IF EXISTS `gtxly_finder_filters`;
-CREATE TABLE IF NOT EXISTS `gtxly_finder_filters` (
-  `filter_id` int(10) unsigned NOT NULL,
+CREATE TABLE `gtxly_finder_filters` (
+  `filter_id` int(10) UNSIGNED NOT NULL,
   `title` varchar(255) NOT NULL,
   `alias` varchar(255) NOT NULL,
   `state` tinyint(1) NOT NULL DEFAULT '1',
   `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `created_by` int(10) unsigned NOT NULL,
+  `created_by` int(10) UNSIGNED NOT NULL,
   `created_by_alias` varchar(255) NOT NULL,
   `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `modified_by` int(10) unsigned NOT NULL DEFAULT '0',
-  `checked_out` int(10) unsigned NOT NULL DEFAULT '0',
+  `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `map_count` int(10) unsigned NOT NULL DEFAULT '0',
+  `map_count` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `data` text NOT NULL,
   `params` mediumtext
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -804,12 +845,12 @@ CREATE TABLE IF NOT EXISTS `gtxly_finder_filters` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_finder_links`
+-- Table structure for table `gtxly_finder_links`
 --
 
 DROP TABLE IF EXISTS `gtxly_finder_links`;
-CREATE TABLE IF NOT EXISTS `gtxly_finder_links` (
-  `link_id` int(10) unsigned NOT NULL,
+CREATE TABLE `gtxly_finder_links` (
+  `link_id` int(10) UNSIGNED NOT NULL,
   `url` varchar(255) NOT NULL,
   `route` varchar(255) NOT NULL,
   `title` varchar(400) DEFAULT NULL,
@@ -824,8 +865,8 @@ CREATE TABLE IF NOT EXISTS `gtxly_finder_links` (
   `publish_end_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `start_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `end_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `list_price` double unsigned NOT NULL DEFAULT '0',
-  `sale_price` double unsigned NOT NULL DEFAULT '0',
+  `list_price` double UNSIGNED NOT NULL DEFAULT '0',
+  `sale_price` double UNSIGNED NOT NULL DEFAULT '0',
   `type_id` int(11) NOT NULL,
   `object` mediumblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -833,229 +874,229 @@ CREATE TABLE IF NOT EXISTS `gtxly_finder_links` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_finder_links_terms0`
+-- Table structure for table `gtxly_finder_links_terms0`
 --
 
 DROP TABLE IF EXISTS `gtxly_finder_links_terms0`;
-CREATE TABLE IF NOT EXISTS `gtxly_finder_links_terms0` (
-  `link_id` int(10) unsigned NOT NULL,
-  `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL
+CREATE TABLE `gtxly_finder_links_terms0` (
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_finder_links_terms1`
+-- Table structure for table `gtxly_finder_links_terms1`
 --
 
 DROP TABLE IF EXISTS `gtxly_finder_links_terms1`;
-CREATE TABLE IF NOT EXISTS `gtxly_finder_links_terms1` (
-  `link_id` int(10) unsigned NOT NULL,
-  `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL
+CREATE TABLE `gtxly_finder_links_terms1` (
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_finder_links_terms2`
+-- Table structure for table `gtxly_finder_links_terms2`
 --
 
 DROP TABLE IF EXISTS `gtxly_finder_links_terms2`;
-CREATE TABLE IF NOT EXISTS `gtxly_finder_links_terms2` (
-  `link_id` int(10) unsigned NOT NULL,
-  `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL
+CREATE TABLE `gtxly_finder_links_terms2` (
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_finder_links_terms3`
+-- Table structure for table `gtxly_finder_links_terms3`
 --
 
 DROP TABLE IF EXISTS `gtxly_finder_links_terms3`;
-CREATE TABLE IF NOT EXISTS `gtxly_finder_links_terms3` (
-  `link_id` int(10) unsigned NOT NULL,
-  `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL
+CREATE TABLE `gtxly_finder_links_terms3` (
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_finder_links_terms4`
+-- Table structure for table `gtxly_finder_links_terms4`
 --
 
 DROP TABLE IF EXISTS `gtxly_finder_links_terms4`;
-CREATE TABLE IF NOT EXISTS `gtxly_finder_links_terms4` (
-  `link_id` int(10) unsigned NOT NULL,
-  `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL
+CREATE TABLE `gtxly_finder_links_terms4` (
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_finder_links_terms5`
+-- Table structure for table `gtxly_finder_links_terms5`
 --
 
 DROP TABLE IF EXISTS `gtxly_finder_links_terms5`;
-CREATE TABLE IF NOT EXISTS `gtxly_finder_links_terms5` (
-  `link_id` int(10) unsigned NOT NULL,
-  `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL
+CREATE TABLE `gtxly_finder_links_terms5` (
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_finder_links_terms6`
+-- Table structure for table `gtxly_finder_links_terms6`
 --
 
 DROP TABLE IF EXISTS `gtxly_finder_links_terms6`;
-CREATE TABLE IF NOT EXISTS `gtxly_finder_links_terms6` (
-  `link_id` int(10) unsigned NOT NULL,
-  `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL
+CREATE TABLE `gtxly_finder_links_terms6` (
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_finder_links_terms7`
+-- Table structure for table `gtxly_finder_links_terms7`
 --
 
 DROP TABLE IF EXISTS `gtxly_finder_links_terms7`;
-CREATE TABLE IF NOT EXISTS `gtxly_finder_links_terms7` (
-  `link_id` int(10) unsigned NOT NULL,
-  `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL
+CREATE TABLE `gtxly_finder_links_terms7` (
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_finder_links_terms8`
+-- Table structure for table `gtxly_finder_links_terms8`
 --
 
 DROP TABLE IF EXISTS `gtxly_finder_links_terms8`;
-CREATE TABLE IF NOT EXISTS `gtxly_finder_links_terms8` (
-  `link_id` int(10) unsigned NOT NULL,
-  `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL
+CREATE TABLE `gtxly_finder_links_terms8` (
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_finder_links_terms9`
+-- Table structure for table `gtxly_finder_links_terms9`
 --
 
 DROP TABLE IF EXISTS `gtxly_finder_links_terms9`;
-CREATE TABLE IF NOT EXISTS `gtxly_finder_links_terms9` (
-  `link_id` int(10) unsigned NOT NULL,
-  `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL
+CREATE TABLE `gtxly_finder_links_terms9` (
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_finder_links_termsa`
+-- Table structure for table `gtxly_finder_links_termsa`
 --
 
 DROP TABLE IF EXISTS `gtxly_finder_links_termsa`;
-CREATE TABLE IF NOT EXISTS `gtxly_finder_links_termsa` (
-  `link_id` int(10) unsigned NOT NULL,
-  `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL
+CREATE TABLE `gtxly_finder_links_termsa` (
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_finder_links_termsb`
+-- Table structure for table `gtxly_finder_links_termsb`
 --
 
 DROP TABLE IF EXISTS `gtxly_finder_links_termsb`;
-CREATE TABLE IF NOT EXISTS `gtxly_finder_links_termsb` (
-  `link_id` int(10) unsigned NOT NULL,
-  `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL
+CREATE TABLE `gtxly_finder_links_termsb` (
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_finder_links_termsc`
+-- Table structure for table `gtxly_finder_links_termsc`
 --
 
 DROP TABLE IF EXISTS `gtxly_finder_links_termsc`;
-CREATE TABLE IF NOT EXISTS `gtxly_finder_links_termsc` (
-  `link_id` int(10) unsigned NOT NULL,
-  `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL
+CREATE TABLE `gtxly_finder_links_termsc` (
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_finder_links_termsd`
+-- Table structure for table `gtxly_finder_links_termsd`
 --
 
 DROP TABLE IF EXISTS `gtxly_finder_links_termsd`;
-CREATE TABLE IF NOT EXISTS `gtxly_finder_links_termsd` (
-  `link_id` int(10) unsigned NOT NULL,
-  `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL
+CREATE TABLE `gtxly_finder_links_termsd` (
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_finder_links_termse`
+-- Table structure for table `gtxly_finder_links_termse`
 --
 
 DROP TABLE IF EXISTS `gtxly_finder_links_termse`;
-CREATE TABLE IF NOT EXISTS `gtxly_finder_links_termse` (
-  `link_id` int(10) unsigned NOT NULL,
-  `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL
+CREATE TABLE `gtxly_finder_links_termse` (
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_finder_links_termsf`
+-- Table structure for table `gtxly_finder_links_termsf`
 --
 
 DROP TABLE IF EXISTS `gtxly_finder_links_termsf`;
-CREATE TABLE IF NOT EXISTS `gtxly_finder_links_termsf` (
-  `link_id` int(10) unsigned NOT NULL,
-  `term_id` int(10) unsigned NOT NULL,
-  `weight` float unsigned NOT NULL
+CREATE TABLE `gtxly_finder_links_termsf` (
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `term_id` int(10) UNSIGNED NOT NULL,
+  `weight` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_finder_taxonomy`
+-- Table structure for table `gtxly_finder_taxonomy`
 --
 
 DROP TABLE IF EXISTS `gtxly_finder_taxonomy`;
-CREATE TABLE IF NOT EXISTS `gtxly_finder_taxonomy` (
-  `id` int(10) unsigned NOT NULL,
-  `parent_id` int(10) unsigned NOT NULL DEFAULT '0',
+CREATE TABLE `gtxly_finder_taxonomy` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `parent_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `title` varchar(255) NOT NULL,
-  `state` tinyint(1) unsigned NOT NULL DEFAULT '1',
-  `access` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `ordering` tinyint(1) unsigned NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+  `state` tinyint(1) UNSIGNED NOT NULL DEFAULT '1',
+  `access` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `ordering` tinyint(1) UNSIGNED NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `gtxly_finder_taxonomy`
+-- Dumping data for table `gtxly_finder_taxonomy`
 --
 
 INSERT INTO `gtxly_finder_taxonomy` (`id`, `parent_id`, `title`, `state`, `access`, `ordering`) VALUES
@@ -1064,29 +1105,29 @@ INSERT INTO `gtxly_finder_taxonomy` (`id`, `parent_id`, `title`, `state`, `acces
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_finder_taxonomy_map`
+-- Table structure for table `gtxly_finder_taxonomy_map`
 --
 
 DROP TABLE IF EXISTS `gtxly_finder_taxonomy_map`;
-CREATE TABLE IF NOT EXISTS `gtxly_finder_taxonomy_map` (
-  `link_id` int(10) unsigned NOT NULL,
-  `node_id` int(10) unsigned NOT NULL
+CREATE TABLE `gtxly_finder_taxonomy_map` (
+  `link_id` int(10) UNSIGNED NOT NULL,
+  `node_id` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_finder_terms`
+-- Table structure for table `gtxly_finder_terms`
 --
 
 DROP TABLE IF EXISTS `gtxly_finder_terms`;
-CREATE TABLE IF NOT EXISTS `gtxly_finder_terms` (
-  `term_id` int(10) unsigned NOT NULL,
+CREATE TABLE `gtxly_finder_terms` (
+  `term_id` int(10) UNSIGNED NOT NULL,
   `term` varchar(75) NOT NULL,
   `stem` varchar(75) NOT NULL,
-  `common` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `phrase` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `weight` float unsigned NOT NULL DEFAULT '0',
+  `common` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `phrase` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `weight` float UNSIGNED NOT NULL DEFAULT '0',
   `soundex` varchar(75) NOT NULL,
   `links` int(10) NOT NULL DEFAULT '0',
   `language` char(3) NOT NULL DEFAULT ''
@@ -1095,17 +1136,17 @@ CREATE TABLE IF NOT EXISTS `gtxly_finder_terms` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_finder_terms_common`
+-- Table structure for table `gtxly_finder_terms_common`
 --
 
 DROP TABLE IF EXISTS `gtxly_finder_terms_common`;
-CREATE TABLE IF NOT EXISTS `gtxly_finder_terms_common` (
+CREATE TABLE `gtxly_finder_terms_common` (
   `term` varchar(75) NOT NULL,
   `language` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `gtxly_finder_terms_common`
+-- Dumping data for table `gtxly_finder_terms_common`
 --
 
 INSERT INTO `gtxly_finder_terms_common` (`term`, `language`) VALUES
@@ -1119,7 +1160,7 @@ INSERT INTO `gtxly_finder_terms_common` (`term`, `language`) VALUES
 ('and', 'en'),
 ('any', 'en'),
 ('are', 'en'),
-('aren''t', 'en'),
+('aren\'t', 'en'),
 ('as', 'en'),
 ('at', 'en'),
 ('be', 'en'),
@@ -1134,7 +1175,7 @@ INSERT INTO `gtxly_finder_terms_common` (`term`, `language`) VALUES
 ('in', 'en'),
 ('into', 'en'),
 ('is', 'en'),
-('isn''t', 'en'),
+('isn\'t', 'en'),
 ('it', 'en'),
 ('its', 'en'),
 ('me', 'en'),
@@ -1223,50 +1264,50 @@ INSERT INTO `gtxly_finder_terms_common` (`term`, `language`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_finder_tokens`
+-- Table structure for table `gtxly_finder_tokens`
 --
 
 DROP TABLE IF EXISTS `gtxly_finder_tokens`;
-CREATE TABLE IF NOT EXISTS `gtxly_finder_tokens` (
+CREATE TABLE `gtxly_finder_tokens` (
   `term` varchar(75) NOT NULL,
   `stem` varchar(75) NOT NULL,
-  `common` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `phrase` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `weight` float unsigned NOT NULL DEFAULT '1',
-  `context` tinyint(1) unsigned NOT NULL DEFAULT '2',
+  `common` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `phrase` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `weight` float UNSIGNED NOT NULL DEFAULT '1',
+  `context` tinyint(1) UNSIGNED NOT NULL DEFAULT '2',
   `language` char(3) NOT NULL DEFAULT ''
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_finder_tokens_aggregate`
+-- Table structure for table `gtxly_finder_tokens_aggregate`
 --
 
 DROP TABLE IF EXISTS `gtxly_finder_tokens_aggregate`;
-CREATE TABLE IF NOT EXISTS `gtxly_finder_tokens_aggregate` (
-  `term_id` int(10) unsigned NOT NULL,
+CREATE TABLE `gtxly_finder_tokens_aggregate` (
+  `term_id` int(10) UNSIGNED NOT NULL,
   `map_suffix` char(1) NOT NULL,
   `term` varchar(75) NOT NULL,
   `stem` varchar(75) NOT NULL,
-  `common` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `phrase` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `term_weight` float unsigned NOT NULL,
-  `context` tinyint(1) unsigned NOT NULL DEFAULT '2',
-  `context_weight` float unsigned NOT NULL,
-  `total_weight` float unsigned NOT NULL,
+  `common` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `phrase` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
+  `term_weight` float UNSIGNED NOT NULL,
+  `context` tinyint(1) UNSIGNED NOT NULL DEFAULT '2',
+  `context_weight` float UNSIGNED NOT NULL,
+  `total_weight` float UNSIGNED NOT NULL,
   `language` char(3) NOT NULL DEFAULT ''
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_finder_types`
+-- Table structure for table `gtxly_finder_types`
 --
 
 DROP TABLE IF EXISTS `gtxly_finder_types`;
-CREATE TABLE IF NOT EXISTS `gtxly_finder_types` (
-  `id` int(10) unsigned NOT NULL,
+CREATE TABLE `gtxly_finder_types` (
+  `id` int(10) UNSIGNED NOT NULL,
   `title` varchar(100) NOT NULL,
   `mime` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -1274,13 +1315,13 @@ CREATE TABLE IF NOT EXISTS `gtxly_finder_types` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_languages`
+-- Table structure for table `gtxly_languages`
 --
 
 DROP TABLE IF EXISTS `gtxly_languages`;
-CREATE TABLE IF NOT EXISTS `gtxly_languages` (
-  `lang_id` int(11) unsigned NOT NULL,
-  `asset_id` int(10) unsigned NOT NULL DEFAULT '0',
+CREATE TABLE `gtxly_languages` (
+  `lang_id` int(11) UNSIGNED NOT NULL,
+  `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `lang_code` char(7) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
   `title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `title_native` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -1291,12 +1332,12 @@ CREATE TABLE IF NOT EXISTS `gtxly_languages` (
   `metadesc` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `sitename` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `published` int(11) NOT NULL DEFAULT '0',
-  `access` int(10) unsigned NOT NULL DEFAULT '0',
+  `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `ordering` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Volcado de datos para la tabla `gtxly_languages`
+-- Dumping data for table `gtxly_languages`
 --
 
 INSERT INTO `gtxly_languages` (`lang_id`, `asset_id`, `lang_code`, `title`, `title_native`, `sef`, `image`, `description`, `metakey`, `metadesc`, `sitename`, `published`, `access`, `ordering`) VALUES
@@ -1307,11 +1348,11 @@ INSERT INTO `gtxly_languages` (`lang_id`, `asset_id`, `lang_code`, `title`, `tit
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_menu`
+-- Table structure for table `gtxly_menu`
 --
 
 DROP TABLE IF EXISTS `gtxly_menu`;
-CREATE TABLE IF NOT EXISTS `gtxly_menu` (
+CREATE TABLE `gtxly_menu` (
   `id` int(11) NOT NULL,
   `menutype` varchar(24) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The type of menu this item belongs to. FK to #__menu_types.menutype',
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The display title of the menu item.',
@@ -1321,29 +1362,29 @@ CREATE TABLE IF NOT EXISTS `gtxly_menu` (
   `link` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The actually link the menu item refers to.',
   `type` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The type of link: Component, URL, Alias, Separator',
   `published` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'The published state of the menu link.',
-  `parent_id` int(10) unsigned NOT NULL DEFAULT '1' COMMENT 'The parent menu item in the menu tree.',
-  `level` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'The relative level in the tree.',
-  `component_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'FK to #__extensions.id',
-  `checked_out` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'FK to #__users.id',
+  `parent_id` int(10) UNSIGNED NOT NULL DEFAULT '1' COMMENT 'The parent menu item in the menu tree.',
+  `level` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'The relative level in the tree.',
+  `component_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'FK to #__extensions.id',
+  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'FK to #__users.id',
   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'The time the menu item was checked out.',
   `browserNav` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'The click behaviour of the link.',
-  `access` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'The access level required to view the menu item.',
+  `access` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'The access level required to view the menu item.',
   `img` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The image of the menu item.',
-  `template_style_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `template_style_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `params` text COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'JSON encoded data for the menu item.',
   `lft` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set lft.',
   `rgt` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set rgt.',
-  `home` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'Indicates if this menu item is the home or default page.',
+  `home` tinyint(3) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Indicates if this menu item is the home or default page.',
   `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `client_id` tinyint(4) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=115 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Volcado de datos para la tabla `gtxly_menu`
+-- Dumping data for table `gtxly_menu`
 --
 
 INSERT INTO `gtxly_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `link`, `type`, `published`, `parent_id`, `level`, `component_id`, `checked_out`, `checked_out_time`, `browserNav`, `access`, `img`, `template_style_id`, `params`, `lft`, `rgt`, `home`, `language`, `client_id`) VALUES
-(1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, 0, '0000-00-00 00:00:00', 0, 0, '', 0, '', 0, 69, 0, '*', 0),
+(1, '', 'Menu_Item_Root', 'root', '', '', '', '', 1, 0, 0, 0, 0, '0000-00-00 00:00:00', 0, 0, '', 0, '', 0, 75, 0, '*', 0),
 (2, 'main', 'com_banners', 'Banners', '', 'Banners', 'index.php?option=com_banners', 'component', 1, 1, 1, 4, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 1, 10, 0, '*', 1),
 (3, 'main', 'com_banners', 'Banners', '', 'Banners/Banners', 'index.php?option=com_banners', 'component', 1, 2, 2, 4, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners', 0, '', 2, 3, 0, '*', 1),
 (4, 'main', 'com_banners_categories', 'Categories', '', 'Banners/Categories', 'index.php?option=com_categories&extension=com_banners', 'component', 1, 2, 2, 6, 0, '0000-00-00 00:00:00', 0, 0, 'class:banners-cat', 0, '', 4, 5, 0, '*', 1),
@@ -1377,26 +1418,29 @@ INSERT INTO `gtxly_menu` (`id`, `menutype`, `title`, `alias`, `note`, `path`, `l
 (111, 'mainmenu', 'Vida nocturna', 'vida-nocturna', '', 'mas/vida-nocturna', 'index.php?option=com_content&view=category&layout=blog&id=17&filter_tag=11', 'component', 1, 109, 2, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{"layout_type":"blog","show_category_heading_title_text":"","show_category_title":"","show_description":"","show_description_image":"","maxLevel":"","show_empty_categories":"","show_no_articles":"","show_subcat_desc":"","show_cat_num_articles":"","show_cat_tags":"","page_subheading":"","num_leading_articles":"","num_intro_articles":"","num_columns":"","num_links":"","multi_column_order":"","show_subcategory_content":"","orderby_pri":"","orderby_sec":"","order_date":"","show_pagination":"","show_pagination_results":"","show_featured":"","show_title":"","link_titles":"","show_intro":"","info_block_position":"","info_block_show_title":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_associations":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_readmore":"","show_readmore_title":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_tags":"","show_noauth":"","show_feed_link":"","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"menu_show":1,"page_title":"","show_page_heading":"","page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 60, 61, 0, '*', 0),
 (112, 'mainmenu', 'Tendencias', 'tendencias', '', 'mas/tendencias', 'index.php?option=com_content&view=category&layout=blog&id=18&filter_tag=12', 'component', 1, 109, 2, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{"layout_type":"blog","show_category_heading_title_text":"","show_category_title":"","show_description":"","show_description_image":"","maxLevel":"","show_empty_categories":"","show_no_articles":"","show_subcat_desc":"","show_cat_num_articles":"","show_cat_tags":"","page_subheading":"","num_leading_articles":"","num_intro_articles":"","num_columns":"","num_links":"","multi_column_order":"","show_subcategory_content":"","orderby_pri":"","orderby_sec":"","order_date":"","show_pagination":"","show_pagination_results":"","show_featured":"","show_title":"","link_titles":"","show_intro":"","info_block_position":"","info_block_show_title":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_associations":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_readmore":"","show_readmore_title":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_tags":"","show_noauth":"","show_feed_link":"","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"menu_show":1,"page_title":"","show_page_heading":"","page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 62, 63, 0, '*', 0),
 (113, 'mainmenu', 'Viajes', 'viajes', '', 'mas/viajes', 'index.php?option=com_content&view=category&layout=blog&id=19&filter_tag=13', 'component', 1, 109, 2, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{"layout_type":"blog","show_category_heading_title_text":"","show_category_title":"","show_description":"","show_description_image":"","maxLevel":"","show_empty_categories":"","show_no_articles":"","show_subcat_desc":"","show_cat_num_articles":"","show_cat_tags":"","page_subheading":"","num_leading_articles":"","num_intro_articles":"","num_columns":"","num_links":"","multi_column_order":"","show_subcategory_content":"","orderby_pri":"","orderby_sec":"","order_date":"","show_pagination":"","show_pagination_results":"","show_featured":"","show_title":"","link_titles":"","show_intro":"","info_block_position":"","info_block_show_title":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_associations":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_readmore":"","show_readmore_title":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_tags":"","show_noauth":"","show_feed_link":"","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"menu_show":1,"page_title":"","show_page_heading":"","page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 64, 65, 0, '*', 0),
-(114, 'mainmenu', 'De compras', 'de-compras', '', 'mas/de-compras', 'index.php?option=com_content&view=category&layout=blog&id=20&filter_tag=14', 'component', 1, 109, 2, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{"layout_type":"blog","show_category_heading_title_text":"","show_category_title":"","show_description":"","show_description_image":"","maxLevel":"","show_empty_categories":"","show_no_articles":"","show_subcat_desc":"","show_cat_num_articles":"","show_cat_tags":"","page_subheading":"","num_leading_articles":"","num_intro_articles":"","num_columns":"","num_links":"","multi_column_order":"","show_subcategory_content":"","orderby_pri":"","orderby_sec":"","order_date":"","show_pagination":"","show_pagination_results":"","show_featured":"","show_title":"","link_titles":"","show_intro":"","info_block_position":"","info_block_show_title":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_associations":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_readmore":"","show_readmore_title":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_tags":"","show_noauth":"","show_feed_link":"","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"menu_show":1,"page_title":"","show_page_heading":"","page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 66, 67, 0, '*', 0);
+(114, 'mainmenu', 'De compras', 'de-compras', '', 'mas/de-compras', 'index.php?option=com_content&view=category&layout=blog&id=20&filter_tag=14', 'component', 1, 109, 2, 22, 0, '0000-00-00 00:00:00', 0, 1, ' ', 0, '{"layout_type":"blog","show_category_heading_title_text":"","show_category_title":"","show_description":"","show_description_image":"","maxLevel":"","show_empty_categories":"","show_no_articles":"","show_subcat_desc":"","show_cat_num_articles":"","show_cat_tags":"","page_subheading":"","num_leading_articles":"","num_intro_articles":"","num_columns":"","num_links":"","multi_column_order":"","show_subcategory_content":"","orderby_pri":"","orderby_sec":"","order_date":"","show_pagination":"","show_pagination_results":"","show_featured":"","show_title":"","link_titles":"","show_intro":"","info_block_position":"","info_block_show_title":"","show_category":"","link_category":"","show_parent_category":"","link_parent_category":"","show_associations":"","show_author":"","link_author":"","show_create_date":"","show_modify_date":"","show_publish_date":"","show_item_navigation":"","show_vote":"","show_readmore":"","show_readmore_title":"","show_icons":"","show_print_icon":"","show_email_icon":"","show_hits":"","show_tags":"","show_noauth":"","show_feed_link":"","feed_summary":"","menu-anchor_title":"","menu-anchor_css":"","menu_image":"","menu_text":1,"menu_show":1,"page_title":"","show_page_heading":"","page_heading":"","pageclass_sfx":"","menu-meta_description":"","menu-meta_keywords":"","robots":"","secure":0}', 66, 67, 0, '*', 0),
+(115, 'main', 'COM_DJIMAGESLIDER', 'com-djimageslider', '', 'com-djimageslider', 'index.php?option=com_djimageslider', 'component', 1, 1, 1, 10010, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_djimageslider/assets/icon-16-djimageslider.png', 0, '{}', 69, 74, 0, '', 1),
+(116, 'main', 'COM_DJIMAGESLIDER_SLIDES', 'com-djimageslider-slides', '', 'com-djimageslider/com-djimageslider-slides', 'index.php?option=com_djimageslider&view=items', 'component', 1, 115, 2, 10010, 0, '0000-00-00 00:00:00', 0, 1, 'components/com_djimageslider/assets/icon-16-menu-slides.png', 0, '{}', 70, 71, 0, '', 1),
+(117, 'main', 'COM_DJIMAGESLIDER_CATEGORIES', 'com-djimageslider-categories', '', 'com-djimageslider/com-djimageslider-categories', 'index.php?option=com_categories&extension=com_djimageslider', 'component', 1, 115, 2, 10010, 0, '0000-00-00 00:00:00', 0, 1, 'class:category', 0, '{}', 72, 73, 0, '', 1);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_menu_types`
+-- Table structure for table `gtxly_menu_types`
 --
 
 DROP TABLE IF EXISTS `gtxly_menu_types`;
-CREATE TABLE IF NOT EXISTS `gtxly_menu_types` (
-  `id` int(10) unsigned NOT NULL,
-  `asset_id` int(10) unsigned NOT NULL DEFAULT '0',
+CREATE TABLE `gtxly_menu_types` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `menutype` varchar(24) COLLATE utf8mb4_unicode_ci NOT NULL,
   `title` varchar(48) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `client_id` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Volcado de datos para la tabla `gtxly_menu_types`
+-- Dumping data for table `gtxly_menu_types`
 --
 
 INSERT INTO `gtxly_menu_types` (`id`, `asset_id`, `menutype`, `title`, `description`, `client_id`) VALUES
@@ -1405,18 +1449,18 @@ INSERT INTO `gtxly_menu_types` (`id`, `asset_id`, `menutype`, `title`, `descript
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_messages`
+-- Table structure for table `gtxly_messages`
 --
 
 DROP TABLE IF EXISTS `gtxly_messages`;
-CREATE TABLE IF NOT EXISTS `gtxly_messages` (
-  `message_id` int(10) unsigned NOT NULL,
-  `user_id_from` int(10) unsigned NOT NULL DEFAULT '0',
-  `user_id_to` int(10) unsigned NOT NULL DEFAULT '0',
-  `folder_id` tinyint(3) unsigned NOT NULL DEFAULT '0',
+CREATE TABLE `gtxly_messages` (
+  `message_id` int(10) UNSIGNED NOT NULL,
+  `user_id_from` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `user_id_to` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `folder_id` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
   `date_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `state` tinyint(1) NOT NULL DEFAULT '0',
-  `priority` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `priority` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
   `subject` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `message` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1424,12 +1468,12 @@ CREATE TABLE IF NOT EXISTS `gtxly_messages` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_messages_cfg`
+-- Table structure for table `gtxly_messages_cfg`
 --
 
 DROP TABLE IF EXISTS `gtxly_messages_cfg`;
-CREATE TABLE IF NOT EXISTS `gtxly_messages_cfg` (
-  `user_id` int(10) unsigned NOT NULL DEFAULT '0',
+CREATE TABLE `gtxly_messages_cfg` (
+  `user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `cfg_name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `cfg_value` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1437,33 +1481,33 @@ CREATE TABLE IF NOT EXISTS `gtxly_messages_cfg` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_modules`
+-- Table structure for table `gtxly_modules`
 --
 
 DROP TABLE IF EXISTS `gtxly_modules`;
-CREATE TABLE IF NOT EXISTS `gtxly_modules` (
+CREATE TABLE `gtxly_modules` (
   `id` int(11) NOT NULL,
-  `asset_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
+  `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
   `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `ordering` int(11) NOT NULL DEFAULT '0',
   `position` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `checked_out` int(10) unsigned NOT NULL DEFAULT '0',
+  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `published` tinyint(1) NOT NULL DEFAULT '0',
   `module` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `access` int(10) unsigned NOT NULL DEFAULT '0',
-  `showtitle` tinyint(3) unsigned NOT NULL DEFAULT '1',
+  `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `showtitle` tinyint(3) UNSIGNED NOT NULL DEFAULT '1',
   `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `client_id` tinyint(4) NOT NULL DEFAULT '0',
   `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Volcado de datos para la tabla `gtxly_modules`
+-- Dumping data for table `gtxly_modules`
 --
 
 INSERT INTO `gtxly_modules` (`id`, `asset_id`, `title`, `note`, `content`, `ordering`, `position`, `checked_out`, `checked_out_time`, `publish_up`, `publish_down`, `published`, `module`, `access`, `showtitle`, `params`, `client_id`, `language`) VALUES
@@ -1483,22 +1527,23 @@ INSERT INTO `gtxly_modules` (`id`, `asset_id`, `title`, `note`, `content`, `orde
 (79, 52, 'Multilanguage status', '', '', 1, 'status', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'mod_multilangstatus', 3, 1, '{"layout":"_:default","moduleclass_sfx":"","cache":"0"}', 1, '*'),
 (86, 53, 'Joomla Version', '', '', 1, 'footer', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_version', 3, 1, '{"format":"short","product":"1","layout":"_:default","moduleclass_sfx":"","cache":"0"}', 1, '*'),
 (88, 57, 'Buscador', '', '', 1, 'lsev-buscador', 224, '2017-09-06 14:54:51', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_search', 1, 1, '{"label":"","width":"25","text":"Estoy buscando...","button":"1","button_pos":"right","imagebutton":"1","button_text":"","opensearch":"1","opensearch_title":"","set_itemid":"0","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"itemid","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
-(89, 86, 'social', '', '<div class="offset2 span2"><a href="http://www.twitter.com/"><img src="images/social/tw.png" alt="" /></a></div>\r\n<div class="span2"><a href="http://www.twitter.com/"><img src="images/social/fb.png" alt="" /></a></div>\r\n<div class="span2"><a href="http://www.twitter.com/"><img src="images/social/yt.png" alt="" /></a></div>\r\n<div class="span2"><a href="http://www.twitter.com/"><img src="images/social/ig.png" alt="" /></a></div>\r\n<div class="span2"><a href="http://www.twitter.com/"><img src="images/social/rss.png" alt="" /></a></div>', 1, 'lsev-redes', 224, '2017-09-07 22:32:22', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 1, '{"prepare_content":"0","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*');
+(89, 86, 'social', '', '<table>\r\n<tbody>\r\n<tr>\r\n<td><a href="http://www.twitter.com/"><img src="images/social/tw.png" alt="" /></a></td>\r\n<td><a href="http://www.twitter.com/"><img src="images/social/fb.png" alt="" /></a></td>\r\n<td><a href="http://www.twitter.com/"><img src="images/social/yt.png" alt="" /></a></td>\r\n<td><a href="http://www.twitter.com/"><img src="images/social/ig.png" alt="" /></a></td>\r\n<td><a href="http://www.twitter.com/"><img src="images/social/rss.png" alt="" /></a></td>\r\n</tr>\r\n</tbody>\r\n</table>', 1, 'lsev-redes', 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_custom', 1, 1, '{"prepare_content":"0","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*'),
+(90, 88, 'DJ-ImageSlider', '', '', 1, 'lsev-slider', 224, '2017-09-09 23:52:41', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 'mod_djimageslider', 1, 1, '{"slider_source":"1","slider_type":"0","theme":"default","link_image":"1","image_folder":"images\\/sampledata\\/fruitshop","link":"","category":"21","show_title":"1","show_desc":"1","show_readmore":"0","readmore_text":"","link_title":"1","link_desc":"0","limit_desc":"","full_width":"1","image_width":"240","image_height":"180","fit_to":"0","image_centering":"0","visible_images":"1","space_between_images":"0","max_images":"20","sort_by":"1","css3":"1","autoplay":"1","looponce":"0","show_buttons":"1","show_arrows":"1","show_custom_nav":"0","wcag":"1","desc_width":"","desc_bottom":"0","desc_horizontal":"0","left_arrow":"","right_arrow":"","play_button":"","pause_button":"","arrows_top":"40","arrows_horizontal":"10","idx_style":"0","effect":"Expo","effect_type":"0","duration":"","delay":"","preload":"800","layout":"_:default","moduleclass_sfx":"","cache":"1","cache_time":"900","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"0"}', 0, '*');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_modules_menu`
+-- Table structure for table `gtxly_modules_menu`
 --
 
 DROP TABLE IF EXISTS `gtxly_modules_menu`;
-CREATE TABLE IF NOT EXISTS `gtxly_modules_menu` (
+CREATE TABLE `gtxly_modules_menu` (
   `moduleid` int(11) NOT NULL DEFAULT '0',
   `menuid` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Volcado de datos para la tabla `gtxly_modules_menu`
+-- Dumping data for table `gtxly_modules_menu`
 --
 
 INSERT INTO `gtxly_modules_menu` (`moduleid`, `menuid`) VALUES
@@ -1520,36 +1565,37 @@ INSERT INTO `gtxly_modules_menu` (`moduleid`, `menuid`) VALUES
 (79, 0),
 (86, 0),
 (88, 0),
-(89, 0);
+(89, 0),
+(90, 101);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_newsfeeds`
+-- Table structure for table `gtxly_newsfeeds`
 --
 
 DROP TABLE IF EXISTS `gtxly_newsfeeds`;
-CREATE TABLE IF NOT EXISTS `gtxly_newsfeeds` (
+CREATE TABLE `gtxly_newsfeeds` (
   `catid` int(11) NOT NULL DEFAULT '0',
-  `id` int(10) unsigned NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
   `link` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `published` tinyint(1) NOT NULL DEFAULT '0',
-  `numarticles` int(10) unsigned NOT NULL DEFAULT '1',
-  `cache_time` int(10) unsigned NOT NULL DEFAULT '3600',
-  `checked_out` int(10) unsigned NOT NULL DEFAULT '0',
+  `numarticles` int(10) UNSIGNED NOT NULL DEFAULT '1',
+  `cache_time` int(10) UNSIGNED NOT NULL DEFAULT '3600',
+  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `ordering` int(11) NOT NULL DEFAULT '0',
   `rtl` tinyint(4) NOT NULL DEFAULT '0',
-  `access` int(10) unsigned NOT NULL DEFAULT '0',
+  `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `created_by` int(10) unsigned NOT NULL DEFAULT '0',
+  `created_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `modified_by` int(10) unsigned NOT NULL DEFAULT '0',
+  `modified_by` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `metadesc` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `metadata` text COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -1557,19 +1603,19 @@ CREATE TABLE IF NOT EXISTS `gtxly_newsfeeds` (
   `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `version` int(10) unsigned NOT NULL DEFAULT '1',
-  `hits` int(10) unsigned NOT NULL DEFAULT '0',
+  `version` int(10) UNSIGNED NOT NULL DEFAULT '1',
+  `hits` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `images` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_overrider`
+-- Table structure for table `gtxly_overrider`
 --
 
 DROP TABLE IF EXISTS `gtxly_overrider`;
-CREATE TABLE IF NOT EXISTS `gtxly_overrider` (
+CREATE TABLE `gtxly_overrider` (
   `id` int(10) NOT NULL COMMENT 'Primary Key',
   `constant` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `string` text COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -1579,12 +1625,12 @@ CREATE TABLE IF NOT EXISTS `gtxly_overrider` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_postinstall_messages`
+-- Table structure for table `gtxly_postinstall_messages`
 --
 
 DROP TABLE IF EXISTS `gtxly_postinstall_messages`;
-CREATE TABLE IF NOT EXISTS `gtxly_postinstall_messages` (
-  `postinstall_message_id` bigint(20) unsigned NOT NULL,
+CREATE TABLE `gtxly_postinstall_messages` (
+  `postinstall_message_id` bigint(20) UNSIGNED NOT NULL,
   `extension_id` bigint(20) NOT NULL DEFAULT '700' COMMENT 'FK to #__extensions',
   `title_key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'Lang key for the title',
   `description_key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'Lang key for description',
@@ -1598,10 +1644,10 @@ CREATE TABLE IF NOT EXISTS `gtxly_postinstall_messages` (
   `condition_method` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Display condition method, must return boolean',
   `version_introduced` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '3.2.0' COMMENT 'Version when this message was introduced',
   `enabled` tinyint(3) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Volcado de datos para la tabla `gtxly_postinstall_messages`
+-- Dumping data for table `gtxly_postinstall_messages`
 --
 
 INSERT INTO `gtxly_postinstall_messages` (`postinstall_message_id`, `extension_id`, `title_key`, `description_key`, `action_key`, `language_extension`, `language_client_id`, `type`, `action_file`, `action`, `condition_file`, `condition_method`, `version_introduced`, `enabled`) VALUES
@@ -1615,17 +1661,17 @@ INSERT INTO `gtxly_postinstall_messages` (`postinstall_message_id`, `extension_i
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_redirect_links`
+-- Table structure for table `gtxly_redirect_links`
 --
 
 DROP TABLE IF EXISTS `gtxly_redirect_links`;
-CREATE TABLE IF NOT EXISTS `gtxly_redirect_links` (
-  `id` int(10) unsigned NOT NULL,
+CREATE TABLE `gtxly_redirect_links` (
+  `id` int(10) UNSIGNED NOT NULL,
   `old_url` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL,
   `new_url` varchar(2048) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `referer` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL,
   `comment` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `hits` int(10) unsigned NOT NULL DEFAULT '0',
+  `hits` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `published` tinyint(4) NOT NULL,
   `created_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `modified_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
@@ -1635,33 +1681,34 @@ CREATE TABLE IF NOT EXISTS `gtxly_redirect_links` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_schemas`
+-- Table structure for table `gtxly_schemas`
 --
 
 DROP TABLE IF EXISTS `gtxly_schemas`;
-CREATE TABLE IF NOT EXISTS `gtxly_schemas` (
+CREATE TABLE `gtxly_schemas` (
   `extension_id` int(11) NOT NULL,
   `version_id` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Volcado de datos para la tabla `gtxly_schemas`
+-- Dumping data for table `gtxly_schemas`
 --
 
 INSERT INTO `gtxly_schemas` (`extension_id`, `version_id`) VALUES
-(700, '3.7.4-2017-07-05');
+(700, '3.7.4-2017-07-05'),
+(10010, '2.0');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_session`
+-- Table structure for table `gtxly_session`
 --
 
 DROP TABLE IF EXISTS `gtxly_session`;
-CREATE TABLE IF NOT EXISTS `gtxly_session` (
+CREATE TABLE `gtxly_session` (
   `session_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `client_id` tinyint(3) unsigned DEFAULT NULL,
-  `guest` tinyint(4) unsigned DEFAULT '1',
+  `client_id` tinyint(3) UNSIGNED DEFAULT NULL,
+  `guest` tinyint(4) UNSIGNED DEFAULT '1',
   `time` varchar(14) COLLATE utf8mb4_unicode_ci DEFAULT '',
   `data` mediumtext COLLATE utf8mb4_unicode_ci,
   `userid` int(11) DEFAULT '0',
@@ -1669,56 +1716,55 @@ CREATE TABLE IF NOT EXISTS `gtxly_session` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Volcado de datos para la tabla `gtxly_session`
+-- Dumping data for table `gtxly_session`
 --
 
 INSERT INTO `gtxly_session` (`session_id`, `client_id`, `guest`, `time`, `data`, `userid`, `username`) VALUES
-('0lb1qe4c1t2sashi2lsl8o1hb1', 1, 0, '1504824385', 'joomla|s:1456:"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjo1OntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjM6e3M6NzoiY291bnRlciI7aToyNTtzOjU6InRpbWVyIjtPOjg6InN0ZENsYXNzIjozOntzOjU6InN0YXJ0IjtpOjE1MDQ4MjE5NjU7czo0OiJsYXN0IjtpOjE1MDQ4MjM1NDM7czozOiJub3ciO2k6MTUwNDgyNDM4NTt9czo1OiJ0b2tlbiI7czozMjoiRGl2cW9rWnAxNk8xZHM5bXJSaGMwazlWUDVtUmtaNVMiO31zOjg6InJlZ2lzdHJ5IjtPOjI0OiJKb29tbGFcUmVnaXN0cnlcUmVnaXN0cnkiOjM6e3M6NzoiACoAZGF0YSI7Tzo4OiJzdGRDbGFzcyI6Mjp7czoxMzoiY29tX2luc3RhbGxlciI7Tzo4OiJzdGRDbGFzcyI6Mjp7czo3OiJtZXNzYWdlIjtzOjA6IiI7czoxNzoiZXh0ZW5zaW9uX21lc3NhZ2UiO3M6MDoiIjt9czoxMToiY29tX21vZHVsZXMiO086ODoic3RkQ2xhc3MiOjI6e3M6NDoiZWRpdCI7Tzo4OiJzdGRDbGFzcyI6MTp7czo2OiJtb2R1bGUiO086ODoic3RkQ2xhc3MiOjI6e3M6NDoiZGF0YSI7TjtzOjI6ImlkIjthOjE6e2k6MDtpOjg5O319fXM6MzoiYWRkIjtPOjg6InN0ZENsYXNzIjoxOntzOjY6Im1vZHVsZSI7Tzo4OiJzdGRDbGFzcyI6Mjp7czoxMjoiZXh0ZW5zaW9uX2lkIjtOO3M6NjoicGFyYW1zIjtOO319fX1zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6OToic2VwYXJhdG9yIjtzOjE6Ii4iO31zOjQ6InVzZXIiO086NToiSlVzZXIiOjE6e3M6MjoiaWQiO3M6MzoiMjI0Ijt9czo5OiJjb21fbWVkaWEiO086ODoic3RkQ2xhc3MiOjE6e3M6MTA6InJldHVybl91cmwiO3M6MTA5OiJpbmRleC5waHA/b3B0aW9uPWNvbV9tZWRpYSZ2aWV3PWltYWdlcyZ0bXBsPWNvbXBvbmVudCZmaWVsZGlkPSZlX25hbWU9amZvcm1fY29udGVudCZhc3NldD1jb21fbW9kdWxlcyZhdXRob3I9Ijt9czoxMToiYXBwbGljYXRpb24iO086ODoic3RkQ2xhc3MiOjE6e3M6NToicXVldWUiO047fX19czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9";', 224, 'mosaicoStudio'),
-('de62f9c7c5psf1m30h6ln2pmm3', 0, 1, '1504823831', 'joomla|s:644:"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjozOntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjI6e3M6NzoiY291bnRlciI7aToyOTtzOjU6InRpbWVyIjtPOjg6InN0ZENsYXNzIjozOntzOjU6InN0YXJ0IjtpOjE1MDQ4MTk3MTU7czo0OiJsYXN0IjtpOjE1MDQ4MjM3NzU7czozOiJub3ciO2k6MTUwNDgyMzgzMTt9fXM6ODoicmVnaXN0cnkiO086MjQ6Ikpvb21sYVxSZWdpc3RyeVxSZWdpc3RyeSI6Mzp7czo3OiIAKgBkYXRhIjtPOjg6InN0ZENsYXNzIjowOnt9czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjU6IkpVc2VyIjoxOntzOjI6ImlkIjtpOjA7fX19czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9";', 0, ''),
-('kag1uglnvilc2ct8jq3djpc1j3', 0, 1, '1504823830', 'joomla|s:644:"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjozOntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjI6e3M6NzoiY291bnRlciI7aToyOTtzOjU6InRpbWVyIjtPOjg6InN0ZENsYXNzIjozOntzOjU6InN0YXJ0IjtpOjE1MDQ4MTk3MTU7czo0OiJsYXN0IjtpOjE1MDQ4MjM3NzQ7czozOiJub3ciO2k6MTUwNDgyMzgzMDt9fXM6ODoicmVnaXN0cnkiO086MjQ6Ikpvb21sYVxSZWdpc3RyeVxSZWdpc3RyeSI6Mzp7czo3OiIAKgBkYXRhIjtPOjg6InN0ZENsYXNzIjowOnt9czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjU6IkpVc2VyIjoxOntzOjI6ImlkIjtpOjA7fX19czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9";', 0, '');
+('07v4bkh41v7sr8ge7hd31v0g53', 0, 1, '1505001244', 'joomla|s:644:"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjozOntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjI6e3M6NzoiY291bnRlciI7aTo0O3M6NToidGltZXIiO086ODoic3RkQ2xhc3MiOjM6e3M6NToic3RhcnQiO2k6MTUwNTAwMDk5MztzOjQ6Imxhc3QiO2k6MTUwNTAwMTE3MTtzOjM6Im5vdyI7aToxNTA1MDAxMjM3O319czo4OiJyZWdpc3RyeSI7TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjA6e31zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6OToic2VwYXJhdG9yIjtzOjE6Ii4iO31zOjQ6InVzZXIiO086NToiSlVzZXIiOjE6e3M6MjoiaWQiO2k6MDt9fX1zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6OToic2VwYXJhdG9yIjtzOjE6Ii4iO30=";', 0, ''),
+('ehmm8ljjl19i3n6rhgsrls0jg4', 1, 0, '1505001165', 'joomla|s:2168:"TzoyNDoiSm9vbWxhXFJlZ2lzdHJ5XFJlZ2lzdHJ5IjozOntzOjc6IgAqAGRhdGEiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiX19kZWZhdWx0IjtPOjg6InN0ZENsYXNzIjo1OntzOjc6InNlc3Npb24iO086ODoic3RkQ2xhc3MiOjM6e3M6NzoiY291bnRlciI7aTo3MztzOjU6InRpbWVyIjtPOjg6InN0ZENsYXNzIjozOntzOjU6InN0YXJ0IjtpOjE1MDQ5OTczNjM7czo0OiJsYXN0IjtpOjE1MDUwMDExNjI7czozOiJub3ciO2k6MTUwNTAwMTE2NDt9czo1OiJ0b2tlbiI7czozMjoiS05qV01WRVBnTEk1UFJtck1DWnhUSjFOVDVoWWtkNXciO31zOjg6InJlZ2lzdHJ5IjtPOjI0OiJKb29tbGFcUmVnaXN0cnlcUmVnaXN0cnkiOjM6e3M6NzoiACoAZGF0YSI7Tzo4OiJzdGRDbGFzcyI6NDp7czoxMzoiY29tX2luc3RhbGxlciI7Tzo4OiJzdGRDbGFzcyI6Mzp7czo3OiJtZXNzYWdlIjtzOjA6IiI7czoxNzoiZXh0ZW5zaW9uX21lc3NhZ2UiO3M6MDoiIjtzOjEyOiJyZWRpcmVjdF91cmwiO047fXM6MTE6ImNvbV9tb2R1bGVzIjtPOjg6InN0ZENsYXNzIjoyOntzOjQ6ImVkaXQiO086ODoic3RkQ2xhc3MiOjE6e3M6NjoibW9kdWxlIjtPOjg6InN0ZENsYXNzIjoyOntzOjI6ImlkIjthOjE6e2k6MDtpOjkwO31zOjQ6ImRhdGEiO047fX1zOjM6ImFkZCI7Tzo4OiJzdGRDbGFzcyI6MTp7czo2OiJtb2R1bGUiO086ODoic3RkQ2xhc3MiOjI6e3M6MTI6ImV4dGVuc2lvbl9pZCI7TjtzOjY6InBhcmFtcyI7Tjt9fX1zOjE0OiJjb21fY2F0ZWdvcmllcyI7Tzo4OiJzdGRDbGFzcyI6Mjp7czoxMDoiY2F0ZWdvcmllcyI7Tzo4OiJzdGRDbGFzcyI6MTp7czoxMzoiZGppbWFnZXNsaWRlciI7Tzo4OiJzdGRDbGFzcyI6Mjp7czo2OiJmaWx0ZXIiO086ODoic3RkQ2xhc3MiOjE6e3M6OToiZXh0ZW5zaW9uIjtzOjE3OiJjb21fZGppbWFnZXNsaWRlciI7fXM6NDoibGlzdCI7YTo0OntzOjk6ImRpcmVjdGlvbiI7czozOiJhc2MiO3M6NToibGltaXQiO3M6MjoiMjAiO3M6ODoib3JkZXJpbmciO3M6NToiYS5sZnQiO3M6NToic3RhcnQiO2Q6MDt9fX1zOjQ6ImVkaXQiO086ODoic3RkQ2xhc3MiOjE6e3M6ODoiY2F0ZWdvcnkiO086ODoic3RkQ2xhc3MiOjI6e3M6NDoiZGF0YSI7TjtzOjI6ImlkIjthOjA6e319fX1zOjE3OiJjb21fZGppbWFnZXNsaWRlciI7Tzo4OiJzdGRDbGFzcyI6MTp7czo0OiJlZGl0IjtPOjg6InN0ZENsYXNzIjoxOntzOjQ6Iml0ZW0iO086ODoic3RkQ2xhc3MiOjE6e3M6NDoiZGF0YSI7Tjt9fX19czoxNDoiACoAaW5pdGlhbGl6ZWQiO2I6MDtzOjk6InNlcGFyYXRvciI7czoxOiIuIjt9czo0OiJ1c2VyIjtPOjU6IkpVc2VyIjoxOntzOjI6ImlkIjtzOjM6IjIyNCI7fXM6MTE6ImFwcGxpY2F0aW9uIjtPOjg6InN0ZENsYXNzIjoxOntzOjU6InF1ZXVlIjtOO31zOjk6ImNvbV9tZWRpYSI7Tzo4OiJzdGRDbGFzcyI6MTp7czoxMDoicmV0dXJuX3VybCI7czoxMTM6ImluZGV4LnBocD9vcHRpb249Y29tX21lZGlhJnZpZXc9aW1hZ2VzJnRtcGw9Y29tcG9uZW50JmZpZWxkaWQ9amZvcm1faW1hZ2UmZV9uYW1lPSZhc3NldD1jb21fZGppbWFnZXNsaWRlciZhdXRob3I9Ijt9fX1zOjE0OiIAKgBpbml0aWFsaXplZCI7YjowO3M6OToic2VwYXJhdG9yIjtzOjE6Ii4iO30=";', 224, 'mosaicoStudio');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_tags`
+-- Table structure for table `gtxly_tags`
 --
 
 DROP TABLE IF EXISTS `gtxly_tags`;
-CREATE TABLE IF NOT EXISTS `gtxly_tags` (
-  `id` int(10) unsigned NOT NULL,
-  `parent_id` int(10) unsigned NOT NULL DEFAULT '0',
+CREATE TABLE `gtxly_tags` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `parent_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `lft` int(11) NOT NULL DEFAULT '0',
   `rgt` int(11) NOT NULL DEFAULT '0',
-  `level` int(10) unsigned NOT NULL DEFAULT '0',
+  `level` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `path` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
   `note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `description` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `published` tinyint(1) NOT NULL DEFAULT '0',
-  `checked_out` int(11) unsigned NOT NULL DEFAULT '0',
+  `checked_out` int(11) UNSIGNED NOT NULL DEFAULT '0',
   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `access` int(10) unsigned NOT NULL DEFAULT '0',
+  `access` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `params` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `metadesc` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The meta description for the page.',
   `metakey` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'The meta keywords for the page.',
   `metadata` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'JSON encoded metadata properties.',
-  `created_user_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `created_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `modified_user_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `modified_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `images` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `urls` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `hits` int(10) unsigned NOT NULL DEFAULT '0',
+  `hits` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `version` int(10) unsigned NOT NULL DEFAULT '1',
+  `version` int(10) UNSIGNED NOT NULL DEFAULT '1',
   `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Volcado de datos para la tabla `gtxly_tags`
+-- Dumping data for table `gtxly_tags`
 --
 
 INSERT INTO `gtxly_tags` (`id`, `parent_id`, `lft`, `rgt`, `level`, `path`, `title`, `alias`, `note`, `description`, `published`, `checked_out`, `checked_out_time`, `access`, `params`, `metadesc`, `metakey`, `metadata`, `created_user_id`, `created_time`, `created_by_alias`, `modified_user_id`, `modified_time`, `images`, `urls`, `hits`, `language`, `version`, `publish_up`, `publish_down`) VALUES
@@ -1740,21 +1786,21 @@ INSERT INTO `gtxly_tags` (`id`, `parent_id`, `lft`, `rgt`, `level`, `path`, `tit
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_template_styles`
+-- Table structure for table `gtxly_template_styles`
 --
 
 DROP TABLE IF EXISTS `gtxly_template_styles`;
-CREATE TABLE IF NOT EXISTS `gtxly_template_styles` (
-  `id` int(10) unsigned NOT NULL,
+CREATE TABLE `gtxly_template_styles` (
+  `id` int(10) UNSIGNED NOT NULL,
   `template` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
-  `client_id` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `client_id` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
   `home` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `params` text COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Volcado de datos para la tabla `gtxly_template_styles`
+-- Dumping data for table `gtxly_template_styles`
 --
 
 INSERT INTO `gtxly_template_styles` (`id`, `template`, `client_id`, `home`, `title`, `params`) VALUES
@@ -1767,19 +1813,19 @@ INSERT INTO `gtxly_template_styles` (`id`, `template`, `client_id`, `home`, `tit
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_ucm_base`
+-- Table structure for table `gtxly_ucm_base`
 --
 
 DROP TABLE IF EXISTS `gtxly_ucm_base`;
-CREATE TABLE IF NOT EXISTS `gtxly_ucm_base` (
-  `ucm_id` int(10) unsigned NOT NULL,
+CREATE TABLE `gtxly_ucm_base` (
+  `ucm_id` int(10) UNSIGNED NOT NULL,
   `ucm_item_id` int(10) NOT NULL,
   `ucm_type_id` int(11) NOT NULL,
   `ucm_language_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Volcado de datos para la tabla `gtxly_ucm_base`
+-- Dumping data for table `gtxly_ucm_base`
 --
 
 INSERT INTO `gtxly_ucm_base` (`ucm_id`, `ucm_item_id`, `ucm_type_id`, `ucm_language_id`) VALUES
@@ -1800,47 +1846,47 @@ INSERT INTO `gtxly_ucm_base` (`ucm_id`, `ucm_item_id`, `ucm_type_id`, `ucm_langu
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_ucm_content`
+-- Table structure for table `gtxly_ucm_content`
 --
 
 DROP TABLE IF EXISTS `gtxly_ucm_content`;
-CREATE TABLE IF NOT EXISTS `gtxly_ucm_content` (
-  `core_content_id` int(10) unsigned NOT NULL,
+CREATE TABLE `gtxly_ucm_content` (
+  `core_content_id` int(10) UNSIGNED NOT NULL,
   `core_type_alias` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'FK to the content types table',
   `core_title` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `core_alias` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL DEFAULT '',
   `core_body` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `core_state` tinyint(1) NOT NULL DEFAULT '0',
   `core_checked_out_time` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `core_checked_out_user_id` int(10) unsigned NOT NULL DEFAULT '0',
-  `core_access` int(10) unsigned NOT NULL DEFAULT '0',
+  `core_checked_out_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `core_access` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `core_params` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `core_featured` tinyint(4) unsigned NOT NULL DEFAULT '0',
+  `core_featured` tinyint(4) UNSIGNED NOT NULL DEFAULT '0',
   `core_metadata` varchar(2048) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'JSON encoded metadata properties.',
-  `core_created_user_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `core_created_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `core_created_by_alias` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `core_created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `core_modified_user_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Most recent user that modified',
+  `core_modified_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Most recent user that modified',
   `core_modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `core_language` char(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `core_publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `core_publish_down` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `core_content_item_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'ID from the individual type table',
-  `asset_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
+  `core_content_item_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'ID from the individual type table',
+  `asset_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'FK to the #__assets table.',
   `core_images` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `core_urls` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `core_hits` int(10) unsigned NOT NULL DEFAULT '0',
-  `core_version` int(10) unsigned NOT NULL DEFAULT '1',
+  `core_hits` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `core_version` int(10) UNSIGNED NOT NULL DEFAULT '1',
   `core_ordering` int(11) NOT NULL DEFAULT '0',
   `core_metakey` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `core_metadesc` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `core_catid` int(10) unsigned NOT NULL DEFAULT '0',
+  `core_catid` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `core_xreference` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'A reference to enable linkages to external data sets.',
-  `core_type_id` int(10) unsigned NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Contains core content data in name spaced fields';
+  `core_type_id` int(10) UNSIGNED NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Contains core content data in name spaced fields';
 
 --
--- Volcado de datos para la tabla `gtxly_ucm_content`
+-- Dumping data for table `gtxly_ucm_content`
 --
 
 INSERT INTO `gtxly_ucm_content` (`core_content_id`, `core_type_alias`, `core_title`, `core_alias`, `core_body`, `core_state`, `core_checked_out_time`, `core_checked_out_user_id`, `core_access`, `core_params`, `core_featured`, `core_metadata`, `core_created_user_id`, `core_created_by_alias`, `core_created_time`, `core_modified_user_id`, `core_modified_time`, `core_language`, `core_publish_up`, `core_publish_down`, `core_content_item_id`, `asset_id`, `core_images`, `core_urls`, `core_hits`, `core_version`, `core_ordering`, `core_metakey`, `core_metadesc`, `core_catid`, `core_xreference`, `core_type_id`) VALUES
@@ -1861,25 +1907,25 @@ INSERT INTO `gtxly_ucm_content` (`core_content_id`, `core_type_alias`, `core_tit
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_ucm_history`
+-- Table structure for table `gtxly_ucm_history`
 --
 
 DROP TABLE IF EXISTS `gtxly_ucm_history`;
-CREATE TABLE IF NOT EXISTS `gtxly_ucm_history` (
-  `version_id` int(10) unsigned NOT NULL,
-  `ucm_item_id` int(10) unsigned NOT NULL,
-  `ucm_type_id` int(10) unsigned NOT NULL,
+CREATE TABLE `gtxly_ucm_history` (
+  `version_id` int(10) UNSIGNED NOT NULL,
+  `ucm_item_id` int(10) UNSIGNED NOT NULL,
+  `ucm_type_id` int(10) UNSIGNED NOT NULL,
   `version_note` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'Optional version name',
   `save_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `editor_user_id` int(10) unsigned NOT NULL DEFAULT '0',
-  `character_count` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Number of characters in this version.',
+  `editor_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `character_count` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Number of characters in this version.',
   `sha1_hash` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'SHA1 hash of the version_data column.',
   `version_data` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'json-encoded string of version data',
   `keep_forever` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0=auto delete; 1=keep'
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Volcado de datos para la tabla `gtxly_ucm_history`
+-- Dumping data for table `gtxly_ucm_history`
 --
 
 INSERT INTO `gtxly_ucm_history` (`version_id`, `ucm_item_id`, `ucm_type_id`, `version_note`, `save_date`, `editor_user_id`, `character_count`, `sha1_hash`, `version_data`, `keep_forever`) VALUES
@@ -1914,11 +1960,11 @@ INSERT INTO `gtxly_ucm_history` (`version_id`, `ucm_item_id`, `ucm_type_id`, `ve
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_update_sites`
+-- Table structure for table `gtxly_update_sites`
 --
 
 DROP TABLE IF EXISTS `gtxly_update_sites`;
-CREATE TABLE IF NOT EXISTS `gtxly_update_sites` (
+CREATE TABLE `gtxly_update_sites` (
   `update_site_id` int(11) NOT NULL,
   `name` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT '',
   `type` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT '',
@@ -1926,32 +1972,34 @@ CREATE TABLE IF NOT EXISTS `gtxly_update_sites` (
   `enabled` int(11) DEFAULT '0',
   `last_check_timestamp` bigint(20) DEFAULT '0',
   `extra_query` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT ''
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Update Sites';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Update Sites';
 
 --
--- Volcado de datos para la tabla `gtxly_update_sites`
+-- Dumping data for table `gtxly_update_sites`
 --
 
 INSERT INTO `gtxly_update_sites` (`update_site_id`, `name`, `type`, `location`, `enabled`, `last_check_timestamp`, `extra_query`) VALUES
-(1, 'Joomla! Core', 'collection', 'https://update.joomla.org/core/list.xml', 1, 1504821981, ''),
-(2, 'Accredited Joomla! Translations', 'collection', 'https://update.joomla.org/language/translationlist_3.xml', 1, 1504821981, ''),
-(3, 'Joomla! Update Component Update Site', 'extension', 'https://update.joomla.org/core/extensions/com_joomlaupdate.xml', 1, 1504821981, ''),
-(5, 'Web357 Framework', 'extension', 'http://updates.web357.eu/web357framework/web357framework.xml', 1, 1504821982, '');
+(1, 'Joomla! Core', 'collection', 'https://update.joomla.org/core/list.xml', 1, 1504997430, ''),
+(2, 'Accredited Joomla! Translations', 'collection', 'https://update.joomla.org/language/translationlist_3.xml', 1, 1504997435, ''),
+(3, 'Joomla! Update Component Update Site', 'extension', 'https://update.joomla.org/core/extensions/com_joomlaupdate.xml', 1, 1504997436, ''),
+(5, 'Web357 Framework', 'extension', 'http://updates.web357.eu/web357framework/web357framework.xml', 1, 1504997438, ''),
+(6, 'WebInstaller Update Site', 'extension', 'https://appscdn.joomla.org/webapps/jedapps/webinstaller.xml', 1, 0, ''),
+(7, 'DJ-ImageSlider Package', 'extension', 'http://dj-extensions.com/updates/djimageslider.xml', 1, 0, '');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_update_sites_extensions`
+-- Table structure for table `gtxly_update_sites_extensions`
 --
 
 DROP TABLE IF EXISTS `gtxly_update_sites_extensions`;
-CREATE TABLE IF NOT EXISTS `gtxly_update_sites_extensions` (
+CREATE TABLE `gtxly_update_sites_extensions` (
   `update_site_id` int(11) NOT NULL DEFAULT '0',
   `extension_id` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Links extensions to update sites';
 
 --
--- Volcado de datos para la tabla `gtxly_update_sites_extensions`
+-- Dumping data for table `gtxly_update_sites_extensions`
 --
 
 INSERT INTO `gtxly_update_sites_extensions` (`update_site_id`, `extension_id`) VALUES
@@ -1960,16 +2008,18 @@ INSERT INTO `gtxly_update_sites_extensions` (`update_site_id`, `extension_id`) V
 (2, 10002),
 (2, 10008),
 (3, 28),
-(5, 10003);
+(5, 10003),
+(6, 10009),
+(7, 10012);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_updates`
+-- Table structure for table `gtxly_updates`
 --
 
 DROP TABLE IF EXISTS `gtxly_updates`;
-CREATE TABLE IF NOT EXISTS `gtxly_updates` (
+CREATE TABLE `gtxly_updates` (
   `update_id` int(11) NOT NULL,
   `update_site_id` int(11) DEFAULT '0',
   `extension_id` int(11) DEFAULT '0',
@@ -1984,10 +2034,10 @@ CREATE TABLE IF NOT EXISTS `gtxly_updates` (
   `detailsurl` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `infourl` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `extra_query` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT ''
-) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Available Updates';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Available Updates';
 
 --
--- Volcado de datos para la tabla `gtxly_updates`
+-- Dumping data for table `gtxly_updates`
 --
 
 INSERT INTO `gtxly_updates` (`update_id`, `update_site_id`, `extension_id`, `name`, `description`, `element`, `type`, `folder`, `client_id`, `version`, `data`, `detailsurl`, `infourl`, `extra_query`) VALUES
@@ -2066,12 +2116,12 @@ INSERT INTO `gtxly_updates` (`update_id`, `update_site_id`, `extension_id`, `nam
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_user_keys`
+-- Table structure for table `gtxly_user_keys`
 --
 
 DROP TABLE IF EXISTS `gtxly_user_keys`;
-CREATE TABLE IF NOT EXISTS `gtxly_user_keys` (
-  `id` int(10) unsigned NOT NULL,
+CREATE TABLE `gtxly_user_keys` (
+  `id` int(10) UNSIGNED NOT NULL,
   `user_id` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `series` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -2083,22 +2133,22 @@ CREATE TABLE IF NOT EXISTS `gtxly_user_keys` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_user_notes`
+-- Table structure for table `gtxly_user_notes`
 --
 
 DROP TABLE IF EXISTS `gtxly_user_notes`;
-CREATE TABLE IF NOT EXISTS `gtxly_user_notes` (
-  `id` int(10) unsigned NOT NULL,
-  `user_id` int(10) unsigned NOT NULL DEFAULT '0',
-  `catid` int(10) unsigned NOT NULL DEFAULT '0',
+CREATE TABLE `gtxly_user_notes` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `catid` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `subject` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `state` tinyint(3) NOT NULL DEFAULT '0',
-  `checked_out` int(10) unsigned NOT NULL DEFAULT '0',
+  `checked_out` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `checked_out_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `created_user_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `created_user_id` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `created_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `modified_user_id` int(10) unsigned NOT NULL,
+  `modified_user_id` int(10) UNSIGNED NOT NULL,
   `modified_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `review_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `publish_up` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
@@ -2108,11 +2158,11 @@ CREATE TABLE IF NOT EXISTS `gtxly_user_notes` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_user_profiles`
+-- Table structure for table `gtxly_user_profiles`
 --
 
 DROP TABLE IF EXISTS `gtxly_user_profiles`;
-CREATE TABLE IF NOT EXISTS `gtxly_user_profiles` (
+CREATE TABLE `gtxly_user_profiles` (
   `user_id` int(11) NOT NULL,
   `profile_key` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `profile_value` text COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -2122,17 +2172,17 @@ CREATE TABLE IF NOT EXISTS `gtxly_user_profiles` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_user_usergroup_map`
+-- Table structure for table `gtxly_user_usergroup_map`
 --
 
 DROP TABLE IF EXISTS `gtxly_user_usergroup_map`;
-CREATE TABLE IF NOT EXISTS `gtxly_user_usergroup_map` (
-  `user_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__users.id',
-  `group_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__usergroups.id'
+CREATE TABLE `gtxly_user_usergroup_map` (
+  `user_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__users.id',
+  `group_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Foreign Key to #__usergroups.id'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Volcado de datos para la tabla `gtxly_user_usergroup_map`
+-- Dumping data for table `gtxly_user_usergroup_map`
 --
 
 INSERT INTO `gtxly_user_usergroup_map` (`user_id`, `group_id`) VALUES
@@ -2141,20 +2191,20 @@ INSERT INTO `gtxly_user_usergroup_map` (`user_id`, `group_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_usergroups`
+-- Table structure for table `gtxly_usergroups`
 --
 
 DROP TABLE IF EXISTS `gtxly_usergroups`;
-CREATE TABLE IF NOT EXISTS `gtxly_usergroups` (
-  `id` int(10) unsigned NOT NULL COMMENT 'Primary Key',
-  `parent_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Adjacency List Reference Id',
+CREATE TABLE `gtxly_usergroups` (
+  `id` int(10) UNSIGNED NOT NULL COMMENT 'Primary Key',
+  `parent_id` int(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Adjacency List Reference Id',
   `lft` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set lft.',
   `rgt` int(11) NOT NULL DEFAULT '0' COMMENT 'Nested set rgt.',
   `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Volcado de datos para la tabla `gtxly_usergroups`
+-- Dumping data for table `gtxly_usergroups`
 --
 
 INSERT INTO `gtxly_usergroups` (`id`, `parent_id`, `lft`, `rgt`, `title`) VALUES
@@ -2171,11 +2221,11 @@ INSERT INTO `gtxly_usergroups` (`id`, `parent_id`, `lft`, `rgt`, `title`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_users`
+-- Table structure for table `gtxly_users`
 --
 
 DROP TABLE IF EXISTS `gtxly_users`;
-CREATE TABLE IF NOT EXISTS `gtxly_users` (
+CREATE TABLE `gtxly_users` (
   `id` int(11) NOT NULL,
   `name` varchar(400) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `username` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
@@ -2192,28 +2242,28 @@ CREATE TABLE IF NOT EXISTS `gtxly_users` (
   `otpKey` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'Two factor authentication encrypted keys',
   `otep` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT 'One time emergency passwords',
   `requireReset` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'Require user to reset password on next login'
-) ENGINE=InnoDB AUTO_INCREMENT=225 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Volcado de datos para la tabla `gtxly_users`
+-- Dumping data for table `gtxly_users`
 --
 
 INSERT INTO `gtxly_users` (`id`, `name`, `username`, `email`, `password`, `block`, `sendEmail`, `registerDate`, `lastvisitDate`, `activation`, `params`, `lastResetTime`, `resetCount`, `otpKey`, `otep`, `requireReset`) VALUES
-(224, 'Super User', 'mosaicoStudio', 'alexanderurbinac@gmail.com', '$2y$10$Rb1A6dP6dSlqpcrxVSMyleXQOdaogocmrpinZIOzDoVGMej0R/J5y', 0, 1, '2017-08-28 16:24:06', '2017-09-07 22:06:17', '0', '', '0000-00-00 00:00:00', 0, '', '', 0);
+(224, 'Super User', 'mosaicoStudio', 'alexanderurbinac@gmail.com', '$2y$10$Rb1A6dP6dSlqpcrxVSMyleXQOdaogocmrpinZIOzDoVGMej0R/J5y', 0, 1, '2017-08-28 16:24:06', '2017-09-09 22:50:16', '0', '', '0000-00-00 00:00:00', 0, '', '', 0);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_utf8_conversion`
+-- Table structure for table `gtxly_utf8_conversion`
 --
 
 DROP TABLE IF EXISTS `gtxly_utf8_conversion`;
-CREATE TABLE IF NOT EXISTS `gtxly_utf8_conversion` (
+CREATE TABLE `gtxly_utf8_conversion` (
   `converted` tinyint(4) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Volcado de datos para la tabla `gtxly_utf8_conversion`
+-- Dumping data for table `gtxly_utf8_conversion`
 --
 
 INSERT INTO `gtxly_utf8_conversion` (`converted`) VALUES
@@ -2222,19 +2272,19 @@ INSERT INTO `gtxly_utf8_conversion` (`converted`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `gtxly_viewlevels`
+-- Table structure for table `gtxly_viewlevels`
 --
 
 DROP TABLE IF EXISTS `gtxly_viewlevels`;
-CREATE TABLE IF NOT EXISTS `gtxly_viewlevels` (
-  `id` int(10) unsigned NOT NULL COMMENT 'Primary Key',
+CREATE TABLE `gtxly_viewlevels` (
+  `id` int(10) UNSIGNED NOT NULL COMMENT 'Primary Key',
   `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
   `ordering` int(11) NOT NULL DEFAULT '0',
   `rules` varchar(5120) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'JSON encoded access control.'
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Volcado de datos para la tabla `gtxly_viewlevels`
+-- Dumping data for table `gtxly_viewlevels`
 --
 
 INSERT INTO `gtxly_viewlevels` (`id`, `title`, `ordering`, `rules`) VALUES
@@ -2245,11 +2295,11 @@ INSERT INTO `gtxly_viewlevels` (`id`, `title`, `ordering`, `rules`) VALUES
 (6, 'Super Users', 4, '[8]');
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `gtxly_assets`
+-- Indexes for table `gtxly_assets`
 --
 ALTER TABLE `gtxly_assets`
   ADD PRIMARY KEY (`id`),
@@ -2258,14 +2308,14 @@ ALTER TABLE `gtxly_assets`
   ADD KEY `idx_parent_id` (`parent_id`);
 
 --
--- Indices de la tabla `gtxly_associations`
+-- Indexes for table `gtxly_associations`
 --
 ALTER TABLE `gtxly_associations`
   ADD PRIMARY KEY (`context`,`id`),
   ADD KEY `idx_key` (`key`);
 
 --
--- Indices de la tabla `gtxly_banner_clients`
+-- Indexes for table `gtxly_banner_clients`
 --
 ALTER TABLE `gtxly_banner_clients`
   ADD PRIMARY KEY (`id`),
@@ -2273,7 +2323,7 @@ ALTER TABLE `gtxly_banner_clients`
   ADD KEY `idx_metakey_prefix` (`metakey_prefix`(100));
 
 --
--- Indices de la tabla `gtxly_banner_tracks`
+-- Indexes for table `gtxly_banner_tracks`
 --
 ALTER TABLE `gtxly_banner_tracks`
   ADD PRIMARY KEY (`track_date`,`track_type`,`banner_id`),
@@ -2282,7 +2332,7 @@ ALTER TABLE `gtxly_banner_tracks`
   ADD KEY `idx_banner_id` (`banner_id`);
 
 --
--- Indices de la tabla `gtxly_banners`
+-- Indexes for table `gtxly_banners`
 --
 ALTER TABLE `gtxly_banners`
   ADD PRIMARY KEY (`id`),
@@ -2293,7 +2343,7 @@ ALTER TABLE `gtxly_banners`
   ADD KEY `idx_language` (`language`);
 
 --
--- Indices de la tabla `gtxly_categories`
+-- Indexes for table `gtxly_categories`
 --
 ALTER TABLE `gtxly_categories`
   ADD PRIMARY KEY (`id`),
@@ -2306,7 +2356,7 @@ ALTER TABLE `gtxly_categories`
   ADD KEY `idx_language` (`language`);
 
 --
--- Indices de la tabla `gtxly_contact_details`
+-- Indexes for table `gtxly_contact_details`
 --
 ALTER TABLE `gtxly_contact_details`
   ADD PRIMARY KEY (`id`),
@@ -2320,7 +2370,7 @@ ALTER TABLE `gtxly_contact_details`
   ADD KEY `idx_xreference` (`xreference`);
 
 --
--- Indices de la tabla `gtxly_content`
+-- Indexes for table `gtxly_content`
 --
 ALTER TABLE `gtxly_content`
   ADD PRIMARY KEY (`id`),
@@ -2334,26 +2384,26 @@ ALTER TABLE `gtxly_content`
   ADD KEY `idx_xreference` (`xreference`);
 
 --
--- Indices de la tabla `gtxly_content_frontpage`
+-- Indexes for table `gtxly_content_frontpage`
 --
 ALTER TABLE `gtxly_content_frontpage`
   ADD PRIMARY KEY (`content_id`);
 
 --
--- Indices de la tabla `gtxly_content_rating`
+-- Indexes for table `gtxly_content_rating`
 --
 ALTER TABLE `gtxly_content_rating`
   ADD PRIMARY KEY (`content_id`);
 
 --
--- Indices de la tabla `gtxly_content_types`
+-- Indexes for table `gtxly_content_types`
 --
 ALTER TABLE `gtxly_content_types`
   ADD PRIMARY KEY (`type_id`),
   ADD KEY `idx_alias` (`type_alias`(100));
 
 --
--- Indices de la tabla `gtxly_contentitem_tag_map`
+-- Indexes for table `gtxly_contentitem_tag_map`
 --
 ALTER TABLE `gtxly_contentitem_tag_map`
   ADD UNIQUE KEY `uc_ItemnameTagid` (`type_id`,`content_item_id`,`tag_id`),
@@ -2362,7 +2412,14 @@ ALTER TABLE `gtxly_contentitem_tag_map`
   ADD KEY `idx_core_content_id` (`core_content_id`);
 
 --
--- Indices de la tabla `gtxly_extensions`
+-- Indexes for table `gtxly_djimageslider`
+--
+ALTER TABLE `gtxly_djimageslider`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `catid` (`catid`,`published`);
+
+--
+-- Indexes for table `gtxly_extensions`
 --
 ALTER TABLE `gtxly_extensions`
   ADD PRIMARY KEY (`extension_id`),
@@ -2371,7 +2428,7 @@ ALTER TABLE `gtxly_extensions`
   ADD KEY `extension` (`type`,`element`,`folder`,`client_id`);
 
 --
--- Indices de la tabla `gtxly_fields`
+-- Indexes for table `gtxly_fields`
 --
 ALTER TABLE `gtxly_fields`
   ADD PRIMARY KEY (`id`),
@@ -2383,13 +2440,13 @@ ALTER TABLE `gtxly_fields`
   ADD KEY `idx_language` (`language`);
 
 --
--- Indices de la tabla `gtxly_fields_categories`
+-- Indexes for table `gtxly_fields_categories`
 --
 ALTER TABLE `gtxly_fields_categories`
   ADD PRIMARY KEY (`field_id`,`category_id`);
 
 --
--- Indices de la tabla `gtxly_fields_groups`
+-- Indexes for table `gtxly_fields_groups`
 --
 ALTER TABLE `gtxly_fields_groups`
   ADD PRIMARY KEY (`id`),
@@ -2401,20 +2458,20 @@ ALTER TABLE `gtxly_fields_groups`
   ADD KEY `idx_language` (`language`);
 
 --
--- Indices de la tabla `gtxly_fields_values`
+-- Indexes for table `gtxly_fields_values`
 --
 ALTER TABLE `gtxly_fields_values`
   ADD KEY `idx_field_id` (`field_id`),
   ADD KEY `idx_item_id` (`item_id`(191));
 
 --
--- Indices de la tabla `gtxly_finder_filters`
+-- Indexes for table `gtxly_finder_filters`
 --
 ALTER TABLE `gtxly_finder_filters`
   ADD PRIMARY KEY (`filter_id`);
 
 --
--- Indices de la tabla `gtxly_finder_links`
+-- Indexes for table `gtxly_finder_links`
 --
 ALTER TABLE `gtxly_finder_links`
   ADD PRIMARY KEY (`link_id`),
@@ -2426,7 +2483,7 @@ ALTER TABLE `gtxly_finder_links`
   ADD KEY `idx_published_sale` (`published`,`state`,`access`,`publish_start_date`,`publish_end_date`,`sale_price`);
 
 --
--- Indices de la tabla `gtxly_finder_links_terms0`
+-- Indexes for table `gtxly_finder_links_terms0`
 --
 ALTER TABLE `gtxly_finder_links_terms0`
   ADD PRIMARY KEY (`link_id`,`term_id`),
@@ -2434,7 +2491,7 @@ ALTER TABLE `gtxly_finder_links_terms0`
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
 --
--- Indices de la tabla `gtxly_finder_links_terms1`
+-- Indexes for table `gtxly_finder_links_terms1`
 --
 ALTER TABLE `gtxly_finder_links_terms1`
   ADD PRIMARY KEY (`link_id`,`term_id`),
@@ -2442,7 +2499,7 @@ ALTER TABLE `gtxly_finder_links_terms1`
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
 --
--- Indices de la tabla `gtxly_finder_links_terms2`
+-- Indexes for table `gtxly_finder_links_terms2`
 --
 ALTER TABLE `gtxly_finder_links_terms2`
   ADD PRIMARY KEY (`link_id`,`term_id`),
@@ -2450,7 +2507,7 @@ ALTER TABLE `gtxly_finder_links_terms2`
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
 --
--- Indices de la tabla `gtxly_finder_links_terms3`
+-- Indexes for table `gtxly_finder_links_terms3`
 --
 ALTER TABLE `gtxly_finder_links_terms3`
   ADD PRIMARY KEY (`link_id`,`term_id`),
@@ -2458,7 +2515,7 @@ ALTER TABLE `gtxly_finder_links_terms3`
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
 --
--- Indices de la tabla `gtxly_finder_links_terms4`
+-- Indexes for table `gtxly_finder_links_terms4`
 --
 ALTER TABLE `gtxly_finder_links_terms4`
   ADD PRIMARY KEY (`link_id`,`term_id`),
@@ -2466,7 +2523,7 @@ ALTER TABLE `gtxly_finder_links_terms4`
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
 --
--- Indices de la tabla `gtxly_finder_links_terms5`
+-- Indexes for table `gtxly_finder_links_terms5`
 --
 ALTER TABLE `gtxly_finder_links_terms5`
   ADD PRIMARY KEY (`link_id`,`term_id`),
@@ -2474,7 +2531,7 @@ ALTER TABLE `gtxly_finder_links_terms5`
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
 --
--- Indices de la tabla `gtxly_finder_links_terms6`
+-- Indexes for table `gtxly_finder_links_terms6`
 --
 ALTER TABLE `gtxly_finder_links_terms6`
   ADD PRIMARY KEY (`link_id`,`term_id`),
@@ -2482,7 +2539,7 @@ ALTER TABLE `gtxly_finder_links_terms6`
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
 --
--- Indices de la tabla `gtxly_finder_links_terms7`
+-- Indexes for table `gtxly_finder_links_terms7`
 --
 ALTER TABLE `gtxly_finder_links_terms7`
   ADD PRIMARY KEY (`link_id`,`term_id`),
@@ -2490,7 +2547,7 @@ ALTER TABLE `gtxly_finder_links_terms7`
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
 --
--- Indices de la tabla `gtxly_finder_links_terms8`
+-- Indexes for table `gtxly_finder_links_terms8`
 --
 ALTER TABLE `gtxly_finder_links_terms8`
   ADD PRIMARY KEY (`link_id`,`term_id`),
@@ -2498,7 +2555,7 @@ ALTER TABLE `gtxly_finder_links_terms8`
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
 --
--- Indices de la tabla `gtxly_finder_links_terms9`
+-- Indexes for table `gtxly_finder_links_terms9`
 --
 ALTER TABLE `gtxly_finder_links_terms9`
   ADD PRIMARY KEY (`link_id`,`term_id`),
@@ -2506,7 +2563,7 @@ ALTER TABLE `gtxly_finder_links_terms9`
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
 --
--- Indices de la tabla `gtxly_finder_links_termsa`
+-- Indexes for table `gtxly_finder_links_termsa`
 --
 ALTER TABLE `gtxly_finder_links_termsa`
   ADD PRIMARY KEY (`link_id`,`term_id`),
@@ -2514,7 +2571,7 @@ ALTER TABLE `gtxly_finder_links_termsa`
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
 --
--- Indices de la tabla `gtxly_finder_links_termsb`
+-- Indexes for table `gtxly_finder_links_termsb`
 --
 ALTER TABLE `gtxly_finder_links_termsb`
   ADD PRIMARY KEY (`link_id`,`term_id`),
@@ -2522,7 +2579,7 @@ ALTER TABLE `gtxly_finder_links_termsb`
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
 --
--- Indices de la tabla `gtxly_finder_links_termsc`
+-- Indexes for table `gtxly_finder_links_termsc`
 --
 ALTER TABLE `gtxly_finder_links_termsc`
   ADD PRIMARY KEY (`link_id`,`term_id`),
@@ -2530,7 +2587,7 @@ ALTER TABLE `gtxly_finder_links_termsc`
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
 --
--- Indices de la tabla `gtxly_finder_links_termsd`
+-- Indexes for table `gtxly_finder_links_termsd`
 --
 ALTER TABLE `gtxly_finder_links_termsd`
   ADD PRIMARY KEY (`link_id`,`term_id`),
@@ -2538,7 +2595,7 @@ ALTER TABLE `gtxly_finder_links_termsd`
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
 --
--- Indices de la tabla `gtxly_finder_links_termse`
+-- Indexes for table `gtxly_finder_links_termse`
 --
 ALTER TABLE `gtxly_finder_links_termse`
   ADD PRIMARY KEY (`link_id`,`term_id`),
@@ -2546,7 +2603,7 @@ ALTER TABLE `gtxly_finder_links_termse`
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
 --
--- Indices de la tabla `gtxly_finder_links_termsf`
+-- Indexes for table `gtxly_finder_links_termsf`
 --
 ALTER TABLE `gtxly_finder_links_termsf`
   ADD PRIMARY KEY (`link_id`,`term_id`),
@@ -2554,7 +2611,7 @@ ALTER TABLE `gtxly_finder_links_termsf`
   ADD KEY `idx_link_term_weight` (`link_id`,`term_id`,`weight`);
 
 --
--- Indices de la tabla `gtxly_finder_taxonomy`
+-- Indexes for table `gtxly_finder_taxonomy`
 --
 ALTER TABLE `gtxly_finder_taxonomy`
   ADD PRIMARY KEY (`id`),
@@ -2565,7 +2622,7 @@ ALTER TABLE `gtxly_finder_taxonomy`
   ADD KEY `idx_parent_published` (`parent_id`,`state`,`access`);
 
 --
--- Indices de la tabla `gtxly_finder_taxonomy_map`
+-- Indexes for table `gtxly_finder_taxonomy_map`
 --
 ALTER TABLE `gtxly_finder_taxonomy_map`
   ADD PRIMARY KEY (`link_id`,`node_id`),
@@ -2573,7 +2630,7 @@ ALTER TABLE `gtxly_finder_taxonomy_map`
   ADD KEY `node_id` (`node_id`);
 
 --
--- Indices de la tabla `gtxly_finder_terms`
+-- Indexes for table `gtxly_finder_terms`
 --
 ALTER TABLE `gtxly_finder_terms`
   ADD PRIMARY KEY (`term_id`),
@@ -2583,35 +2640,35 @@ ALTER TABLE `gtxly_finder_terms`
   ADD KEY `idx_soundex_phrase` (`soundex`,`phrase`);
 
 --
--- Indices de la tabla `gtxly_finder_terms_common`
+-- Indexes for table `gtxly_finder_terms_common`
 --
 ALTER TABLE `gtxly_finder_terms_common`
   ADD KEY `idx_word_lang` (`term`,`language`),
   ADD KEY `idx_lang` (`language`);
 
 --
--- Indices de la tabla `gtxly_finder_tokens`
+-- Indexes for table `gtxly_finder_tokens`
 --
 ALTER TABLE `gtxly_finder_tokens`
   ADD KEY `idx_word` (`term`),
   ADD KEY `idx_context` (`context`);
 
 --
--- Indices de la tabla `gtxly_finder_tokens_aggregate`
+-- Indexes for table `gtxly_finder_tokens_aggregate`
 --
 ALTER TABLE `gtxly_finder_tokens_aggregate`
   ADD KEY `token` (`term`),
   ADD KEY `keyword_id` (`term_id`);
 
 --
--- Indices de la tabla `gtxly_finder_types`
+-- Indexes for table `gtxly_finder_types`
 --
 ALTER TABLE `gtxly_finder_types`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `title` (`title`);
 
 --
--- Indices de la tabla `gtxly_languages`
+-- Indexes for table `gtxly_languages`
 --
 ALTER TABLE `gtxly_languages`
   ADD PRIMARY KEY (`lang_id`),
@@ -2621,7 +2678,7 @@ ALTER TABLE `gtxly_languages`
   ADD KEY `idx_ordering` (`ordering`);
 
 --
--- Indices de la tabla `gtxly_menu`
+-- Indexes for table `gtxly_menu`
 --
 ALTER TABLE `gtxly_menu`
   ADD PRIMARY KEY (`id`),
@@ -2634,27 +2691,27 @@ ALTER TABLE `gtxly_menu`
   ADD KEY `idx_language` (`language`);
 
 --
--- Indices de la tabla `gtxly_menu_types`
+-- Indexes for table `gtxly_menu_types`
 --
 ALTER TABLE `gtxly_menu_types`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `idx_menutype` (`menutype`);
 
 --
--- Indices de la tabla `gtxly_messages`
+-- Indexes for table `gtxly_messages`
 --
 ALTER TABLE `gtxly_messages`
   ADD PRIMARY KEY (`message_id`),
   ADD KEY `useridto_state` (`user_id_to`,`state`);
 
 --
--- Indices de la tabla `gtxly_messages_cfg`
+-- Indexes for table `gtxly_messages_cfg`
 --
 ALTER TABLE `gtxly_messages_cfg`
   ADD UNIQUE KEY `idx_user_var_name` (`user_id`,`cfg_name`);
 
 --
--- Indices de la tabla `gtxly_modules`
+-- Indexes for table `gtxly_modules`
 --
 ALTER TABLE `gtxly_modules`
   ADD PRIMARY KEY (`id`),
@@ -2663,13 +2720,13 @@ ALTER TABLE `gtxly_modules`
   ADD KEY `idx_language` (`language`);
 
 --
--- Indices de la tabla `gtxly_modules_menu`
+-- Indexes for table `gtxly_modules_menu`
 --
 ALTER TABLE `gtxly_modules_menu`
   ADD PRIMARY KEY (`moduleid`,`menuid`);
 
 --
--- Indices de la tabla `gtxly_newsfeeds`
+-- Indexes for table `gtxly_newsfeeds`
 --
 ALTER TABLE `gtxly_newsfeeds`
   ADD PRIMARY KEY (`id`),
@@ -2682,19 +2739,19 @@ ALTER TABLE `gtxly_newsfeeds`
   ADD KEY `idx_xreference` (`xreference`);
 
 --
--- Indices de la tabla `gtxly_overrider`
+-- Indexes for table `gtxly_overrider`
 --
 ALTER TABLE `gtxly_overrider`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `gtxly_postinstall_messages`
+-- Indexes for table `gtxly_postinstall_messages`
 --
 ALTER TABLE `gtxly_postinstall_messages`
   ADD PRIMARY KEY (`postinstall_message_id`);
 
 --
--- Indices de la tabla `gtxly_redirect_links`
+-- Indexes for table `gtxly_redirect_links`
 --
 ALTER TABLE `gtxly_redirect_links`
   ADD PRIMARY KEY (`id`),
@@ -2702,13 +2759,13 @@ ALTER TABLE `gtxly_redirect_links`
   ADD KEY `idx_link_modifed` (`modified_date`);
 
 --
--- Indices de la tabla `gtxly_schemas`
+-- Indexes for table `gtxly_schemas`
 --
 ALTER TABLE `gtxly_schemas`
   ADD PRIMARY KEY (`extension_id`,`version_id`);
 
 --
--- Indices de la tabla `gtxly_session`
+-- Indexes for table `gtxly_session`
 --
 ALTER TABLE `gtxly_session`
   ADD PRIMARY KEY (`session_id`),
@@ -2716,7 +2773,7 @@ ALTER TABLE `gtxly_session`
   ADD KEY `time` (`time`);
 
 --
--- Indices de la tabla `gtxly_tags`
+-- Indexes for table `gtxly_tags`
 --
 ALTER TABLE `gtxly_tags`
   ADD PRIMARY KEY (`id`),
@@ -2729,7 +2786,7 @@ ALTER TABLE `gtxly_tags`
   ADD KEY `idx_language` (`language`);
 
 --
--- Indices de la tabla `gtxly_template_styles`
+-- Indexes for table `gtxly_template_styles`
 --
 ALTER TABLE `gtxly_template_styles`
   ADD PRIMARY KEY (`id`),
@@ -2737,7 +2794,7 @@ ALTER TABLE `gtxly_template_styles`
   ADD KEY `idx_home` (`home`);
 
 --
--- Indices de la tabla `gtxly_ucm_base`
+-- Indexes for table `gtxly_ucm_base`
 --
 ALTER TABLE `gtxly_ucm_base`
   ADD PRIMARY KEY (`ucm_id`),
@@ -2746,7 +2803,7 @@ ALTER TABLE `gtxly_ucm_base`
   ADD KEY `idx_ucm_language_id` (`ucm_language_id`);
 
 --
--- Indices de la tabla `gtxly_ucm_content`
+-- Indexes for table `gtxly_ucm_content`
 --
 ALTER TABLE `gtxly_ucm_content`
   ADD PRIMARY KEY (`core_content_id`),
@@ -2764,7 +2821,7 @@ ALTER TABLE `gtxly_ucm_content`
   ADD KEY `idx_core_type_id` (`core_type_id`);
 
 --
--- Indices de la tabla `gtxly_ucm_history`
+-- Indexes for table `gtxly_ucm_history`
 --
 ALTER TABLE `gtxly_ucm_history`
   ADD PRIMARY KEY (`version_id`),
@@ -2772,25 +2829,25 @@ ALTER TABLE `gtxly_ucm_history`
   ADD KEY `idx_save_date` (`save_date`);
 
 --
--- Indices de la tabla `gtxly_update_sites`
+-- Indexes for table `gtxly_update_sites`
 --
 ALTER TABLE `gtxly_update_sites`
   ADD PRIMARY KEY (`update_site_id`);
 
 --
--- Indices de la tabla `gtxly_update_sites_extensions`
+-- Indexes for table `gtxly_update_sites_extensions`
 --
 ALTER TABLE `gtxly_update_sites_extensions`
   ADD PRIMARY KEY (`update_site_id`,`extension_id`);
 
 --
--- Indices de la tabla `gtxly_updates`
+-- Indexes for table `gtxly_updates`
 --
 ALTER TABLE `gtxly_updates`
   ADD PRIMARY KEY (`update_id`);
 
 --
--- Indices de la tabla `gtxly_user_keys`
+-- Indexes for table `gtxly_user_keys`
 --
 ALTER TABLE `gtxly_user_keys`
   ADD PRIMARY KEY (`id`),
@@ -2800,7 +2857,7 @@ ALTER TABLE `gtxly_user_keys`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indices de la tabla `gtxly_user_notes`
+-- Indexes for table `gtxly_user_notes`
 --
 ALTER TABLE `gtxly_user_notes`
   ADD PRIMARY KEY (`id`),
@@ -2808,19 +2865,19 @@ ALTER TABLE `gtxly_user_notes`
   ADD KEY `idx_category_id` (`catid`);
 
 --
--- Indices de la tabla `gtxly_user_profiles`
+-- Indexes for table `gtxly_user_profiles`
 --
 ALTER TABLE `gtxly_user_profiles`
   ADD UNIQUE KEY `idx_user_id_profile_key` (`user_id`,`profile_key`);
 
 --
--- Indices de la tabla `gtxly_user_usergroup_map`
+-- Indexes for table `gtxly_user_usergroup_map`
 --
 ALTER TABLE `gtxly_user_usergroup_map`
   ADD PRIMARY KEY (`user_id`,`group_id`);
 
 --
--- Indices de la tabla `gtxly_usergroups`
+-- Indexes for table `gtxly_usergroups`
 --
 ALTER TABLE `gtxly_usergroups`
   ADD PRIMARY KEY (`id`),
@@ -2830,7 +2887,7 @@ ALTER TABLE `gtxly_usergroups`
   ADD KEY `idx_usergroup_nested_set_lookup` (`lft`,`rgt`) USING BTREE;
 
 --
--- Indices de la tabla `gtxly_users`
+-- Indexes for table `gtxly_users`
 --
 ALTER TABLE `gtxly_users`
   ADD PRIMARY KEY (`id`),
@@ -2840,191 +2897,196 @@ ALTER TABLE `gtxly_users`
   ADD KEY `email` (`email`);
 
 --
--- Indices de la tabla `gtxly_viewlevels`
+-- Indexes for table `gtxly_viewlevels`
 --
 ALTER TABLE `gtxly_viewlevels`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `idx_assetgroup_title_lookup` (`title`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `gtxly_assets`
+-- AUTO_INCREMENT for table `gtxly_assets`
 --
 ALTER TABLE `gtxly_assets`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',AUTO_INCREMENT=87;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=90;
 --
--- AUTO_INCREMENT de la tabla `gtxly_banner_clients`
+-- AUTO_INCREMENT for table `gtxly_banner_clients`
 --
 ALTER TABLE `gtxly_banner_clients`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `gtxly_banners`
+-- AUTO_INCREMENT for table `gtxly_banners`
 --
 ALTER TABLE `gtxly_banners`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `gtxly_categories`
+-- AUTO_INCREMENT for table `gtxly_categories`
 --
 ALTER TABLE `gtxly_categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
--- AUTO_INCREMENT de la tabla `gtxly_contact_details`
+-- AUTO_INCREMENT for table `gtxly_contact_details`
 --
 ALTER TABLE `gtxly_contact_details`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `gtxly_content`
+-- AUTO_INCREMENT for table `gtxly_content`
 --
 ALTER TABLE `gtxly_content`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `gtxly_content_types`
+-- AUTO_INCREMENT for table `gtxly_content_types`
 --
 ALTER TABLE `gtxly_content_types`
-  MODIFY `type_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+  MODIFY `type_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
--- AUTO_INCREMENT de la tabla `gtxly_extensions`
+-- AUTO_INCREMENT for table `gtxly_djimageslider`
+--
+ALTER TABLE `gtxly_djimageslider`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `gtxly_extensions`
 --
 ALTER TABLE `gtxly_extensions`
-  MODIFY `extension_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10009;
+  MODIFY `extension_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10013;
 --
--- AUTO_INCREMENT de la tabla `gtxly_fields`
+-- AUTO_INCREMENT for table `gtxly_fields`
 --
 ALTER TABLE `gtxly_fields`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `gtxly_fields_groups`
+-- AUTO_INCREMENT for table `gtxly_fields_groups`
 --
 ALTER TABLE `gtxly_fields_groups`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `gtxly_finder_filters`
+-- AUTO_INCREMENT for table `gtxly_finder_filters`
 --
 ALTER TABLE `gtxly_finder_filters`
-  MODIFY `filter_id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `filter_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `gtxly_finder_links`
+-- AUTO_INCREMENT for table `gtxly_finder_links`
 --
 ALTER TABLE `gtxly_finder_links`
-  MODIFY `link_id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `link_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `gtxly_finder_taxonomy`
+-- AUTO_INCREMENT for table `gtxly_finder_taxonomy`
 --
 ALTER TABLE `gtxly_finder_taxonomy`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT de la tabla `gtxly_finder_terms`
+-- AUTO_INCREMENT for table `gtxly_finder_terms`
 --
 ALTER TABLE `gtxly_finder_terms`
-  MODIFY `term_id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `term_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `gtxly_finder_types`
+-- AUTO_INCREMENT for table `gtxly_finder_types`
 --
 ALTER TABLE `gtxly_finder_types`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `gtxly_languages`
+-- AUTO_INCREMENT for table `gtxly_languages`
 --
 ALTER TABLE `gtxly_languages`
-  MODIFY `lang_id` int(11) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `lang_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT de la tabla `gtxly_menu`
+-- AUTO_INCREMENT for table `gtxly_menu`
 --
 ALTER TABLE `gtxly_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=115;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
 --
--- AUTO_INCREMENT de la tabla `gtxly_menu_types`
+-- AUTO_INCREMENT for table `gtxly_menu_types`
 --
 ALTER TABLE `gtxly_menu_types`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT de la tabla `gtxly_messages`
+-- AUTO_INCREMENT for table `gtxly_messages`
 --
 ALTER TABLE `gtxly_messages`
-  MODIFY `message_id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `message_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `gtxly_modules`
+-- AUTO_INCREMENT for table `gtxly_modules`
 --
 ALTER TABLE `gtxly_modules`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=90;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 --
--- AUTO_INCREMENT de la tabla `gtxly_newsfeeds`
+-- AUTO_INCREMENT for table `gtxly_newsfeeds`
 --
 ALTER TABLE `gtxly_newsfeeds`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `gtxly_overrider`
+-- AUTO_INCREMENT for table `gtxly_overrider`
 --
 ALTER TABLE `gtxly_overrider`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key';
 --
--- AUTO_INCREMENT de la tabla `gtxly_postinstall_messages`
+-- AUTO_INCREMENT for table `gtxly_postinstall_messages`
 --
 ALTER TABLE `gtxly_postinstall_messages`
-  MODIFY `postinstall_message_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `postinstall_message_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
--- AUTO_INCREMENT de la tabla `gtxly_redirect_links`
+-- AUTO_INCREMENT for table `gtxly_redirect_links`
 --
 ALTER TABLE `gtxly_redirect_links`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `gtxly_tags`
+-- AUTO_INCREMENT for table `gtxly_tags`
 --
 ALTER TABLE `gtxly_tags`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
--- AUTO_INCREMENT de la tabla `gtxly_template_styles`
+-- AUTO_INCREMENT for table `gtxly_template_styles`
 --
 ALTER TABLE `gtxly_template_styles`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
--- AUTO_INCREMENT de la tabla `gtxly_ucm_content`
+-- AUTO_INCREMENT for table `gtxly_ucm_content`
 --
 ALTER TABLE `gtxly_ucm_content`
-  MODIFY `core_content_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+  MODIFY `core_content_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
--- AUTO_INCREMENT de la tabla `gtxly_ucm_history`
+-- AUTO_INCREMENT for table `gtxly_ucm_history`
 --
 ALTER TABLE `gtxly_ucm_history`
-  MODIFY `version_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
+  MODIFY `version_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
--- AUTO_INCREMENT de la tabla `gtxly_update_sites`
+-- AUTO_INCREMENT for table `gtxly_update_sites`
 --
 ALTER TABLE `gtxly_update_sites`
-  MODIFY `update_site_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `update_site_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
--- AUTO_INCREMENT de la tabla `gtxly_updates`
+-- AUTO_INCREMENT for table `gtxly_updates`
 --
 ALTER TABLE `gtxly_updates`
-  MODIFY `update_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=72;
+  MODIFY `update_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 --
--- AUTO_INCREMENT de la tabla `gtxly_user_keys`
+-- AUTO_INCREMENT for table `gtxly_user_keys`
 --
 ALTER TABLE `gtxly_user_keys`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `gtxly_user_notes`
+-- AUTO_INCREMENT for table `gtxly_user_notes`
 --
 ALTER TABLE `gtxly_user_notes`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `gtxly_usergroups`
+-- AUTO_INCREMENT for table `gtxly_usergroups`
 --
 ALTER TABLE `gtxly_usergroups`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=10;
 --
--- AUTO_INCREMENT de la tabla `gtxly_users`
+-- AUTO_INCREMENT for table `gtxly_users`
 --
 ALTER TABLE `gtxly_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=225;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=225;
 --
--- AUTO_INCREMENT de la tabla `gtxly_viewlevels`
+-- AUTO_INCREMENT for table `gtxly_viewlevels`
 --
 ALTER TABLE `gtxly_viewlevels`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Primary Key', AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
