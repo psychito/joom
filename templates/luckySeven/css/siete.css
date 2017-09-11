@@ -14,13 +14,16 @@
 }
 
 .padders{
-	padding-right: 30px;
-	padding-left: 30px;
-width: calc(100% - 60px) !important;
+	padding-right: 50px;
+	padding-left: 50px;
+width: calc(100% - 100px) !important;
 }
 
 .redes img{
 	max-height: 20px;
+}
+.slidercont{
+	padding-top: 30px;
 }
 .navbar .btn-navbar {
 	display: none;
